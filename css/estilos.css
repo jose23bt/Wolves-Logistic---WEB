@@ -35,3 +35,8 @@ body {
 
 #mode {
   color: black; }
+
+footer {
+  background-color: black; }
+  footer img {
+    height: 150px; }
