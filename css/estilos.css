@@ -1,4 +1,75 @@
 /*inicio*/
+/*main-index*/
+/*hero-section*/
+/*segundoHero*/
+.segundoHero {
+  margin-top: 80px;
+  margin-bottom: 100px; }
+
+.nuestrosServicios {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center; }
+
+/*main-flex*/
+.parent {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px; }
+
+.div1 {
+  padding: 90px;
+  margin-top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  grid-area: 1 / 1 / 2 / 2; }
+
+.div2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  grid-area: 1 / 2 / 2 / 3; }
+
+.div3 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  grid-area: 2 / 1 / 3 / 2; }
+
+.div4 {
+  padding: 90px;
+  margin-top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  grid-area: 2 / 2 / 3 / 3; }
+
+.parent2 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: px;
+  grid-row-gap: px; }
+
+.div5 {
+  grid-area: 1 / 1 / 2 / 2; }
+
+.div6 {
+  grid-area: 1 / 2 / 2 / 3; }
+
+.div7 {
+  grid-area: 1 / 3 / 2 / 4; }
+
+/*precios-mapa*/
 body {
   color: #5bc0de;
   font-family: "Poppins", sans-serif; }
@@ -40,3 +111,33 @@ footer {
   background-color: black; }
   footer img {
     height: 150px; }
+
+@media (max-width: 700px) {
+  .parent {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px; }
+  .div1 {
+    grid-area: 1 / 1 / 2 / 2; }
+  .div2 {
+    grid-area: 2 / 1 / 3 / 2; }
+  .div3 {
+    grid-area: 3 / 1 / 4 / 2; }
+  .div4 {
+    grid-area: 4 / 1 / 5 / 2; } }
+
+@media (max-width: 700px) {
+  .parent2 {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px; }
+  .div5 {
+    grid-area: 1 / 1 / 2 / 2; }
+  .div6 {
+    grid-area: 2 / 1 / 3 / 2; }
+  .div7 {
+    grid-area: 3 / 1 / 4 / 2; } }
