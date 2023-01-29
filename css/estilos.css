@@ -105,19 +105,15 @@ section {
   grid-area: 1 / 3 / 2 / 4; }
 
 /*precios-mapa*/
-body {
-  color: #5bc0de;
-  font-family: "Poppins", sans-serif; }
-
 .fa-map-marker-alt,
 .fa-dot-circle {
-  color: #5bc0de; }
+  color: #000000; }
 
 /*Jumbotron*/
 .jumbotron {
   background-color: transparent;
   margin: 0;
-  padding: 10px; }
+  padding: 80px; }
 
 .jumbotron h1 {
   letter-spacing: 2.5px;
@@ -128,8 +124,15 @@ body {
   text-align: center; }
 
 /*map*/
+.boton {
+  display: flex;
+  justify-content: center; }
+  .boton button {
+    background-color: #e4e4e4;
+    width: 500px; }
+
 #googleMap {
-  width: 80%;
+  width: 100%;
   height: 400px;
   margin: 10px auto; }
 
