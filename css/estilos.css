@@ -1,13 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Poiret+One&family=Poppins:ital,wght@0,100;0,500;1,300&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box; }
+
+section {
+  background-color: #f1f1f1; }
+
 /*inicio*/
 /*main-index*/
 /*hero-section*/
 /*segundoHero*/
 .segundoHero {
-  margin-top: 80px;
-  margin-bottom: 100px; }
+  text-align: center; }
+  .segundoHero h5 {
+    font-family: 'Anton', sans-serif;
+    font-size: 60px; }
+  .segundoHero p {
+    font-size: 20px; }
 
 .nuestrosServicios {
-  margin-top: 100px;
+  margin-top: 0;
+  padding: 80px;
+  padding-right: 200px;
+  padding-left: 200px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -20,17 +38,19 @@
   grid-template-rows: repeat(2, 1fr);
   grid-column-gap: 0px;
   grid-row-gap: 0px; }
+  .parent img {
+    border-radius: 20px;
+    width: 80%; }
 
 .div1 {
-  padding: 90px;
-  margin-top: 0;
+  margin-top: 100px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
+  justify-content: center;
   grid-area: 1 / 1 / 2 / 2; }
 
 .div2 {
+  margin-top: 100px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -45,12 +65,10 @@
   grid-area: 2 / 1 / 3 / 2; }
 
 .div4 {
-  padding: 90px;
   margin-top: 0;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
+  justify-content: center;
   grid-area: 2 / 2 / 3 / 3; }
 
 .parent2 {
@@ -58,15 +76,32 @@
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: 1fr;
   grid-column-gap: px;
-  grid-row-gap: px; }
+  grid-row-gap: px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  align-content: center; }
+  .parent2 img {
+    padding: 20px;
+    width: 80%;
+    border-radius: 30px; }
 
 .div5 {
+  margin-bottom: 50px;
+  align-items: center;
+  text-align: center;
   grid-area: 1 / 1 / 2 / 2; }
 
 .div6 {
+  margin-bottom: 50px;
+  align-items: center;
+  text-align: center;
   grid-area: 1 / 2 / 2 / 3; }
 
 .div7 {
+  margin-bottom: 50px;
+  align-items: center;
+  text-align: center;
   grid-area: 1 / 3 / 2 / 4; }
 
 /*precios-mapa*/
@@ -120,21 +155,28 @@ footer {
     grid-column-gap: 0px;
     grid-row-gap: 0px; }
   .div1 {
+    margin-top: 0px;
     grid-area: 1 / 1 / 2 / 2; }
   .div2 {
+    margin-top: 0px;
     grid-area: 2 / 1 / 3 / 2; }
   .div3 {
-    grid-area: 3 / 1 / 4 / 2; }
+    margin-top: 0px;
+    margin-bottom: 50px;
+    grid-area: 4 / 1 / 5 / 2; }
   .div4 {
-    grid-area: 4 / 1 / 5 / 2; } }
-
-@media (max-width: 700px) {
+    grid-area: 3 / 1 / 4 / 2; }
+  .nuestrosServicios {
+    padding: 10px;
+    padding-right: 10px;
+    padding-left: 10px; }
   .parent2 {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(3, 1fr);
     grid-column-gap: 0px;
-    grid-row-gap: 0px; }
+    grid-row-gap: 0px;
+    justify-items: center; }
   .div5 {
     grid-area: 1 / 1 / 2 / 2; }
   .div6 {
