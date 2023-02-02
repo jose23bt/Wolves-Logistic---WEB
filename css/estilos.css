@@ -131,12 +131,12 @@ section {
   font-size: 30px; }
 
 .heroPrecios {
-  padding: 50px;
-  height: auto;
-  background-image: url(/Img/ciudad.jpg);
+  background-image: url("../Img/ciudad.jpg");
+  background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
-  background-attachment: fixed; }
+  padding: 50px;
+  height: auto; }
   .heroPrecios h1 {
     text-align: center;
     color: #e4e4e4;

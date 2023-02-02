@@ -145,6 +145,11 @@
 
 /*precios*/
 
+
+.mainPrecios{
+  
+}
+
 .titulo{
     margin-top: 80px;
     margin-bottom: 100px;
@@ -154,13 +159,13 @@
     font-size: 30px;
 }
 
-.heroPrecios {
+.heroPrecios { 
+    background-image: url("../Img/ciudad.jpg");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;   
     padding: 50px;
     height: auto;
-    background-image: url(/Img/ciudad.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
     h1 {
         text-align: center;
         color: #e4e4e4;
