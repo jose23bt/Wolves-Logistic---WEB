@@ -1,15 +1,15 @@
 ﻿<!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <meta charset="utf-8" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/estilos.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">    
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <script src="https://kit.fontawesome.com/ab2155e76b.js" crossorigin="anonymous"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-    <title>wolves | Cotizador de viajes</title>
-</head>
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Wolves | Logistica Y Mensajeria</title>
+
 <body>
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -22,10 +22,10 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                    <div class="navbar-nav">
+                    <div class="navbar-nav m-auto mb-lg-0">
                         <a class="nav-link active" aria-current="page" href="../index.html">Inicio</a>
                         <a class="nav-link" href="#">Quienes Somos</a>
-                        <a class="nav-link" href="./precios.html">Precios</a>
+                        <a class="nav-link" href="/pages/precios.html">Precios</a>
                         <a class="nav-link" href="#">Contacto</a>
                     </div>
                 </div>
@@ -33,51 +33,102 @@
         </nav>
     </header>
 
-    <div class="jumbotron">
-        <div class="container-fluid">
-            <h1>Cotizador de viajes</h1>
-            <p>Calcula el precio de tu envio de forma particular</p>
-            <form class="form-horizontal">
-                <div class="form-group">
-                    <label for="from" class="col-xs-2 control-label"><i class="far fa-dot-circle"></i></label>
-                    <div class="col-xs-4">
-                        <input type="text" id="from" placeholder="Origen" class="form-control">
+    <main class="mainPrecios">
+        <section class="heroPrecios">
+            <div class="titulo">
+                <h1>Tarifas de envío claras y competitivas</h1>
+            </div>
+
+            <div class="precios">
+                <div class="precioCaba">
+                    <h1>CABA</h1>
+                    <p class="precioUno">$400</p>
+                    <h5>Zona 1</h5>
+                    <p>$ 600</p>
+                    <h5>Zona 2</h5>
+                    <p>$ 780</p>
+                    <h5>Zona 3</h5>
+                    <p>$ 920</p>
+                </div>
+                <div class="precioLomas">
+                    <h1>Envio desde Lomas de Zamora</h1>
+                    <p class="precioUno">$370</p>
+                    <h5>Zona 1</h5>
+                    <p>$ 550</p>
+                    <h5>Cordon 2</h5>
+                    <p>$ 730</p>
+                    <h5>Cordon 3</h5>
+                    <p>$ 880</p>
+                </div>
+            </div>    
+            <div class="aclaracion">
+                <p>En ambos precios esta incluido el servicio de puerta a puerta, pagos contra entrega, logística inversa,
+                    búsqueda y almacenamiento, E-commers y flex.</p>
+    
+                <h3>Todos los envíos que sean menos a 10 paquetes, sean programados o particulares se cobran por
+                    kilometraje. Has tu consulta vía whatsapp, cotizamos al momento.</h3>
+    
+                <a href="https://api.whatsapp.com/send/?phone=5491123318355&text&type=phone_number&app_absent=0"><img
+                        src="../Img/logowhatsapp.png" alt=""></a>
+            </div>
+        </section>
+
+
+        <div class="jumbotron">
+            <div class="container-fluid">
+                <h1>Cotizador de viajes</h1>
+                <p>Calcula el precio de tu envio de forma particular</p>
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <label for="from" class="col-xs-2 control-label"><i class="far fa-dot-circle"></i></label>
+                        <div class="col-xs-4">
+                            <input type="text" id="from" placeholder="Origen" class="form-control">
+                        </div>
                     </div>
-               </div>
-               <div class="form-group">                
-                    <label for="to" class="col-xs-2 control-label"><i class="fas fa-map-marker-alt"></i></label>
-                    <div class="col-xs-4">
-                        <input type="text" id="to" placeholder="Destino" class="form-control">                        
-                    </div>                    
-                 </div>                 
-            </form>
-            
-            <div class="boton">
-                <div class="col-xs-offset-2 col-xs-10" style="margin-top: 50px; margin-bottom: 50px;">
-                    <button onclick="calcRoute();">Calcular</button>                
+                    <div class="form-group">
+                        <label for="to" class="col-xs-2 control-label"><i class="fas fa-map-marker-alt"></i></label>
+                        <div class="col-xs-4">
+                            <input type="text" id="to" placeholder="Destino" class="form-control">
+                        </div>
+                    </div>
+                </form>
+    
+                <div class="boton">
+                    <div class="col-xs-offset-2 col-xs-10" style="margin-top: 50px; margin-bottom: 50px;">
+                        <button onclick="calcRoute();">COTIZAR</button>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="container-fluid">
-            
-            <div id="googleMap">
-
+            <div class="container-fluid">
+    
+                <div id="googleMap">
+    
+                </div>
+                <div id="output">
+    
+                </div>
             </div>
-            <div id="output">
-                
-            </div>            
+    
         </div>
+    </main>
 
-    </div>
+    <footer>
 
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-    crossorigin="anonymous"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBCTFv7kmJ-6tH3VBiygWhlbyRCOtnJVww&libraries=places"></script>
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBCTFv7kmJ-6tH3VBiygWhlbyRCOtnJVww&libraries=places"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="Scripts/jquery-3.1.1.min.js"></script>
     <script src="../Main.js"></script>
 </body>
+
 </html>

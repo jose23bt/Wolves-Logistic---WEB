@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Anton&family=Poiret+One&family=Poppins:ital,wght@0,100;0,500;1,300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Poiret+One&family=Poppins:ital,wght@0,100;0,200;0,500;1,300&display=swap");
 * {
   padding: 0;
   margin: 0;
@@ -111,9 +111,8 @@ section {
 
 /*Jumbotron*/
 .jumbotron {
-  background-color: transparent;
   margin: 0;
-  padding: 80px; }
+  padding: 30px; }
 
 .jumbotron h1 {
   letter-spacing: 2.5px;
@@ -123,13 +122,92 @@ section {
 .jumbotron p {
   text-align: center; }
 
+/*precios*/
+.titulo {
+  margin-top: 80px;
+  margin-bottom: 100px; }
+
+.precioUno {
+  font-size: 30px; }
+
+.heroPrecios {
+  padding: 50px;
+  height: auto;
+  background-image: url(/Img/ciudad.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed; }
+  .heroPrecios h1 {
+    text-align: center;
+    color: #e4e4e4;
+    font-size: 60px;
+    font-family: 'Anton', sans-serif; }
+
+.precios {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around; }
+  .precios div {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    height: 400px;
+    width: 300px;
+    font-family: 'Poiret One', 200;
+    color: white; }
+
+.titulo {
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+.precioCaba {
+  background-color: #0066c5bb; }
+
+.precioLomas {
+  background-color: #135802bb; }
+  .precioLomas h1 {
+    font-size: 30px; }
+
+.aclaracion {
+  margin-top: 10px;
+  padding-left: 7%;
+  padding-right: 7%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Poppins', sans-serif; }
+  .aclaracion p {
+    text-align: left;
+    margin-bottom: 70px;
+    font-size: 20px;
+    color: #d8d8d8; }
+  .aclaracion h3 {
+    font-size: 30px;
+    margin-bottom: 50px;
+    color: white; }
+  .aclaracion img {
+    height: 250px; }
+
 /*map*/
 .boton {
   display: flex;
   justify-content: center; }
   .boton button {
-    background-color: #e4e4e4;
-    width: 500px; }
+    background-color: #e4e4e449;
+    width: 280px;
+    height: auto;
+    border-radius: 40px;
+    font-family: 'Poiret One', 200; }
 
 #googleMap {
   width: 100%;
@@ -186,3 +264,10 @@ footer {
     grid-area: 2 / 1 / 3 / 2; }
   .div7 {
     grid-area: 3 / 1 / 4 / 2; } }
+
+@media (max-width: 700px) {
+  .precios {
+    flex-direction: column;
+    align-items: center; }
+    .precios .precioLomas {
+      margin-top: 80px; } }

@@ -1,4 +1,3 @@
-
 /*inicio*/
 
 /*main-index*/
@@ -9,25 +8,27 @@
 
 
 
-.segundoHero{
+.segundoHero {
     text-align: center;
-    h5{
+
+    h5 {
         font-family: 'Anton', sans-serif;
         font-size: 60px;
     }
-    p{
+
+    p {
         font-size: 20px;
     }
 }
 
-.nuestrosServicios{
+.nuestrosServicios {
     margin-top: 0;
     padding: 80px;
     padding-right: 200px;
     padding-left: 200px;
     display: flex;
-    flex-direction: column;        
-    align-items: center;        
+    flex-direction: column;
+    align-items: center;
     text-align: center;
 }
 
@@ -38,77 +39,86 @@
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
     grid-column-gap: 0px;
-    grid-row-gap: 0px;    
-    img{
+    grid-row-gap: 0px;
+
+    img {
         border-radius: 20px;
         width: 80%;
     }
-    }
-    .div1 {
-        margin-top: 100px;
-        display: flex;
-        flex-direction: column;   
-        justify-content: center;        
-        grid-area: 1 / 1 / 2 / 2;
-    }
-    .div2 {
-        margin-top: 100px;
-        display: flex;
-        flex-direction: column;        
-        align-items: center;        
-        text-align: center;grid-area: 1 / 2 / 2 / 3;
-    }
-    .div3 { 
-        display: flex;
-        flex-direction: column;        
-        align-items: center;        
-        text-align: center;
-        grid-area: 2 / 1 / 3 / 2;
-    }
-    .div4 {        
-        margin-top: 0;
-        display: flex;
-        flex-direction: column;   
-        justify-content: center;
-        grid-area: 2 / 2 / 3 / 3;
-    }
-    
-
-.parent2 {
-display: grid;
-grid-template-columns: repeat(3, 1fr);
-grid-template-rows: 1fr;
-grid-column-gap: px;
-grid-row-gap: px;
-display: flex;
-justify-content: space-around;
-align-items: center;
-align-content: center;
-img{
-    padding: 20px;
-    width: 80%;
-    border-radius: 30px;    
-}
 }
 
-.div5 {
-    margin-bottom: 50px; 
-    align-items: center;        
-    text-align: center;
+.div1 {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     grid-area: 1 / 1 / 2 / 2;
 }
-.div6 {
-    margin-bottom: 50px; 
-    align-items: center;        
+
+.div2 {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
     grid-area: 1 / 2 / 2 / 3;
 }
-.div7 { 
-    margin-bottom: 50px;
-    align-items: center;        
+
+.div3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
-    grid-area: 1 / 3 / 2 / 4; 
-}  
+    grid-area: 2 / 1 / 3 / 2;
+}
+
+.div4 {
+    margin-top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    grid-area: 2 / 2 / 3 / 3;
+}
+
+
+.parent2 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: px;
+    grid-row-gap: px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+
+    img {
+        padding: 20px;
+        width: 80%;
+        border-radius: 30px;
+    }
+}
+
+.div5 {
+    margin-bottom: 50px;
+    align-items: center;
+    text-align: center;
+    grid-area: 1 / 1 / 2 / 2;
+}
+
+.div6 {
+    margin-bottom: 50px;
+    align-items: center;
+    text-align: center;
+    grid-area: 1 / 2 / 2 / 3;
+}
+
+.div7 {
+    margin-bottom: 50px;
+    align-items: center;
+    text-align: center;
+    grid-area: 1 / 3 / 2 / 4;
+}
 
 /*precios-mapa*/
 
@@ -119,9 +129,8 @@ img{
 
 /*Jumbotron*/
 .jumbotron {
-    background-color: transparent;
     margin: 0;
-    padding: 80px;
+    padding: 30px;
 }
 
 .jumbotron h1 {
@@ -134,15 +143,110 @@ img{
     text-align: center;
 }
 
+/*precios*/
+
+.titulo{
+    margin-top: 80px;
+    margin-bottom: 100px;
+}
+
+.precioUno{
+    font-size: 30px;
+}
+
+.heroPrecios {
+    padding: 50px;
+    height: auto;
+    background-image: url(/Img/ciudad.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    h1 {
+        text-align: center;
+        color: #e4e4e4;
+        font-size: 60px;
+        font-family: 'Anton', sans-serif;
+    }
+}
+.precios{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    div{
+        padding: 0;
+        margin: 0;
+        text-decoration: none;
+        list-style: none;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        height: 400px;
+        width: 300px;
+        font-family: 'Poiret One', 200;
+        color: white;
+    }
+}
+
+.titulo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.precioCaba {
+    background-color: #0066c5bb;
+}
+
+.precioLomas {
+    background-color: #135802bb;
+    h1{
+        font-size: 30px;
+    }
+}
+
+.aclaracion{
+    p{
+        text-align: left;
+        margin-bottom: 70px;
+        font-size: 20px;
+        color: #d8d8d8;
+    }
+    h3{
+        font-size: 30px;
+        margin-bottom: 50px;
+        color: white;
+    }
+    margin-top: 10px;
+    padding-left: 7%;
+    padding-right: 7%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Poppins', sans-serif;        
+    img{
+        height: 250px;
+    }
+
+}
+
 /*map*/
 
 
-.boton{
+.boton {
     display: flex;
     justify-content: center;
-    button{
-        background-color: #e4e4e4;
-        width: 500px;        
+
+    button {
+        background-color: #e4e4e449;
+        width: 280px;
+        height: auto;
+        border-radius: 40px;
+        font-family: 'Poiret One', 200;
     }
 }
 
