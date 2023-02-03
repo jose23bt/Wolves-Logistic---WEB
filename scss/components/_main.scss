@@ -146,10 +146,6 @@
 /*precios*/
 
 
-.mainPrecios{
-  
-}
-
 .titulo{
     margin-top: 80px;
     margin-bottom: 100px;
@@ -159,11 +155,11 @@
     font-size: 30px;
 }
 
-.heroPrecios { 
+.heroPrecios {
     background-image: url("../Img/ciudad.jpg");
     background-attachment: fixed;
     background-repeat: no-repeat;
-    background-size: cover;   
+    background-size: cover;    
     padding: 50px;
     height: auto;
     h1 {
@@ -269,5 +265,5 @@
 }
 
 #mode {
-    color: black;
+    color: rgb(238, 238, 238);
 }

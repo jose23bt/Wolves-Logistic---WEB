@@ -221,12 +221,37 @@ section {
   margin: 20px auto; }
 
 #mode {
-  color: black; }
+  color: #eeeeee; }
 
 footer {
-  background-color: black; }
+  background-color: black;
+  height: 200px; }
   footer img {
-    height: 150px; }
+    height: 100px; }
+
+footer .pie {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-around;
+  flex-direction: row; }
+
+footer nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center; }
+  footer nav ul {
+    display: flex;
+    flex-direction: column; }
+    footer nav ul a {
+      color: white;
+      list-style: none;
+      text-decoration: none;
+      margin: 10px; }
+
+.info {
+  margin-top: 20px;
+  color: #d8d8d8; }
 
 @media (max-width: 700px) {
   .parent {
@@ -271,3 +296,11 @@ footer {
     align-items: center; }
     .precios .precioLomas {
       margin-top: 80px; } }
+
+@media (max-width: 700px) {
+  footer {
+    height: auto; }
+    footer .pie {
+      flex-direction: column; }
+      footer .pie nav {
+        margin-top: 30px; } }
