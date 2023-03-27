@@ -1,75 +1,139 @@
-﻿//javascript.js
-//set map options
-var myLatLng = { lat: -34.6148108, lng: -58.502316 };
-var mapOptions = {
+﻿//VIAJES PARTICULARES CON MAPA
+
+// CARACTERISTICAS DEL MAPA
+const myLatLng = { lat: -34.6148108, lng: -58.502316 };
+const mapOptions = {
     center: myLatLng,
     zoom: 11,
     mapTypeId: google.maps.MapTypeId.ROADMAP
-
 };
 
-//create map
-var map = new google.maps.Map(document.getElementById('googleMap'), mapOptions);
+// EL MAPA
+const map = new google.maps.Map(document.getElementById('googleMap'), mapOptions);
 
-//create a DirectionsService object to use the route method and get a result for our request
-var directionsService = new google.maps.DirectionsService();
+// Crear un objeto DirectionsService para usar el método de ruta y obtener un resultado para nuestra solicitud
+const directionsService = new google.maps.DirectionsService();
 
-//create a DirectionsRenderer object which we will use to display the route
-var directionsDisplay = new google.maps.DirectionsRenderer();
+// Crear un objeto DirectionsRenderer que usaremos para mostrar la ruta
+const directionsDisplay = new google.maps.DirectionsRenderer();
 
-//bind the DirectionsRenderer to the map
+// Vincular DirectionsRenderer al mapa
 directionsDisplay.setMap(map);
 
-
-//define calcRoute function
+// Definir función calcRoute
 function calcRoute() {
-    //create request
-    var request = {
+    // Crear solicitud
+    const request = {
         origin: document.getElementById("from").value,
         destination: document.getElementById("to").value,
-        travelMode: google.maps.TravelMode.DRIVING, //WALKING, BYCYCLING, TRANSIT
+        travelMode: google.maps.TravelMode.DRIVING, 
         unitSystem: google.maps.UnitSystem.METRIC,
-    }
+    };
 
-    //pass the request to the route method
+    // Pasar la solicitud al método de ruta
     directionsService.route(request, function (result, status) {
         if (status == google.maps.DirectionsStatus.OK) {
-            //Get distance and time
+            // Obtener distancia y tiempo
             const output = document.querySelector('#output');
-            var fare = calculateFare_km(result.routes[0].legs[0].distance.value);
-            output.innerHTML = "<div class='alert-info'>Origen: " + document.getElementById("from").value + ".<br />Destino: " + document.getElementById("to").value + ".<br /> distancia del recorrido <i class='fas fa-road'></i> : " + result.routes[0].legs[0].distance.text + ".<br />Duración <i class='fas fa-hourglass-start'></i> : " + result.routes[0].legs[0].duration.text + ".<br /> Tarifa $ : " + fare + ".</div>" 
-            //display route
+            const fare = calculateFare_km(result.routes[0].legs[0].distance.value);
+            output.innerHTML = "<div class='alert-info'>Origen: " + document.getElementById("from").value + ".<br />Destino: " + document.getElementById("to").value + ".<br /> distancia del recorrido <i class='fas fa-road'></i> : " + result.routes[0].legs[0].distance.text + ".<br />Duración <i class='fas fa-hourglass-start'></i> : " + result.routes[0].legs[0].duration.text + ".<br /> Tarifa $ : " + fare + ".</div>"
+            // Mostrar la ruta
             directionsDisplay.setDirections(result);
         }
         else {
-            //delete route from map
+            // Eliminar la ruta del mapa
             directionsDisplay.setDirections({ routes: [] });
-            //center map in London
+            // Centrar el mapa en buenos aires
             map.setCenter(myLatLng);
 
-            //show error message
-            output.innerHTML = "<div class='alert-danger'><i class='fas fa-exclamation-triangle'></i> Could not retrieve driving distance.</div>";
+            // Mostrar mensaje de error
+            output.innerHTML = "<div class='alert-danger'><i class='fas fa-exclamation-triangle'></i> No se pudo recuperar la distancia del viaje.</div>";
         }
     });
-
 }
 
-
-
-//create autocomplete objects for all inputs
-var options = {
+// Crear objetos de autocompletado para todas las entradas
+const options = {
     types: ['(cities)']
-}
+};
 
-var input1 = document.getElementById("from");
-var autocomplete1 = new google.maps.places.Autocomplete(input1, options);
+const input1 = document.getElementById("from");
+const autocomplete1 = new google.maps.places.Autocomplete(input1, options);
 
-var input2 = document.getElementById("to");
-var autocomplete2 = new google.maps.places.Autocomplete(input2, options);
+const input2 = document.getElementById("to");
+const autocomplete2 = new google.maps.places.Autocomplete(input2, options);
 
-
-function calculateFare_km(kilometros){
-    var fare = (kilometros * 0.100).toFixed(2); 
+function calculateFare_km(kilometros) {
+    const fare = (kilometros * 0.100).toFixed(2);
     return fare;
 }
+
+//COTIZADOR POR ZONAS
+
+// Obtener los botones
+const botonesAgregar = document.querySelectorAll('.agregar');
+const botonesEliminar = document.querySelectorAll('.eliminar');
+
+// Obtener el carrito desde el almacenamiento local (si existe)
+let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+
+// Actualizar el carrito en el almacenamiento local
+function actualizarCarrito() {
+    // Obtener el elemento <ul> del carrito
+    const carritoUL = document.querySelector('.carrito ul');
+
+    // Reiniciar el contenido del carrito
+    carritoUL.innerHTML = '';
+
+    // Comprobar que el carrito tenga algún producto
+    if (carrito.length === 0) {
+        document.querySelector('.total').innerHTML = 'Total: $0.00';
+        return;
+    }
+
+    // Agregar cada producto al carrito
+    carrito.forEach(producto => {
+        const li = document.createElement('li');
+        li.innerHTML = `${producto.nombre} <span>$${producto.precio}</span>`;
+        carritoUL.appendChild(li);
+    });
+
+    // Calcular el total y mostrarlo
+    const total = carrito.reduce((acumulador, producto) => acumulador + parseFloat(producto.precio), 0);
+    document.querySelector('.total').innerHTML = `Total: $${total.toFixed(2)}`;
+
+    // Actualizar el almacenamiento local
+    localStorage.setItem('carrito', JSON.stringify(carrito));
+}
+
+// Agregar un producto al carrito
+function agregarProducto(evento) {
+    // Obtener el nombre y el precio del producto
+    const producto = evento.target.dataset.producto;
+    const precio = evento.target.parentNode.querySelector('.precio').textContent.replace('$', '');
+    // Agregar el producto al carrito
+    carrito.push({ nombre: producto, precio: precio });
+
+    // Actualizar el carrito en la página y en el almacenamiento local
+    actualizarCarrito();
+}
+
+// Eliminar un producto del carrito
+function eliminarProducto(evento) {
+    // Obtener el nombre del producto
+    const producto = evento.target.dataset.producto;
+
+    // Buscar y eliminar el producto del carrito
+    carrito = carrito.filter(item => item.nombre !== producto);
+
+    // Actualizar el carrito en la página y en el almacenamiento local
+    actualizarCarrito();
+}
+
+// Agregar eventos a los botones de agregar y eliminar
+botonesAgregar.forEach(boton => boton.addEventListener('click', agregarProducto));
+botonesEliminar.forEach(boton => boton.addEventListener('click', eliminarProducto));
+
+// Mostrar el carrito al cargar la página
+actualizarCarrito();
 

@@ -223,6 +223,63 @@ section {
 #mode {
   color: #eeeeee; }
 
+/*SECCION COTIZADOR POR ZONAS*/
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 1px 0px;
+  grid-template-areas: ". . . ."; }
+
+/*TARJETAS*/
+.productos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; }
+
+.producto {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px #ccc;
+  padding: 10px;
+  margin-bottom: 20px;
+  width: calc(25% - 10px); }
+
+.producto h2 {
+  margin-top: 0; }
+
+.producto .precio {
+  font-weight: bold;
+  margin-bottom: 0; }
+
+.producto button {
+  display: block;
+  margin-top: 10px; }
+
+.carrito {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px #ccc;
+  padding: 10px;
+  margin-top: 20px; }
+
+.carrito h2 {
+  margin-top: 0; }
+
+.carrito ul {
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+
+.carrito li {
+  margin-bottom: 10px; }
+
+.carrito li span {
+  font-weight: bold; }
+
+.carrito .total {
+  font-weight: bold; }
+
 footer {
   background-color: black;
   height: 200px; }
