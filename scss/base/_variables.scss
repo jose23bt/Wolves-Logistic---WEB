@@ -1,0 +1,20 @@
+%tarjetas{
+    background-color: #0066c5bb;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;      
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    height: 400px;
+    width: 300px;
+    font-family: 'Poiret One', 200;
+    color: white;
+};

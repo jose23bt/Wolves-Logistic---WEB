@@ -6,8 +6,25 @@
   list-style: none;
   box-sizing: border-box; }
 
-section {
-  background-color: #f1f1f1; }
+.producto, .carrito {
+  background-color: #0066c5bb;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style: none;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  height: 400px;
+  width: 300px;
+  font-family: 'Poiret One', 200;
+  color: white; }
 
 /*inicio*/
 /*main-index*/
@@ -136,7 +153,7 @@ section {
   background-repeat: no-repeat;
   background-size: cover;
   padding: 50px;
-  height: auto; }
+  height: 2200px; }
   .heroPrecios h1 {
     text-align: center;
     color: #e4e4e4;
@@ -144,6 +161,9 @@ section {
     font-family: 'Anton', sans-serif; }
 
 .precios {
+  margin-right: 200px;
+  margin-left: 200px;
+  margin-bottom: 50px;
   display: flex;
   flex-direction: row;
   justify-content: space-around; }
@@ -185,7 +205,7 @@ section {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-family: 'Poppins', sans-serif; }
+  font-family: 'Poppins', sans-serif; }
   .aclaracion p {
     text-align: left;
     margin-bottom: 70px;
@@ -231,54 +251,156 @@ section {
   gap: 1px 0px;
   grid-template-areas: ". . . ."; }
 
+/*SECCION COTIZADOR POR ZONAS*/
+.zonas {
+  margin-top: 80px; }
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 1px 0px;
+  grid-template-areas: ". . . ."; }
+
+/*ZONAS*/
 /*TARJETAS*/
 .productos {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between; }
+  justify-content: center;
+  align-items: center; }
 
-.producto {
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-shadow: 2px 2px 5px #ccc;
-  padding: 10px;
-  margin-bottom: 20px;
-  width: calc(25% - 10px); }
+.productos img {
+  height: 40%; }
 
-.producto h2 {
+.producto .titulo {
+  text-align: center;
   margin-top: 0; }
 
 .producto .precio {
   font-weight: bold;
   margin-bottom: 0; }
 
-.producto button {
-  display: block;
+.botones {
+  display: flex;
+  justify-content: center;
   margin-top: 10px; }
 
+/*botones de agregar tarjetas*/
+.agregar {
+  margin-top: 20px;
+  min-width: 100px;
+  height: 40px;
+  color: #fff;
+  padding: 5px 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  outline: none;
+  border-radius: 10px;
+  border: 2px solid #4433ff;
+  background: #4433ff; }
+
+.agregar:hover {
+  background: #fff;
+  color: #4433ff; }
+
+/*botones de eliminar tarjetas*/
+.eliminar {
+  min-width: 100px;
+  height: 40px;
+  color: #fff;
+  padding: 5px 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  outline: none;
+  border-radius: 10px;
+  border: 2px solid #85061b;
+  background: #85061b; }
+
+.eliminar:hover {
+  background: #fff;
+  color: #85061b; }
+
+/*botones solicitar o reinicar*/
+.solicitar {
+  min-width: 150px;
+  height: 40px;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  outline: none;
+  border-radius: 10px;
+  border: 2px solid #4433ff;
+  background: #4433ff; }
+
+.solicitar:hover {
+  background: #fff;
+  color: #4433ff; }
+
+.reiniciar {
+  min-width: 150px;
+  height: 40px;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  outline: none;
+  border-radius: 10px;
+  border: 2px solid #85061b;
+  background: #85061b; }
+
+.reiniciar:hover {
+  background: #fff;
+  color: #85061b; }
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 200px;
+  gap: 1px 0px;
+  grid-template-areas: "producto1 producto2 producto3 producto4" "carrito carrito carrito carrito"; }
+
 .carrito {
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-shadow: 2px 2px 5px #ccc;
-  padding: 10px;
-  margin-top: 20px; }
+  grid-area: carrito;
+  margin-right: 13px;
+  margin-left: 13px;
+  margin-top: 50px;
+  width: auto;
+  height: 280px; }
 
-.carrito h2 {
-  margin-top: 0; }
+.producto1 {
+  grid-area: producto1;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
 
-.carrito ul {
-  list-style: none;
-  margin: 0;
-  padding: 0; }
+.producto2 {
+  grid-area: producto2;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
 
-.carrito li {
-  margin-bottom: 10px; }
+.producto3 {
+  grid-area: producto3;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
 
-.carrito li span {
-  font-weight: bold; }
-
-.carrito .total {
-  font-weight: bold; }
+.producto4 {
+  grid-area: producto4;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
 
 footer {
   background-color: black;
@@ -361,3 +483,23 @@ footer nav {
       flex-direction: column; }
       footer .pie nav {
         margin-top: 30px; } }
+
+@media (max-width: 700px) {
+  .heroPrecios {
+    height: 4900px; }
+  .container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    gap: 10px 0px;
+    grid-template-areas: "producto1" "producto2" "producto3" "producto4" "carrito"; }
+  .producto1 {
+    grid-area: producto1; }
+  .producto2 {
+    grid-area: producto2; }
+  .producto3 {
+    grid-area: producto3; }
+  .producto4 {
+    grid-area: producto4; }
+  .carrito {
+    grid-area: carrito; } }

@@ -38,7 +38,6 @@
             <div class="titulo">
                 <h1>Tarifas de envío claras y competitivas</h1>
             </div>
-
             <div class="precios">
                 <div class="precioCaba">
                     <h1>CABA</h1>
@@ -71,46 +70,58 @@
                 <a href="https://api.whatsapp.com/send/?phone=5491123318355&text&type=phone_number&app_absent=0"><img
                         src="../Img/logowhatsapp.png" alt=""></a>
             </div>
+            <section class="zonas">
+                <h1>COTIZADOR DE ENVIOS PROGRAMADOS POR ZONA O FLEX</h1>
+                <div class="productos">
+                    <div class="container">                
+                        <div class="producto1">
+                            <div class="producto">
+                                <h2>CABA</h2>
+                                <p class="precio">$ 400</p>
+                                <img src="../Img/mapa caba.jpg" alt="">                            
+                                        <button class="agregar" data-producto="caba">Agregar</button>
+                                        <button class="eliminar" data-producto="caba">Eliminar</button>                            
+                            </div>
+                        </div>
+                        <div class="producto2">
+                            <div class="producto">
+                                <h2>Cordon 1</h2>
+                                <p class="precio">$ 600</p>
+                                <img src="../Img/mapa primer cordon.jpg" alt="">                        
+                                    <button class="agregar" data-producto="Cordon1">Agregar</button>
+                                    <button class="eliminar" data-producto="Cordon1">Eliminar</button>                        
+                            </div>
+                        </div>
+                        <div class="producto3">
+                            <div class="producto">
+                                <h2>Cordon 2</h2>
+                                <p class="precio">$ 720</p>
+                                <img src="../Img/mapa segundo cordon.jpg" alt="">                        
+                                    <button class="agregar" data-producto="Cordon2">Agregar</button>
+                                    <button class="eliminar" data-producto="Cordon2">Eliminar</button>                     
+                            </div>
+                        </div>
+                        <div class="producto4">
+                            <div class="producto">
+                                    <h2>Cordon 3</h2>
+                                    <p class="precio">$ 920</p>
+                                    <img src="../img/mapa tercer cordon.jpg" alt="">                            
+                                        <button class="agregar" data-producto="Cordon 3">Agregar</button>
+                                        <button class="eliminar" data-producto="Cordon 3">Eliminar</button>                                                        
+                            </div>
+                        </div>                
+                            <div class="carrito">
+                                <h2>Envios</h2>
+                                <ul></ul>
+                                <p class="total"></p>
+                                <button class="solicitar" onclick="solicitarViaje()">Solicitar viaje</button>
+                                <button class="reiniciar">Reiniciar Cotizador</button>
+                            </div>                
+                    </div>            
+                </div>
+                </div>        
+            </section>
         </section>
-
-        <section class="zonas">
-            <H2>COTIZADOR DE ENVIOS PROGRAMADOS POR ZONA O FLEX</H2>
-            <div class="productos">
-                <div class="producto">
-                    <h2>CABA</h2>
-                    <p class="precio">$ 400</p>
-                    <button class="agregar" data-producto="CABA">Agregar</button>
-                    <button class="eliminar" data-producto="CABA">Eliminar</button>
-                </div>
-                <div class="producto">
-                    <h2>Cordon 1</h2>
-                    <p class="precio">$ 600</p>
-                    <button class="agregar" data-producto="Cordon 1">Agregar</button>
-                    <button class="eliminar" data-producto="Cordon 1">Eliminar</button>
-                </div>
-                <div class="producto">
-                    <h2>Cordon 2</h2>
-                    <p class="precio">$ 720</p>
-                    <button class="agregar" data-producto="Cordon 2">Agregar</button>
-                    <button class="eliminar" data-producto="Cordon 2">Eliminar</button>
-                </div>
-                <div class="producto">
-                    <h2>Cordon 3</h2>
-                    <p class="precio">$ 920</p>
-                    <button class="agregar" data-producto="Cordon 3">Agregar</button>
-                    <button class="eliminar" data-producto="Cordon 3">Eliminar</button>
-                </div>
-            </div>
-            <div class="carrito">
-                <h2>Envios</h2>
-                <ul></ul>
-                <p class="total"></p>
-                <button onclick="solicitarViaje()">Solicitar viaje</button>
-                <button class="reiniciar">Reiniciar Cotizador</button>
-            </div>
-            </div>
-        </section>
-
 
         <div class="jumbotron">
             <div class="container-fluid">
@@ -148,13 +159,7 @@
                 </div>
             </div>
     
-        </div>
-
-        <div class="zonas">
-            <h3>Mapa de las zonas logísticas para los envíos desde Lomas de Zamora</h3>
-        </div>
-
-        <iframe src="https://www.google.com/maps/d/embed?mid=1M8NDUGC3yUgRdgo1D0KMzXOhs3Ox5wE&hl=es&ehbc=2E312F" width="340" height="280"></iframe>
+        </div>     
 
 
     </main>

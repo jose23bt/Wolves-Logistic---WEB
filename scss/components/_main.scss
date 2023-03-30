@@ -1,3 +1,5 @@
+@import "../base/variables";
+
 /*inicio*/
 
 /*main-index*/
@@ -146,12 +148,12 @@
 /*precios*/
 
 
-.titulo{
+.titulo {
     margin-top: 80px;
     margin-bottom: 100px;
 }
 
-.precioUno{
+.precioUno {
     font-size: 30px;
 }
 
@@ -159,9 +161,10 @@
     background-image: url("../Img/ciudad.jpg");
     background-attachment: fixed;
     background-repeat: no-repeat;
-    background-size: cover;    
+    background-size: cover;
     padding: 50px;
-    height: auto;
+    height: 2200px;
+
     h1 {
         text-align: center;
         color: #e4e4e4;
@@ -169,11 +172,16 @@
         font-family: 'Anton', sans-serif;
     }
 }
-.precios{
+
+.precios {
+    margin-right: 200px;
+    margin-left: 200px;
+    margin-bottom: 50px;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    div{
+
+    div {
         padding: 0;
         margin: 0;
         text-decoration: none;
@@ -203,23 +211,26 @@
 
 .precioLomas {
     background-color: #135802bb;
-    h1{
+
+    h1 {
         font-size: 30px;
     }
 }
 
-.aclaracion{
-    p{
+.aclaracion {
+    p {
         text-align: left;
         margin-bottom: 70px;
         font-size: 20px;
         color: #d8d8d8;
     }
-    h3{
+
+    h3 {
         font-size: 30px;
         margin-bottom: 50px;
         color: white;
     }
+
     margin-top: 10px;
     padding-left: 7%;
     padding-right: 7%;
@@ -228,8 +239,10 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    font-family: 'Poppins', sans-serif;        
-    img{
+    font-family: 'Poppins',
+    sans-serif;
+
+    img {
         height: 250px;
     }
 
@@ -279,24 +292,39 @@
         ". . . .";
 }
 
+/*SECCION COTIZADOR POR ZONAS*/
+.zonas{
+    margin-top: 80px;    
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 1px 0px;
+    grid-template-areas: ". . . .";
+}
+
+/*ZONAS*/
+
 /*TARJETAS*/
 
-.productos {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+.productos{
+    display: flex;    
+    justify-content: center;    
+    align-items: center;
 }
 
-.producto {
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-shadow: 2px 2px 5px #ccc;
-    padding: 10px;
-    margin-bottom: 20px;
-    width: calc(25% - 10px);
+.productos img {
+    height: 40%;    
 }
 
-.producto h2 {
+.producto {       
+    @extend %tarjetas;
+}
+
+.producto .titulo {
+    text-align: center;
     margin-top: 0;
 }
 
@@ -305,37 +333,143 @@
     margin-bottom: 0;
 }
 
-.producto button {
-    display: block;
+.botones {
+    display: flex;
+    justify-content: center;
     margin-top: 10px;
 }
 
-.carrito {
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-shadow: 2px 2px 5px #ccc;
-    padding: 10px;
+/*botones de agregar tarjetas*/
+.agregar {
     margin-top: 20px;
-}
-
-.carrito h2 {
-    margin-top: 0;
-}
-
-.carrito ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-.carrito li {
-    margin-bottom: 10px;
-}
-
-.carrito li span {
+    min-width: 100px;
+    height: 40px;
+    color: #fff;
+    padding: 5px 10px;
     font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    outline: none;
+    border-radius: 10px;
+    border: 2px solid #4433ff;
+    background: #4433ff;
 }
 
-.carrito .total {
+.agregar:hover {
+    background: #fff;
+    color: #4433ff;
+}
+
+/*botones de eliminar tarjetas*/
+.eliminar {
+    min-width: 100px;
+    height: 40px;
+    color: #fff;
+    padding: 5px 10px;
     font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    outline: none;
+    border-radius: 10px;
+    border: 2px solid #85061b;
+    background: #85061b;
+}
+
+.eliminar:hover {
+    background: #fff;
+    color: #85061b;
+}
+
+/*botones solicitar o reinicar*/
+
+.solicitar {
+    min-width: 150px;
+    height: 40px;
+    color: #fff;    
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    outline: none;
+    border-radius: 10px;
+    border: 2px solid #4433ff;
+    background: #4433ff;
+}
+
+.solicitar:hover {
+    background: #fff;
+    color: #4433ff;
+}
+
+.reiniciar {
+    min-width: 150px;
+    height: 40px;
+    color: #fff;    
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    outline: none;
+    border-radius: 10px;
+    border: 2px solid #85061b;
+    background: #85061b;
+}
+
+.reiniciar:hover {
+    background: #fff;
+    color: #85061b;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 200px;
+    gap: 1px 0px;
+    grid-template-areas:
+        "producto1 producto2 producto3 producto4"
+        "carrito carrito carrito carrito";      
+}
+
+.carrito {
+    grid-area: carrito;
+    margin-right: 13px;
+    margin-left: 13px;
+    margin-top: 50px; 
+    width: auto;
+    height: 280px; 
+    @extend %tarjetas;
+}
+
+.producto1 {
+    grid-area: producto1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.producto2 {
+    grid-area: producto2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.producto3 {
+    grid-area: producto3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.producto4 {
+    grid-area: producto4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

@@ -185,3 +185,5 @@ function reiniciarCotizador() {
 }
 
 botonReiniciar.addEventListener('click', reiniciarCotizador);
+
+console.log(producto)
