@@ -270,7 +270,7 @@
   align-items: center; }
 
 .productos img {
-  height: 40%; }
+  height: 60%; }
 
 .producto .titulo {
   text-align: center;
@@ -299,12 +299,12 @@
   display: inline-block;
   outline: none;
   border-radius: 10px;
-  border: 2px solid #4433ff;
-  background: #4433ff; }
+  border: 2px solid #f3610c86;
+  background: #f17909; }
 
 .agregar:hover {
-  background: #fff;
-  color: #4433ff; }
+  background: #fdfdfdc2;
+  color: #ff7b00; }
 
 /*botones de eliminar tarjetas*/
 .eliminar {
@@ -319,12 +319,13 @@
   display: inline-block;
   outline: none;
   border-radius: 10px;
-  border: 2px solid #85061b;
-  background: #85061b; }
+  border: 2px solid #060044;
+  background: #070058;
+  margin-bottom: 20px; }
 
 .eliminar:hover {
   background: #fff;
-  color: #85061b; }
+  color: #880000; }
 
 /*botones solicitar o reinicar*/
 .solicitar {
@@ -338,12 +339,12 @@
   display: inline-block;
   outline: none;
   border-radius: 10px;
-  border: 2px solid #4433ff;
-  background: #4433ff; }
+  border: 2px solid #f3610c86;
+  background: #f17909; }
 
 .solicitar:hover {
-  background: #fff;
-  color: #4433ff; }
+  background: #fdfdfdc2;
+  color: #ff7b00; }
 
 .reiniciar {
   min-width: 150px;
@@ -356,12 +357,12 @@
   display: inline-block;
   outline: none;
   border-radius: 10px;
-  border: 2px solid #85061b;
-  background: #85061b; }
+  border: 2px solid #060044;
+  background: #070058; }
 
 .reiniciar:hover {
   background: #fff;
-  color: #85061b; }
+  color: #880000; }
 
 .container {
   display: grid;
@@ -471,6 +472,8 @@ footer nav {
 
 @media (max-width: 700px) {
   .precios {
+    margin-left: 0;
+    margin-right: 0;
     flex-direction: column;
     align-items: center; }
     .precios .precioLomas {
