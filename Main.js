@@ -36,7 +36,7 @@ function calcRoute() {
             // Obtener distancia y tiempo
             const output = document.querySelector('#output');
             const fare = calculateFare_km(result.routes[0].legs[0].distance.value);
-            output.innerHTML = "<div class='alert-info'>Origen: " + document.getElementById("from").value + ".<br />Destino: " + document.getElementById("to").value + ".<br /> distancia del recorrido <i class='fas fa-road'></i> : " + result.routes[0].legs[0].distance.text + ".<br />Duración <i class='fas fa-hourglass-start'></i> : " + result.routes[0].legs[0].duration.text + ".<br /> Tarifa $ : " + fare + ".</div>"
+            output.innerHTML = "<div>Origen: " + document.getElementById("from").value + ".<br />Destino: " + document.getElementById("to").value + ".<br /> distancia del recorrido: " + result.routes[0].legs[0].distance.text + ".<br />Duración : " + result.routes[0].legs[0].duration.text + ".<br /> Tarifa $ : " + fare + ".</div>"
             // Mostrar la ruta
             directionsDisplay.setDirections(result);
         }
@@ -47,7 +47,7 @@ function calcRoute() {
             map.setCenter(myLatLng);
 
             // Mostrar mensaje de error
-            output.innerHTML = "<div class='alert-danger'><i class='fas fa-exclamation-triangle'></i> No se pudo recuperar la distancia del viaje.</div>";
+            output.innerHTML = "<div>No se pudo recuperar la distancia del viaje.</div>";
         }
     });
 }
@@ -186,4 +186,26 @@ function reiniciarCotizador() {
 
 botonReiniciar.addEventListener('click', reiniciarCotizador);
 
-console.log(producto)
+
+//CLIMA
+
+document.addEventListener('DOMContentLoaded', () => {
+    const climaDiv = document.getElementById("clima");
+    const apikey = "de7441f28b6bb245fa434b1e282f457b";
+    const ciudad = "Lomas de Zamora,Buenos Aires,Argentina"; // Cambia la ciudad aquí
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${ciudad}&appid=${apikey}&lang=es`;
+  
+    fetch(url)
+      .then(response => response.json())
+      .then(data => {
+        const clima = data.weather[0].description;
+        const temperatura = (data.main.temp - 273.15).toFixed(2); // Temperatura en Celsius
+        const sensacionTermica = (data.main.feels_like - 273.15).toFixed(2); // Sensación térmica en Celsius
+        const humedad = data.main.humidity;
+  
+        const infoClima = `El clima en ${ciudad} es ${clima}. La temperatura actual es de ${temperatura}°C, con una sensación térmica de ${sensacionTermica}°C. La humedad es del ${humedad}%.`;      
+        const textoClima = document.createTextNode(infoClima);
+        climaDiv.appendChild(textoClima);
+      })
+      .catch(error => console.error(error));
+  });
