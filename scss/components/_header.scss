@@ -1,0 +1,136 @@
+/*header*/
+
+header {
+    min-height: 6rem;
+}
+
+li {
+    list-style: none;
+}
+.navbar a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-size: 1.1rem;
+}
+
+header {
+    position: relative;
+    padding: 0 2rem;
+}
+
+.navbar {
+    width: 100%;
+    height: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar .logo{
+    display: flex;
+    align-items: center;
+}
+
+.navbar .logo img{
+    margin: 1rem;
+    width: 80px;
+}
+
+.navbar .logo a {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.navbar .logo a:hover{
+    color: orange;
+}
+
+.navbar .links {
+    margin-top: 20px;
+    display: flex;
+    gap: 2rem;
+}
+
+.navbar .links a:hover{
+    color: orange;
+}
+
+.navbar .toggle_btn {
+    color: black;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none;
+}
+
+
+.action_btn {
+    background-color: orange;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: scale 0.2 ease;
+}
+
+.action_btn:hover {
+    scale: 1.05;
+    color: white;
+}
+
+.action_btn:active {
+    scale: 0.95;
+}
+
+/*dropdown menu*/
+
+.dropdown_menu {
+    margin-top: 3.8vh;
+    z-index: 9999;
+    display: none;
+    position: absolute;
+    height: 0px;
+    width: 350px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.dropdown_menu.open {
+    height: 240px;
+}
+
+.dropdown_menu li {
+    padding: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dropdown_menu .action_btn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.dropdown_menu li a{
+    text-decoration: none;
+    color: black;
+    font-size: 1rem;
+}
+
+.dropdown_menu li :hover{
+    color: orange;
+}
+
+.dropdown_menu .action_btn:hover{
+    scale: 1.05;
+    color:white;
+}

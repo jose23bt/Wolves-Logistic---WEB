@@ -1,29 +1,59 @@
+/*responsive carrusel*/
+
 @media (max-width: 700px) {
+
+    .carousel-inner {
+        border-radius: 25px;
+        width: 350px;
+    }
+}
+
+@media (max-width: 700px) {
+
+    .segundoHero { 
+
+        h5 {
+            font-family: 'Anton', sans-serif;
+            font-size: 40px;
+        }}
     .parent {
+        margin-top: 30px;
         display: grid;
         grid-template-columns: 1fr;
-        grid-template-rows: repeat(4, 1fr);
+        grid-template-rows: repeat(3, 1fr);
         grid-column-gap: 0px;
         grid-row-gap: 0px;
     }
 
     .div1 {
-        margin-top: 0px;
+        height: auto;
+        width: 300px;
+        margin-left: 50px;
+        margin-right: 50px; 
         grid-area: 1 / 1 / 2 / 2;
     }
 
     .div2 {
-        margin-top: 0px;
+        height: auto;
+        width: 300px;
+        margin-left: 50px;
+        margin-right: 50px; 
         grid-area: 2 / 1 / 3 / 2;
     }
 
     .div3 {
-        margin-top: 0px;
-        margin-bottom: 50px;
+        height: auto;
+        width: 300px;
+        margin-left: 50px;
+        margin-right: 50px; 
         grid-area: 4 / 1 / 5 / 2;
     }
 
     .div4 {
+        height: auto;
+        width: 300px;
+        margin-left: 50px;
+        margin-right: 50px; 
         grid-area: 3 / 1 / 4 / 2;
     }
 
@@ -83,40 +113,21 @@
     }
 }
 
-@media(max-width: 700px) {
-    .heroPrecios {
-        height: 4900px;
-    }
-    .container {
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
-        gap: 10px 0px;
-        grid-template-areas:
-            "producto1"
-            "producto2"
-            "producto3"
-            "producto4"
-            "carrito";
+
+/*reponsive header*/
+
+@media (max-width: 992px) {
+
+    .navbar .links,
+    .navbar .action_btn {
+        display: none;
     }
 
-    .producto1 {
-        grid-area: producto1;
+    .navbar .toggle_btn {
+        display: block;
     }
 
-    .producto2 {
-        grid-area: producto2;
-    }
-
-    .producto3 {
-        grid-area: producto3;
-    }
-
-    .producto4 {
-        grid-area: producto4;
-    }
-
-    .carrito {
-        grid-area: carrito;
+    .dropdown_menu {
+        display: block;
     }
 }

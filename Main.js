@@ -1,4 +1,134 @@
-﻿//VIAJES PARTICULARES CON MAPA
+﻿//-------header-----//
+
+const toggleBtn = document.querySelector('.toggle_btn')
+const toggle_btnIcon = document.querySelector('.toggle_btn i')
+const dropDownMenu = document.querySelector('.dropdown_menu')
+
+toggleBtn.onclick = function () {
+    dropDownMenu.classList.toggle('open')
+}
+
+//-------------------COTIZADOR POR ZONAS-------------------------//
+
+// Obtener los botones
+const botonesAgregar = document.querySelectorAll('.agregar');
+const botonesEliminar = document.querySelectorAll('.eliminar');
+
+console.log(botonesAgregar); // Verificar si se seleccionan los botones correctamente
+console.log(botonesEliminar); // Verificar si se seleccionan los botones correctamente
+
+// Obtener el carrito desde el almacenamiento local (si existe)
+let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+
+// Actualizar el carrito en el almacenamiento local
+function actualizarCarrito() {
+    const carritoUL = document.querySelector('.carrito ul');
+    carritoUL.innerHTML = '';
+    let total = 0;
+    const productosAgregados = {};
+
+    carrito.forEach(producto => {
+        const nombreProducto = producto.nombre;
+        const precioProducto = parseFloat(producto.precio);
+        total += precioProducto;
+
+        // Agregar el producto al objeto productosAgregados y contar cuántas veces se ha agregado
+        if (nombreProducto in productosAgregados) {
+            productosAgregados[nombreProducto]++;
+        } else {
+            productosAgregados[nombreProducto] = 1;
+        }
+    });
+
+    for (const nombreProducto in productosAgregados) {
+        const cantidad = productosAgregados[nombreProducto];
+        const li = document.createElement('li');
+        li.innerHTML = `${nombreProducto} x${cantidad} <span>$${(cantidad * parseFloat(carrito.find(item => item.nombre === nombreProducto).precio)).toFixed(2)}</span>`;
+        carritoUL.appendChild(li);
+    }
+
+    document.querySelector('.total').innerHTML = `Total: $${total.toFixed(2)}`;
+    localStorage.setItem('carrito', JSON.stringify(carrito));
+}
+
+// Agregar un producto al carrito
+function agregarProducto(evento) {
+    // Obtener el nombre y el precio del producto
+    const producto = evento.target.dataset.producto;
+    const precio = evento.target.closest('.card').querySelector('.precio').textContent.replace('$', '');
+    // Agregar el producto al carrito
+    carrito.push({ nombre: producto, precio: precio });
+
+    // Actualizar el carrito en la página y en el almacenamiento local
+    actualizarCarrito();
+}
+
+// Eliminar un producto del carrito
+function eliminarProducto(evento) {
+    // Obtener el nombre del producto
+    const producto = evento.target.dataset.producto;
+
+    // Buscar y eliminar el producto del carrito
+    carrito = carrito.filter(item => item.nombre !== producto);
+
+    // Actualizar el carrito en la página y en el almacenamiento local
+    actualizarCarrito();
+}
+
+// Agregar eventos a los botones de agregar y eliminar
+botonesAgregar.forEach(boton => boton.addEventListener('click', agregarProducto));
+botonesEliminar.forEach(boton => boton.addEventListener('click', eliminarProducto));
+
+// Mostrar el carrito al cargar la página
+actualizarCarrito();
+
+function solicitarViaje() {
+    // Obtener los productos agrupados por nombre y sumar las cantidades
+    const productosAgrupados = carrito.reduce((acumulador, producto) => {
+        if (!acumulador[producto.nombre]) {
+            acumulador[producto.nombre] = {
+                nombre: producto.nombre,
+                precio: parseFloat(producto.precio),
+                cantidad: 1
+            };
+        } else {
+            acumulador[producto.nombre].precio += parseFloat(producto.precio);
+            acumulador[producto.nombre].cantidad++;
+        }
+        return acumulador;
+    }, {});
+
+    // Crear una cadena de consulta URL-encoded con los productos y sus cantidades
+    const queryString = Object.values(productosAgrupados)
+        .map(producto => `${encodeURIComponent(producto.nombre)} x${producto.cantidad}=${encodeURIComponent(producto.precio)}`)
+        .join('%0A');
+
+    // Obtener el precio total
+    const total = Object.values(productosAgrupados)
+        .reduce((acumulador, producto) => acumulador + producto.precio, 0);
+
+    // Crear el mensaje con los productos y el precio total
+    const mensaje = `¡Hola! Quiero solicitar un viaje con los siguientes productos:%0A%0A${queryString}%0A%0ATotal: $${total.toFixed(2)}`;
+
+    // Crear la URL de la conversación de WhatsApp con el mensaje
+    const url = `https://api.whatsapp.com/send/?phone=5491123318355&text=${mensaje}`;
+
+    // Abrir la conversación de WhatsApp en una pestaña nueva
+    window.open(url, '_blank');
+}
+
+//REINICIAR COTIZADOR
+
+const botonReiniciar = document.querySelector('.reiniciar');
+
+function reiniciarCotizador() {
+    carrito = [];
+    actualizarCarrito();
+}
+
+botonReiniciar.addEventListener('click', reiniciarCotizador);
+
+//---------------VIAJES PARTICULARES CON MAPA------------------------//
 
 // CARACTERISTICAS DEL MAPA
 const myLatLng = { lat: -34.6148108, lng: -58.502316 };
@@ -69,143 +199,25 @@ function calculateFare_km(kilometros) {
 }
 
 
-//COTIZADOR POR ZONAS
-
-// Obtener los botones
-const botonesAgregar = document.querySelectorAll('.agregar');
-const botonesEliminar = document.querySelectorAll('.eliminar');
-
-// Obtener el carrito desde el almacenamiento local (si existe)
-let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
-
-// Actualizar el carrito en el almacenamiento local
-function actualizarCarrito() {
-    const carritoUL = document.querySelector('.carrito ul');
-    carritoUL.innerHTML = '';
-    let total = 0;
-    const productosAgregados = {};
-
-    carrito.forEach(producto => {
-        const nombreProducto = producto.nombre;
-        const precioProducto = parseFloat(producto.precio);
-        total += precioProducto;
-
-        // Agregar el producto al objeto productosAgregados y contar cuántas veces se ha agregado
-        if (nombreProducto in productosAgregados) {
-            productosAgregados[nombreProducto]++;
-        } else {
-            productosAgregados[nombreProducto] = 1;
-        }
-    });
-
-    for (const nombreProducto in productosAgregados) {
-        const cantidad = productosAgregados[nombreProducto];
-        const li = document.createElement('li');
-        li.innerHTML = `${nombreProducto} x${cantidad} <span>$${(cantidad * parseFloat(carrito.find(item => item.nombre === nombreProducto).precio)).toFixed(2)}</span>`;
-        carritoUL.appendChild(li);
-    }
-
-    document.querySelector('.total').innerHTML = `Total: $${total.toFixed(2)}`;
-    localStorage.setItem('carrito', JSON.stringify(carrito));
-}
-
-// Agregar un producto al carrito
-function agregarProducto(evento) {
-    // Obtener el nombre y el precio del producto
-    const producto = evento.target.dataset.producto;
-    const precio = evento.target.parentNode.querySelector('.precio').textContent.replace('$', '');
-    // Agregar el producto al carrito
-    carrito.push({ nombre: producto, precio: precio });
-
-    // Actualizar el carrito en la página y en el almacenamiento local
-    actualizarCarrito();
-}
-
-// Eliminar un producto del carrito
-function eliminarProducto(evento) {
-    // Obtener el nombre del producto
-    const producto = evento.target.dataset.producto;
-
-    // Buscar y eliminar el producto del carrito
-    carrito = carrito.filter(item => item.nombre !== producto);
-
-    // Actualizar el carrito en la página y en el almacenamiento local
-    actualizarCarrito();
-}
-
-// Agregar eventos a los botones de agregar y eliminar
-botonesAgregar.forEach(boton => boton.addEventListener('click', agregarProducto));
-botonesEliminar.forEach(boton => boton.addEventListener('click', eliminarProducto));
-
-// Mostrar el carrito al cargar la página
-actualizarCarrito();
-
-function solicitarViaje() {
-    // Obtener los productos agrupados por nombre y sumar las cantidades
-    const productosAgrupados = carrito.reduce((acumulador, producto) => {
-        if (!acumulador[producto.nombre]) {
-            acumulador[producto.nombre] = {
-                nombre: producto.nombre,
-                precio: parseFloat(producto.precio),
-                cantidad: 1
-            };
-        } else {
-            acumulador[producto.nombre].precio += parseFloat(producto.precio);
-            acumulador[producto.nombre].cantidad++;
-        }
-        return acumulador;
-    }, {});
-
-    // Crear una cadena de consulta URL-encoded con los productos y sus cantidades
-    const queryString = Object.values(productosAgrupados)
-        .map(producto => `${encodeURIComponent(producto.nombre)} x${producto.cantidad}=${encodeURIComponent(producto.precio)}`)
-        .join('%0A');
-
-    // Obtener el precio total
-    const total = Object.values(productosAgrupados)
-        .reduce((acumulador, producto) => acumulador + producto.precio, 0);
-
-    // Crear el mensaje con los productos y el precio total
-    const mensaje = `¡Hola! Quiero solicitar un viaje con los siguientes productos:%0A%0A${queryString}%0A%0ATotal: $${total.toFixed(2)}`;
-
-    // Crear la URL de la conversación de WhatsApp con el mensaje
-    const url = `https://api.whatsapp.com/send/?phone=5491123318355&text=${mensaje}`;
-
-    // Abrir la conversación de WhatsApp en una pestaña nueva
-    window.open(url, '_blank');
-}
-
- //REINICIAR COTIZADOR
-
- const botonReiniciar = document.querySelector('.reiniciar');
-
-function reiniciarCotizador() {
-    carrito = [];
-    actualizarCarrito();
-}
-
-botonReiniciar.addEventListener('click', reiniciarCotizador);
-
-
-//CLIMA
+//-----------------------CLIMA------------------------//
 
 document.addEventListener('DOMContentLoaded', () => {
     const climaDiv = document.getElementById("clima");
     const apikey = "de7441f28b6bb245fa434b1e282f457b";
     const ciudad = "Lomas de Zamora,Buenos Aires,Argentina"; // Cambia la ciudad aquí
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${ciudad}&appid=${apikey}&lang=es`;
-  
+
     fetch(url)
-      .then(response => response.json())
-      .then(data => {
-        const clima = data.weather[0].description;
-        const temperatura = (data.main.temp - 273.15).toFixed(2); // Temperatura en Celsius
-        const sensacionTermica = (data.main.feels_like - 273.15).toFixed(2); // Sensación térmica en Celsius
-        const humedad = data.main.humidity;
-  
-        const infoClima = `El clima en ${ciudad} es ${clima}. La temperatura actual es de ${temperatura}°C, con una sensación térmica de ${sensacionTermica}°C. La humedad es del ${humedad}%.`;      
-        const textoClima = document.createTextNode(infoClima);
-        climaDiv.appendChild(textoClima);
-      })
-      .catch(error => console.error(error));
-  });
+        .then(response => response.json())
+        .then(data => {
+            const clima = data.weather[0].description;
+            const temperatura = (data.main.temp - 273.15).toFixed(2); // Temperatura en Celsius
+            const sensacionTermica = (data.main.feels_like - 273.15).toFixed(2); // Sensación térmica en Celsius
+            const humedad = data.main.humidity;
+
+            const infoClima = `El clima en ${ciudad} es ${clima}. La temperatura actual es de ${temperatura}°C, con una sensación térmica de ${sensacionTermica}°C. La humedad es del ${humedad}%.`;
+            const textoClima = document.createTextNode(infoClima);
+            climaDiv.appendChild(textoClima);
+        })
+        .catch(error => console.error(error));
+});
