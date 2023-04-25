@@ -94,6 +94,15 @@
 }
 
 @media(max-width: 700px) {
+    .tarjetaPrecio {
+    height: 180px;
+}
+    .tarjetaPrecio2:hover{
+        height: 680px;
+}
+}
+
+@media(max-width: 700px) {
     .mainPrecios{
         width: 350px;
         margin-left: 30px;

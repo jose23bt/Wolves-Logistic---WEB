@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Anton&family=Poiret+One&family=Poppins:ital,wght@0,100;0,200;0,500;1,300&display=swap");
 * {
   padding: 0;
@@ -251,12 +252,6 @@ header {
   margin-right: 50px;
   margin-bottom: 20px; }
 
-.titulo {
-  padding: 50px; }
-
-.precioUno {
-  font-size: 30px; }
-
 .heroPrecios {
   border-radius: 30px;
   background-image: url("../Img/ciudad.jpg");
@@ -270,37 +265,135 @@ header {
     font-size: 40px;
     font-family: 'Anton', sans-serif; }
 
+/*INICIO TARJETA DE PRECIOS*/
 .precios {
-  margin-right: 10px;
-  margin-left: 10px;
-  margin-bottom: 50px;
   display: flex;
   flex-direction: row;
-  justify-content: space-around; }
-  .precios div {
-    padding: 0;
-    margin: 0;
-    text-decoration: none;
-    list-style: none;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border-radius: 10px;
-    height: 400px;
-    width: 300px;
-    font-family: 'Poiret One', 200;
-    color: white; }
+  flex-wrap: wrap;
+  justify-content: space-evenly; }
 
-.titulo {
+/*TARJETAS DE PRECIOS*/
+.tarjetaPrecio {
+  margin: 5px;
+  border-radius: 25px;
+  width: 250px;
+  height: 180px;
+  background-color: #ff7700aa;
+  padding: 20px;
+  position: relative;
+  transition: all 0.5s ease-in-out; }
+
+.tarjetaPrecio:hover {
+  width: 250px;
+  height: 500px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  z-index: 1; }
+
+.title {
   display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  justify-content: center; }
+  height: auto; }
 
-.precioCaba {
-  background-color: #0066c5bb; }
+.title h2 {
+  margin: 0; }
 
+.list {
+  width: 0px;
+  height: 0px;
+  margin: 20px 0 0 0;
+  padding: 0;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 2s ease-in-out; }
+
+.tarjetaPrecio:hover .list {
+  width: auto;
+  height: auto;
+  visibility: visible;
+  opacity: 1; }
+
+.list li {
+  list-style: none;
+  margin: 0 0 10px 0;
+  padding: 0; }
+
+.list li:before {
+  content: "• ";
+  color: #ffa200; }
+
+/*tarjeta zona 1*/
+.tarjetaPrecio1 {
+  margin: 5px;
+  border-radius: 25px;
+  width: 250px;
+  height: 180px;
+  background-color: #0048ff56;
+  padding: 20px;
+  position: relative;
+  transition: all 0.5s ease-in-out; }
+
+.tarjetaPrecio1:hover {
+  width: 250px;
+  height: 370px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  z-index: 1; }
+
+.tarjetaPrecio1:hover .list {
+  width: auto;
+  height: auto;
+  visibility: visible;
+  opacity: 1; }
+
+/*tarjeta zona 2*/
+.tarjetaPrecio2 {
+  margin: 5px;
+  border-radius: 25px;
+  width: 250px;
+  height: 180px;
+  background-color: #f2f2f2;
+  border: 1px solid #ccc;
+  padding: 20px;
+  position: relative;
+  transition: all 0.5s ease-in-out; }
+
+.tarjetaPrecio2:hover {
+  width: 250px;
+  height: 680px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  z-index: 1; }
+
+.tarjetaPrecio2:hover .list {
+  width: auto;
+  height: auto;
+  visibility: visible;
+  opacity: 1; }
+
+/*tarjeta zona 3*/
+.tarjetaPrecio3 {
+  margin: 5px;
+  border-radius: 25px;
+  width: 250px;
+  height: 180px;
+  background-color: #0000006a;
+  padding: 20px;
+  position: relative;
+  transition: all 0.5s ease-in-out; }
+
+.tarjetaPrecio3:hover {
+  width: 250px;
+  height: 680px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  z-index: 1; }
+
+.tarjetaPrecio3:hover .list {
+  width: auto;
+  height: auto;
+  visibility: visible;
+  opacity: 1; }
+
+/*FIN TARJETAS DE PRECIOS*/
 .aclaracion {
   margin-top: 10px;
   padding-left: 7%;
@@ -545,6 +638,12 @@ footer nav {
   .mainPrecios {
     margin-left: 200px;
     margin-right: 200px; } }
+
+@media (max-width: 700px) {
+  .tarjetaPrecio {
+    height: 180px; }
+  .tarjetaPrecio2:hover {
+    height: 680px; } }
 
 @media (max-width: 700px) {
   .mainPrecios {
