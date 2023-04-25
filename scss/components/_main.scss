@@ -153,10 +153,9 @@
 /*----main---precios--*/
 
 .mainPrecios{
-    width: 350px;
-    margin-left: 30px;
-    margin-right: 30px;
-    height: 1750px;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-bottom: 20px;
 }
 
 .titulo {
@@ -173,7 +172,7 @@
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 1700px;
+    height: auto;
 
     h1 {
         text-align: center;
@@ -184,8 +183,8 @@
 }
 
 .precios {
-    margin-right: 200px;
-    margin-left: 200px;
+    margin-right: 10px;
+    margin-left: 10px;
     margin-bottom: 50px;
     display: flex;
     flex-direction: row;
@@ -245,6 +244,7 @@
     sans-serif;
 
     img {
+        margin-bottom: 20px;
         height: 100px;
     }
 

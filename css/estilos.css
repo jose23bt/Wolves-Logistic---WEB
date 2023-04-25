@@ -247,10 +247,9 @@ header {
 
 /*----main---precios--*/
 .mainPrecios {
-  width: 350px;
-  margin-left: 30px;
-  margin-right: 30px;
-  height: 1750px; }
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-bottom: 20px; }
 
 .titulo {
   padding: 50px; }
@@ -264,7 +263,7 @@ header {
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 1700px; }
+  height: auto; }
   .heroPrecios h1 {
     text-align: center;
     color: #e4e4e4;
@@ -272,8 +271,8 @@ header {
     font-family: 'Anton', sans-serif; }
 
 .precios {
-  margin-right: 200px;
-  margin-left: 200px;
+  margin-right: 10px;
+  margin-left: 10px;
   margin-bottom: 50px;
   display: flex;
   flex-direction: row;
@@ -322,6 +321,7 @@ header {
     margin-bottom: 50px;
     color: white; }
   .aclaracion img {
+    margin-bottom: 20px;
     height: 100px; }
 
 /*-------------------COTIZACION----------------------*/
@@ -541,14 +541,17 @@ footer nav {
   .div7 {
     grid-area: 3 / 1 / 4 / 2; } }
 
+@media (min-width: 1200px) {
+  .mainPrecios {
+    margin-left: 200px;
+    margin-right: 200px; } }
+
 @media (max-width: 700px) {
-  .precios {
-    margin-left: 0;
-    margin-right: 0;
-    flex-direction: column;
-    align-items: center; }
-    .precios .precioLomas {
-      margin-top: 80px; } }
+  .mainPrecios {
+    width: 350px;
+    margin-left: 30px;
+    margin-right: 30px;
+    height: auto; } }
 
 @media (max-width: 700px) {
   footer {
