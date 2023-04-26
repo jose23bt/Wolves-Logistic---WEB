@@ -1,5 +1,10 @@
 /*header*/
 
+@font-face {
+    font-family: hemi;
+    src: url(../fonts/hemi.otf);
+}
+
 header {
     min-height: 6rem;
 }
@@ -28,17 +33,21 @@ header {
     justify-content: space-between;
 }
 
-.navbar .logo{
+.navbar .logo{    
     display: flex;
     align-items: center;
 }
 
 .navbar .logo img{
-    margin: 1rem;
+    margin-top: 1rem;    
+    margin-right: 0px;
+    margin-left: 0px;
     width: 80px;
 }
 
 .navbar .logo a {
+    margin-top: 1rem;
+    font-family: hemi;
     font-size: 1.5rem;
     font-weight: bold;
 }
