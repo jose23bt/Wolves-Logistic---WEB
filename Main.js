@@ -221,3 +221,71 @@ document.addEventListener('DOMContentLoaded', () => {
         })
         .catch(error => console.error(error));
 });
+
+
+
+//--------------------FORMULARIO------------------------//
+
+// Obtener el Form
+const formContent = document.getElementById('contenedor')
+
+// Obtener los input del Form
+const formInputs = formContent.childNodes[1].childNodes[3].childNodes[3]
+// console.log(formInputs[2])
+
+// Obtener el boton Solicitar Viaje
+const botonSolicitiar = document.getElementById('solicitar')
+
+// Obtener el icono para cerrar el Form
+const closeForm = document.querySelector('.icon-close')
+
+// Obtener Boton Formulario
+const enviarSolicitud = document.getElementById('enviarSolicitud')
+
+// ABRIR/CERRAR FORMULARIO
+
+botonSolicitiar.addEventListener('click', (e) => {
+    // Previene la accion por defecto del <button></button>
+    e.preventDefault()
+    // Remueve la Class "Inactive" que tiene el atributo display:none del Form   
+    formContent.classList.remove("inactive")
+   //  const menj = solicitarViaje
+    // console.log(menj)
+
+})
+
+closeForm.addEventListener('click', () =>{
+    console.log("first")
+    // Agrega la Class "inactive" al form
+    formContent.classList.add("inactive")
+})
+
+// RECOPILAR DATOS DEL CLIENTE DEL FORM
+
+const recDatos = () => {    
+    let i = 0
+    let arr = []
+    for(let input of formInputs){
+        if(input.tagName === "INPUT" & input.type !== 'checkbox' & input.type !== 'submit'){            
+            arr.push([formInputs[i].value])
+            i += 1
+        }
+    }
+   
+    return arr
+}
+
+ // ENVIAR SOLICITUD Y DATOS
+ enviarSolicitud.addEventListener('click',(e) =>{
+     e.preventDefault()
+    let checket = formInputs[8].checked
+    console.log(checket)
+    let datos = recDatos()
+    if(checket & datos[0] != '' & datos[1] != '' & datos[2] != ''& datos[3] != '' & datos[4] != '' & datos[6] != '' & datos[7] != ''){
+        solicitarViaje()
+        formContent.classList.add("inactive")
+        console.log(datos)
+       
+        
+    }     
+})

@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/estilos.css">
+    <link rel="stylesheet" href="../css/estilos-form.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -84,7 +85,7 @@
                             <h3>Envios</h3>
                             <ul></ul>
                             <p class="total"></p>
-                            <button class="solicitar" onclick="solicitarViaje()">Solicitar viaje</button>
+                            <button id="solicitar" class="solicitar">Solicitar viaje</button>
                             <button class="reiniciar">Reiniciar Cotizador</button>
                         </div>            
                     </div>
@@ -126,7 +127,37 @@
             <div id="clima"></div>
     
         </div>
+
+        <section id="contenedor" class="contenedor inactive">
+            <div class="wrapper">
+                <ion-icon class="icon-close" name="close-outline"></ion-icon>
+                <div class="form">
+                    <h3>Por Favor <br> Complete los siguientes datos <br> para una mejor atencion</h3>
+                    <form action="">
+                        <div>
+                            <input id="Nombre" type="text" placeholder="Nombre y Apellido *">
+                            <input id="Local" type="text" placeholder="Empresa/local *">
+                            <input id="Contacto" type="text" placeholder="Numero de Contacto *">
+                            <input id="Email" type="text" placeholder="Email *">
+                        </div>
+                        <div>
+                            <input id="Direccion" type="text" placeholder="Direccion *">
+                            <input id="Barrio" type="text" placeholder="Barrio">
+                            <input id="Localidad" type="text" placeholder="Localidad *">
+                            <input id="CP" type="text" placeholder="Codigo Postal *">
+                        </div>
+        
+                        <p>detalle del envio <-- esto se modifica con JS</p>
+                        <input type="checkbox" required><label for="" >los detalles son correctos</label>
+                        <button id="enviarSolicitud">Solicitar viaje</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
     </main>
     <script src="../Main.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
 </html>
