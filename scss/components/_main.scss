@@ -156,19 +156,18 @@
     margin-left: 50px;
     margin-right: 50px;
     margin-bottom: 20px;
+    background-image: url("../Img/fondoprecios.png");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size:cover; 
+    padding: 30px;
+    border-radius: 30px;    
+    min-height: 900px;   
 }
 
 
 
 .heroPrecios {
-    padding: 30px;
-    border-radius: 30px;
-    background-image: url("../Img/fondoprecios.png");
-    background-position: center;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: auto;
 
     i{  
         font-size: 20px;
@@ -191,7 +190,7 @@
 
 /*INICIO TARJETA DE PRECIOS*/
 
-.precios{
+.precios{    
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -200,7 +199,7 @@
 
 /*TARJETAS DE PRECIOS*/
 
-.tarjetaPrecio {
+.tarjetaPrecio {    
     backdrop-filter: blur(10px);
     color: white;
     margin: 5px;
@@ -216,7 +215,7 @@
     }
 }
 
-.tarjetaPrecio:hover {
+.tarjetaPrecio:hover {    
     width: 250px;
     height: 560px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
