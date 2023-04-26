@@ -164,6 +164,7 @@
     padding: 30px;
     border-radius: 30px;
     background-image: url("../Img/fondoprecios.png");
+    background-position: center;
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
@@ -522,7 +523,7 @@ h3 {
 }
 
 .card {
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(8px);
     color: white;
     margin: 5px;
     border-radius: 25px;
@@ -540,7 +541,7 @@ h3 {
 }
 
 .card:hover {
-    background-color: #004d9a7d;
+    background-color: #005fbe7d;
     background-position: center;
     background-repeat: no-repeat;    
     height: 420px;
