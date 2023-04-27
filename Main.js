@@ -14,8 +14,8 @@ toggleBtn.onclick = function () {
 const botonesAgregar = document.querySelectorAll('.agregar');
 const botonesEliminar = document.querySelectorAll('.eliminar');
 
-console.log(botonesAgregar); // Verificar si se seleccionan los botones correctamente
-console.log(botonesEliminar); // Verificar si se seleccionan los botones correctamente
+// console.log(botonesAgregar); // Verificar si se seleccionan los botones correctamente
+// console.log(botonesEliminar); // Verificar si se seleccionan los botones correctamente
 
 // Obtener el carrito desde el almacenamiento local (si existe)
 let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
@@ -263,29 +263,63 @@ closeForm.addEventListener('click', () =>{
 // RECOPILAR DATOS DEL CLIENTE DEL FORM
 
 const recDatos = () => {    
-    let i = 0
-    let arr = []
+    let datos = {}
     for(let input of formInputs){
         if(input.tagName === "INPUT" & input.type !== 'checkbox' & input.type !== 'submit'){            
-            arr.push([formInputs[i].value])
-            i += 1
+            datos[input.id] = input.value;
         }
     }
-   
-    return arr
+    return datos
 }
 
- // ENVIAR SOLICITUD Y DATOS
- enviarSolicitud.addEventListener('click',(e) =>{
-     e.preventDefault()
-    let checket = formInputs[8].checked
-    console.log(checket)
-    let datos = recDatos()
-    if(checket & datos[0] != '' & datos[1] != '' & datos[2] != ''& datos[3] != '' & datos[4] != '' & datos[6] != '' & datos[7] != ''){
+const validarEmail = (email) => {
+    // Expresión regular para validar correo electrónico
+    const re = /\S+@\S+\.\S+/
+    return re.test(email)
+  }
+  
+  // ENVIAR SOLICITUD Y DATOS
+  enviarSolicitud.addEventListener('click',(e) =>{
+      e.preventDefault()
+
+      let checket = formInputs[8].checked
+      let datos = recDatos()
+
+      if(!checket){
+          return console.log('marque el checkbox')
+        }     
+        if(datos.Nombre == ''){
+            return console.log('complete el campo nombre')
+        }
+        if(datos.Local == ''){
+            return console.log("complete el campo Empresa/local")
+        }
+        if(datos.Contacto == ''){
+            return console.log('complete el campo contacto')
+        }
+        if(!validarEmail(datos.Email)){
+            formInputs[3].classList.add('inputerror')
+            return console.log('complete el campo Email')
+        } else{
+            formInputs[3].classList.remove('inputerror')
+        }
+        if(datos.Direccion == ''){
+            return console.log('complete el campo Direccion')
+        }
+        if(datos.Localidad == ''){
+            return console.log('complete el campo Localidad')
+        }
+        if(datos.CP == ''){
+            return console.log('complete el campo Codigo Postal')
+        }
         solicitarViaje()
         formContent.classList.add("inactive")
+        // en este punto tengo que incluir el codigo para enviar los "datos" a la base de datos
         console.log(datos)
-       
-        
-    }     
-})
+        for(let input of formInputs){
+            if(input.tagName === "INPUT" & input.type !== 'checkbox' & input.type !== 'submit'){            
+                input.value = ""
+            }
+        }
+    })
+

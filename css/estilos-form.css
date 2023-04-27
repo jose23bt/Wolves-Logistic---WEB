@@ -63,6 +63,11 @@
     margin-top: 10px;
 }
 
+.inputerror{
+  background-color: rgba(255,0,0,0.5);
+  /* border-color: red; */
+}
+
 
 @media (max-width: 720px) {
   .contenedor .wrapper{

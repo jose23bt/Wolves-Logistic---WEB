@@ -135,20 +135,20 @@
                     <h3>Por Favor <br> Complete los siguientes datos <br> para una mejor atencion</h3>
                     <form action="">
                         <div>
-                            <input id="Nombre" type="text" placeholder="Nombre y Apellido *">
-                            <input id="Local" type="text" placeholder="Empresa/local *">
-                            <input id="Contacto" type="text" placeholder="Numero de Contacto *">
-                            <input id="Email" type="text" placeholder="Email *">
+                            <input id="Nombre" type="text" placeholder="Nombre y Apellido *" required>
+                            <input id="Local" type="text" placeholder="Empresa/local *" required>
+                            <input id="Contacto" type="text" placeholder="Numero de Contacto *" required>
+                            <input id="Email" type="text"  placeholder="Email *" required>
                         </div>
                         <div>
-                            <input id="Direccion" type="text" placeholder="Direccion *">
+                            <input id="Direccion" type="text" placeholder="Direccion *" required>
                             <input id="Barrio" type="text" placeholder="Barrio">
-                            <input id="Localidad" type="text" placeholder="Localidad *">
-                            <input id="CP" type="text" placeholder="Codigo Postal *">
+                            <input id="Localidad" type="text" placeholder="Localidad *" required>
+                            <input id="CP" type="text" placeholder="Codigo Postal *" required>
                         </div>
         
                         <p>detalle del envio <-- esto se modifica con JS</p>
-                        <input type="checkbox" required><label for="" >los detalles son correctos</label>
+                        <input type="checkbox" id="ok" required><label for="ok" >los detalles son correctos</label>
                         <button id="enviarSolicitud">Solicitar viaje</button>
                     </form>
                 </div>
