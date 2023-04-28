@@ -6,21 +6,23 @@
 
 /*hero-section*/
 
-.heroSection{
+.heroSection {
     display: flex;
     justify-content: center;
 }
-.carousel-inner{
+
+.carousel-inner {
     width: 1200px;
-    border-radius: 25px;    
+    border-radius: 25px;
 }
+
 .carousel.slide {
     max-width: 1200px;
 }
 
 /*segundoHero*/
 
-.segundoHero {    
+.segundoHero {
 
     h5 {
         font-family: 'Anton', sans-serif;
@@ -34,7 +36,7 @@
 
 .nuestrosServicios {
     margin-left: 50px;
-    margin-right: 50px; 
+    margin-right: 50px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -43,7 +45,7 @@
 
 /*main-index*/
 
-.parentCenter{
+.parentCenter {
     display: flex;
     justify-content: center;
 }
@@ -65,7 +67,7 @@
     height: auto;
     width: 500px;
     margin-left: 50px;
-    margin-right: 50px; 
+    margin-right: 50px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -76,7 +78,7 @@
     height: auto;
     width: 500px;
     margin-left: 50px;
-    margin-right: 50px; 
+    margin-right: 50px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -88,7 +90,7 @@
     height: auto;
     width: 500px;
     margin-left: 50px;
-    margin-right: 50px; 
+    margin-right: 50px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -100,14 +102,14 @@
     height: auto;
     width: 500px;
     margin-left: 50px;
-    margin-right: 50px;    
+    margin-right: 50px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     grid-area: 2 / 2 / 3 / 3;
 }
 
-.parentCenter2{
+.parentCenter2 {
     display: flex;
     justify-content: center;
 }
@@ -152,33 +154,34 @@
 
 /*----main---precios--*/
 
-.mainPrecios{
+.mainPrecios {
     margin-left: 50px;
     margin-right: 50px;
     margin-bottom: 20px;
-    background-image: url("../Img/fondoprecios.png");
+    background-image: url("../img/fondoprecios.png");
     background-attachment: fixed;
     background-repeat: no-repeat;
-    background-size:cover; 
+    background-size: cover;
     padding: 30px;
-    border-radius: 30px;    
-    min-height: 900px;   
+    border-radius: 30px;
+    min-height: 900px;
 }
 
 
 
 .heroPrecios {
 
-    i{  
+    i {
         font-size: 20px;
-        margin-top: 20px;             
+        margin-top: 20px;
         color: orange;
     }
-    i:hover{
+
+    i:hover {
         color: #036bd3;
     }
-    
-    
+
+
     h1 {
         text-align: center;
         color: #5c5c5ca9;
@@ -190,186 +193,104 @@
 
 /*INICIO TARJETA DE PRECIOS*/
 
-.precios{    
+.tarjetasDePrecios {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    align-items: start;
+    justify-content: space-between;
+    height: auto;
 }
 
-/*TARJETAS DE PRECIOS*/
-
-.tarjetaPrecio {    
+.tarjeta1 {
+    background-color: rgba(255, 119, 0, 0.476);
     backdrop-filter: blur(10px);
+}
+
+.tarjeta2 {
+    background-color: rgba(0, 0, 255, 0.319);
+    backdrop-filter: blur(10px);
+}
+
+.tarjeta3 {
+    background-color: rgba(173, 173, 173, 0.794);
+    backdrop-filter: blur(10px);
+}
+
+.tarjeta4 {
+    background-color: rgba(39, 39, 39, 0.319);
+    backdrop-filter: blur(10px);
+}
+
+.tarjetaPrecios {
     color: white;
-    margin: 5px;
     border-radius: 25px;
-    width: 250px;
-    height: 130px;
-    background-color: #ff8913aa;
+    width: 300px;
+    height: 155px;
     padding: 20px;
+    display: block;
+    position: unset;
+    overflow: hidden;
+    transition: height 0.8s ease-out;
+}
+
+.tarjetaPrecios.tarjeta1.open {
+    display: block;
+    height: 580px;
     position: relative;
-    transition: all 0.5s ease-in-out;
-    i{
-        margin-top: 30px;
-    }
 }
 
-.tarjetaPrecio:hover {    
-    width: 250px;
-    height: 560px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-    z-index: 1;
+.tarjetaPrecios.tarjeta2.open {
+    display: block;
+    height: 450px;
+    position: relative;
 }
 
-.title {
+.tarjetaPrecios.tarjeta3.open {
+    display: block;
+    height: 810px;
+    position: relative;
+}
+
+.tarjetaPrecios.tarjeta4.open {
+    display: block;
+    height: 580px;
+    position: relative;
+}
+
+.menu {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    height: auto;
-}
-
-.tarjetaPrecio .title h2{
-    margin-bottom: 15px;
-    font-size: 25px;
-    text-align: center;
-}
-
-.title h2 {
-    margin-bottom: 15px;
+    flex-wrap: nowrap;
     color: white;
-    font-size: 2rem;
 }
 
-.list {
-    width: 0px;
-    height: 0px;
-    margin: 20px 0 0 0;
-    padding: 0;
-    visibility: hidden;
-    opacity: 0;
-    transition: opacity 2s ease-in-out;
+.menu a:hover {
+    color: rgb(0, 98, 255);
 }
 
-.tarjetaPrecio:hover .list {
-    width: auto;
-    height: auto;
-    visibility: visible;
-    opacity: 1;
+.tarjetaPrecios ol {
+    padding: 0px;
 }
 
-.list li {
-    list-style: none;
-    margin: 0 0 10px 0;
-    padding: 0;
+.tarjetaPrecios li {
+    padding: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.list li:before {
-    content: "• ";
-    color: #ffa200;
-}
-
-/*tarjeta zona 1*/
-
-.tarjetaPrecio1 {
-    backdrop-filter: blur(10px);
-    color: white;
-    margin: 5px;
-    border-radius: 25px;
-    width: 250px;
-    height: 130px;
-    background-color: #0048ff56;    
-    padding: 20px;
-    position: relative;
-    transition: all 0.5s ease-in-out;
-}
-
-.tarjetaPrecio1:hover {
-    width: 250px;
-    height: 430px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-    z-index: 1;
-}
-
-.tarjetaPrecio1:hover .list {
-    width: auto;
-    height: auto;
-    visibility: visible;
-    opacity: 1;
-}
-
-/*tarjeta zona 2*/
-
-.tarjetaPrecio2 {
-    backdrop-filter: blur(10px);
-    color: white;
-    margin: 5px;
-    border-radius: 25px;
-    width: 250px;
-    height: 130px;
-    background-color: #afafaf81;
-    padding: 20px;
-    position: relative;
-    transition: all 0.5s ease-in-out;
-    p{
-        margin-top: 20px;
-    }
-}
-
-.tarjetaPrecio2:hover {
-    width: 250px;
-    height: 740px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-    z-index: 1;
-}
-
-.tarjetaPrecio2:hover .list {
-    width: auto;
-    height: auto;
-    visibility: visible;
-    opacity: 1;
-}
-
-/*tarjeta zona 3*/
-
-.tarjetaPrecio3 {
-    backdrop-filter: blur(10px);
-    margin: 5px;
-    border-radius: 25px;
-    width: 250px;
-    height: 130px;
-    background-color: #0000006a;
-    padding: 20px;
-    position: relative;
-    transition: all 0.5s ease-in-out;
-}
-
-.tarjetaPrecio3:hover {
-    margin-bottom: 50px;
-    width: 250px;
-    height: 530px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-    z-index: 1;
-}
-
-.tarjetaPrecio3:hover .list {
-    color: white;
-    width: auto;
-    height: auto;
-    visibility: visible;
-    opacity: 1;
-}
 
 /*FIN TARJETAS DE PRECIOS*/
 
 .aclaracion {
     p {
-        font-family:Verdana, Geneva, Tahoma, sans-serif;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
         text-align: left;
         margin-bottom: 70px;
         font-size: 20px;
-        color: #5c5c5c;        
+        color: #5c5c5c;
     }
 
     h3 {
@@ -398,8 +319,8 @@
 
 /*---------------PAGINA----COTIZACION----------------------*/
 
-.mainCotizador{
-    background-image: url(../Img/fondocotizacion.png);
+.mainCotizador {
+    background-image: url(../img/fondocotizacion.png);
     padding: 30px;
     border-radius: 30px;
     background-attachment: fixed;
@@ -479,8 +400,8 @@
 }
 
 /*SECCION COTIZADOR POR ZONAS*/
-.zonas{
-    margin-top: 80px;    
+.zonas {
+    margin-top: 80px;
 }
 
 .container {
@@ -527,25 +448,25 @@ h3 {
     margin: 5px;
     border-radius: 25px;
     width: 250px;
-    height: 390px;    
+    height: 390px;
     padding: 20px;
-    position: relative;    
-    background-color: #0033667d;    
+    position: relative;
+    background-color: #0033667d;
     background-position: center;
-    background-repeat:no-repeat;
-    background-size:contain;  
+    background-repeat: no-repeat;
+    background-size: contain;
     display: flex;
     flex-direction: column;
-    align-items: center;    
+    align-items: center;
 }
 
 .card:hover {
     background-color: #005fbe7d;
     background-position: center;
-    background-repeat: no-repeat;    
+    background-repeat: no-repeat;
     height: 420px;
     transition: ease 1s;
-    }
+}
 
 .card:hover .botones {
     visibility: visible;
@@ -572,20 +493,21 @@ h3 {
     background-image: url(../img/zona3.png);
 }
 
-.divCarrito{
+.divCarrito {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.carrito{
+.carrito {
     text-align: center;
     background-color: #003366;
     border-radius: 10px;
     color: white;
     width: 300px;
     height: 150px;
-    .total{
+
+    .total {
         font-size: 30px;
     }
 }

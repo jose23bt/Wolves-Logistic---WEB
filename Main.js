@@ -8,6 +8,21 @@ toggleBtn.onclick = function () {
     dropDownMenu.classList.toggle('open')
 }
 
+//-----------tarejtas-precios---------------//
+
+/*BOTONES TARJETA DE PRECIOS*/
+
+const toggleBtns = document.querySelectorAll('.tarjetaBoton');
+const dropDownMenus = document.querySelectorAll('.tarjetaPrecios');
+
+toggleBtns.forEach((toggleBtn, index) => {
+    toggleBtn.addEventListener('click', () => {
+        dropDownMenus[index].classList.toggle('open');
+    });
+});
+
+
+
 //-------------------COTIZADOR POR ZONAS-------------------------//
 
 // Obtener los botones

@@ -1,4 +1,3 @@
-@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Anton&family=Poiret+One&family=Poppins:ital,wght@0,100;0,200;0,500;1,300&display=swap");
 * {
   padding: 0;
@@ -259,7 +258,7 @@ header {
   margin-left: 50px;
   margin-right: 50px;
   margin-bottom: 20px;
-  background-image: url("../Img/fondoprecios.png");
+  background-image: url("../img/fondoprecios.png");
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
@@ -283,151 +282,79 @@ header {
   margin-bottom: 50px; }
 
 /*INICIO TARJETA DE PRECIOS*/
-.precios {
+.tarjetasDePrecios {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-evenly; }
-
-/*TARJETAS DE PRECIOS*/
-.tarjetaPrecio {
-  backdrop-filter: blur(10px);
-  color: white;
-  margin: 5px;
-  border-radius: 25px;
-  width: 250px;
-  height: 130px;
-  background-color: #ff8913aa;
-  padding: 20px;
-  position: relative;
-  transition: all 0.5s ease-in-out; }
-  .tarjetaPrecio i {
-    margin-top: 30px; }
-
-.tarjetaPrecio:hover {
-  width: 250px;
-  height: 560px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-  z-index: 1; }
-
-.title {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  align-items: start;
+  justify-content: space-between;
   height: auto; }
 
-.tarjetaPrecio .title h2 {
-  margin-bottom: 15px;
-  font-size: 25px;
-  text-align: center; }
+.tarjeta1 {
+  background-color: rgba(255, 119, 0, 0.476);
+  backdrop-filter: blur(10px); }
 
-.title h2 {
-  margin-bottom: 15px;
+.tarjeta2 {
+  background-color: rgba(0, 0, 255, 0.319);
+  backdrop-filter: blur(10px); }
+
+.tarjeta3 {
+  background-color: rgba(173, 173, 173, 0.794);
+  backdrop-filter: blur(10px); }
+
+.tarjeta4 {
+  background-color: rgba(39, 39, 39, 0.319);
+  backdrop-filter: blur(10px); }
+
+.tarjetaPrecios {
   color: white;
-  font-size: 2rem; }
-
-.list {
-  width: 0px;
-  height: 0px;
-  margin: 20px 0 0 0;
-  padding: 0;
-  visibility: hidden;
-  opacity: 0;
-  transition: opacity 2s ease-in-out; }
-
-.tarjetaPrecio:hover .list {
-  width: auto;
-  height: auto;
-  visibility: visible;
-  opacity: 1; }
-
-.list li {
-  list-style: none;
-  margin: 0 0 10px 0;
-  padding: 0; }
-
-.list li:before {
-  content: "• ";
-  color: #ffa200; }
-
-/*tarjeta zona 1*/
-.tarjetaPrecio1 {
-  backdrop-filter: blur(10px);
-  color: white;
-  margin: 5px;
   border-radius: 25px;
-  width: 250px;
-  height: 130px;
-  background-color: #0048ff56;
+  width: 300px;
+  height: 155px;
   padding: 20px;
-  position: relative;
-  transition: all 0.5s ease-in-out; }
+  display: block;
+  position: unset;
+  overflow: hidden;
+  transition: height 0.8s ease-out; }
 
-.tarjetaPrecio1:hover {
-  width: 250px;
-  height: 430px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-  z-index: 1; }
+.tarjetaPrecios.tarjeta1.open {
+  display: block;
+  height: 580px;
+  position: relative; }
 
-.tarjetaPrecio1:hover .list {
-  width: auto;
-  height: auto;
-  visibility: visible;
-  opacity: 1; }
+.tarjetaPrecios.tarjeta2.open {
+  display: block;
+  height: 450px;
+  position: relative; }
 
-/*tarjeta zona 2*/
-.tarjetaPrecio2 {
-  backdrop-filter: blur(10px);
-  color: white;
-  margin: 5px;
-  border-radius: 25px;
-  width: 250px;
-  height: 130px;
-  background-color: #afafaf81;
-  padding: 20px;
-  position: relative;
-  transition: all 0.5s ease-in-out; }
-  .tarjetaPrecio2 p {
-    margin-top: 20px; }
+.tarjetaPrecios.tarjeta3.open {
+  display: block;
+  height: 810px;
+  position: relative; }
 
-.tarjetaPrecio2:hover {
-  width: 250px;
-  height: 740px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-  z-index: 1; }
+.tarjetaPrecios.tarjeta4.open {
+  display: block;
+  height: 580px;
+  position: relative; }
 
-.tarjetaPrecio2:hover .list {
-  width: auto;
-  height: auto;
-  visibility: visible;
-  opacity: 1; }
+.menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: nowrap;
+  color: white; }
 
-/*tarjeta zona 3*/
-.tarjetaPrecio3 {
-  backdrop-filter: blur(10px);
-  margin: 5px;
-  border-radius: 25px;
-  width: 250px;
-  height: 130px;
-  background-color: #0000006a;
-  padding: 20px;
-  position: relative;
-  transition: all 0.5s ease-in-out; }
+.menu a:hover {
+  color: #0062ff; }
 
-.tarjetaPrecio3:hover {
-  margin-bottom: 50px;
-  width: 250px;
-  height: 530px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-  z-index: 1; }
+.tarjetaPrecios ol {
+  padding: 0px; }
 
-.tarjetaPrecio3:hover .list {
-  color: white;
-  width: auto;
-  height: auto;
-  visibility: visible;
-  opacity: 1; }
+.tarjetaPrecios li {
+  padding: 0.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
 
 /*FIN TARJETAS DE PRECIOS*/
 .aclaracion {
@@ -456,7 +383,7 @@ header {
 
 /*---------------PAGINA----COTIZACION----------------------*/
 .mainCotizador {
-  background-image: url(../Img/fondocotizacion.png);
+  background-image: url(../img/fondocotizacion.png);
   padding: 30px;
   border-radius: 30px;
   background-attachment: fixed;
