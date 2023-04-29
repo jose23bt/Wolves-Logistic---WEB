@@ -158,13 +158,10 @@
     margin-left: 50px;
     margin-right: 50px;
     margin-bottom: 20px;
-    background-image: url("../img/fondoprecios.png");
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-image: url("../img/fondoprecios.jpg");
     padding: 30px;
     border-radius: 30px;
-    min-height: 900px;
+    min-height: 1200px;
 }
 
 
@@ -202,6 +199,26 @@
     height: auto;
 }
 
+.tarjetaPrecios {
+    margin: 10px;
+    color: white;
+    border-radius: 25px;
+    width: 300px;
+    height: 155px;
+    padding: 20px;
+    display: block;
+    position: unset;
+    overflow: hidden;
+    transition: height 0.8s ease-out;
+    span{
+        font-size: 15px;
+        margin-bottom: 0px;
+    }
+    i{
+        margin-top: 0px;
+    }
+}
+
 .tarjeta1 {
     background-color: rgba(255, 119, 0, 0.476);
     backdrop-filter: blur(10px);
@@ -222,17 +239,6 @@
     backdrop-filter: blur(10px);
 }
 
-.tarjetaPrecios {
-    color: white;
-    border-radius: 25px;
-    width: 300px;
-    height: 155px;
-    padding: 20px;
-    display: block;
-    position: unset;
-    overflow: hidden;
-    transition: height 0.8s ease-out;
-}
 
 .tarjetaPrecios.tarjeta1.open {
     display: block;
@@ -248,7 +254,7 @@
 
 .tarjetaPrecios.tarjeta3.open {
     display: block;
-    height: 810px;
+    height: 840px;
     position: relative;
 }
 
@@ -262,6 +268,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     flex-wrap: nowrap;
     color: white;
 }
