@@ -133,18 +133,18 @@
                 <ion-icon class="icon-close" name="close-outline"></ion-icon>
                 <div class="form">
                     <h3>Por Favor <br> Complete los siguientes datos <br> para una mejor atencion</h3>
-                    <form action="">
+                    <form id="form" action="">
                         <div>
-                            <input id="Nombre" type="text" placeholder="Nombre y Apellido *" required>
-                            <input id="Local" type="text" placeholder="Empresa/local *" required>
-                            <input id="Contacto" type="text" placeholder="Numero de Contacto *" required>
-                            <input id="Email" type="text"  placeholder="Email *" required>
+                            <input id="Nombre" name="Nombre" type="text" placeholder="Nombre y Apellido *" required>
+                            <input id="Local" name="local" type="text" placeholder="Empresa/local *" required>
+                            <input id="Contacto" name="Contacto" type="text" placeholder="Numero de Contacto *" required>
+                            <input id="Email" name="Email" type="text"  placeholder="Email *" required>
                         </div>
                         <div>
-                            <input id="Direccion" type="text" placeholder="Direccion *" required>
-                            <input id="Barrio" type="text" placeholder="Barrio">
-                            <input id="Localidad" type="text" placeholder="Localidad *" required>
-                            <input id="CP" type="text" placeholder="Codigo Postal *" required>
+                            <input id="Direccion" name="Direccion" type="text" placeholder="Direccion *" required>
+                            <input id="Barrio" name="Barrio" type="text" placeholder="Barrio">
+                            <input id="Localidad" name="Localidad" type="text" placeholder="Localidad *" required>
+                            <input id="CP" name="CP" type="text" placeholder="Codigo Postal *" required>
                         </div>
         
                         <p>detalle del envio <-- esto se modifica con JS</p>
@@ -156,7 +156,10 @@
         </section>
 
     </main>
-    <script src="../Main.js"></script>
+    <script type="module" src="../Main.js"></script>
+    <script type="module" src="../js/getform.js"></script>
+
+
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
