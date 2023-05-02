@@ -313,3 +313,42 @@
         width: 340px;
     }
 }
+
+@media (min-width: 500px){
+    #googleMap{
+        width: 390px;
+    }
+}
+
+@media (min-width: 1000px){
+    #googleMap{
+        width: 1000px;
+    }
+}
+
+
+@media (min-width: 500px){
+    #from{
+        width: 390px;
+    }
+    #to{
+        width: 390px;
+    }
+}
+
+@media (min-width: 1000px){
+    #from{
+        width: 500px;
+    }
+    #to{
+        width: 500px;
+    }
+}
+
+@media (max-width: 500px){
+ .container-fluid{
+    h1{
+        font-size: 2.5rem;
+    }
+ }
+}

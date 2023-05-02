@@ -164,11 +164,6 @@
     justify-content: center;
     flex-direction: column;
     align-items: center;
-
-    .titulo{       
-        
-    }
-
     .titulo img{
         width: 100%;
         position: relative;
@@ -410,7 +405,8 @@
 
 .mainCotizador {
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.com/svgjs' width='1440' height='560' preserveAspectRatio='none' viewBox='0 0 1440 560'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1638%26quot%3b)' fill='none'%3e%3crect width='1440' height='560' x='0' y='0' fill='url(%23SvgjsLinearGradient1639)'%3e%3c/rect%3e%3cpath d='M1440 0L1187.97 0L1440 168.9z' fill='rgba(255%2c 255%2c 255%2c .1)'%3e%3c/path%3e%3cpath d='M1187.97 0L1440 168.9L1440 215.71L765.25 0z' fill='rgba(255%2c 255%2c 255%2c .075)'%3e%3c/path%3e%3cpath d='M765.25 0L1440 215.71L1440 227.73000000000002L316.87 0z' fill='rgba(255%2c 255%2c 255%2c .05)'%3e%3c/path%3e%3cpath d='M316.8699999999999 0L1440 227.73000000000002L1440 394.12L113.28999999999988 0z' fill='rgba(255%2c 255%2c 255%2c .025)'%3e%3c/path%3e%3cpath d='M0 560L221.21 560L0 386.3z' fill='rgba(0%2c 0%2c 0%2c .1)'%3e%3c/path%3e%3cpath d='M0 386.3L221.21 560L224.28 560L0 295.55z' fill='rgba(0%2c 0%2c 0%2c .075)'%3e%3c/path%3e%3cpath d='M0 295.55L224.28 560L785.42 560L0 264.1z' fill='rgba(0%2c 0%2c 0%2c .05)'%3e%3c/path%3e%3cpath d='M0 264.1L785.42 560L1060.71 560L0 188.86z' fill='rgba(0%2c 0%2c 0%2c .025)'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1638'%3e%3crect width='1440' height='560' fill='white'%3e%3c/rect%3e%3c/mask%3e%3clinearGradient x1='50%25' y1='100%25' x2='50%25' y2='0%25' gradientUnits='userSpaceOnUse' id='SvgjsLinearGradient1639'%3e%3cstop stop-color='rgba(0%2c 60%2c 121%2c 1)' offset='0'%3e%3c/stop%3e%3cstop stop-color='rgba(255%2c 255%2c 255%2c 1)' offset='1'%3e%3c/stop%3e%3c/linearGradient%3e%3c/defs%3e%3c/svg%3e");
-    padding: 30px;
+    padding-top: 30px;
+    padding-bottom: 30px;
     border-radius: 30px;
     background-attachment: fixed;
     background-repeat: no-repeat;
@@ -418,21 +414,52 @@
     height: auto;
     margin-left: 50px;
     margin-right: 50px;
-    margin-bottom: 20px;
+    margin-bottom: 20px; 
+    
+    h1{
+        margin: 50px;
+        text-align: center;
+        font-family: 'Anton', sans-serif;
+        color: #485a7cdb;
+    }
+    p{
+        color: white;
+        text-align: center;
+        font-family:'Poppins', sans-serif; 
+    }
 }
 
 /*precios-mapa*/
 
-.fa-map-marker-alt,
-.fa-dot-circle {
-    color: #000000;
+.container-fluid{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-horizontal{
+    margin: 25px;
+}
+
+#from{
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+    width: 250px;
+    height: 30px;
+    margin-bottom: 10px;
+}
+#to{
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+    width: 250px;
+    height: 30px;
 }
 
 /*Jumbotron*/
-.jumbotron {
-    margin: 0;
-    padding: 30px;
-}
+
 
 .jumbotron h1 {
     letter-spacing: 2.5px;
@@ -452,15 +479,18 @@
     justify-content: center;
 
     button {
-        background-color: #e4e4e449;
-        width: 280px;
-        height: auto;
-        border-radius: 40px;
-        font-family: 'Poiret One', 200;
+        color: white;
+        font-family: 'Poppins', sans-serif;
+        width: 80px;
+        height: 40px;
+        border-radius: 20%;
+        background-color: #000b5ca5;
+        border-color: #cacaca00;
     }
 }
 
 #googleMap {
+    border-radius: 25px;
     width: 100%;
     height: 400px;
     margin: 10px auto;
@@ -489,10 +519,21 @@
 }
 
 /*SECCION COTIZADOR POR ZONAS*/
-.zonas {
+.zonas {    
     margin-top: 80px;
+    button{
+        color: white;
+        font-family: 'Poppins', sans-serif;
+        width: 80px;
+        height: 40px;
+        border-radius: 20%;
+        background-color: #000b5ca5;
+        border-color: #cacaca00;
+    }
+    .agregar{
+        background-color: orange;
+    }
 }
-
 .container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -503,7 +544,9 @@
 
 /*ZONAS*/
 
+
 /*TARJETAS*/
+
 
 .zonas {
     display: flex;
@@ -512,6 +555,7 @@
     margin: 20px;
     flex-wrap: wrap;
     width: auto;
+
 }
 
 h3 {
@@ -521,7 +565,7 @@ h3 {
 .botones {
     display: flex;
     flex-direction: row;
-    margin: 300px;
+    margin: 260px;
     visibility: hidden;
     opacity: 0;
     transition: opacity 3s ease;
@@ -537,10 +581,11 @@ h3 {
     margin: 5px;
     border-radius: 25px;
     width: 250px;
-    height: 390px;
+    height: 400px;
     padding: 20px;
     position: relative;
-    background-color: #0033667d;
+    border-color:#00336600;
+    background-color: #00336658;
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
@@ -590,11 +635,33 @@ h3 {
 
 .carrito {
     text-align: center;
-    background-color: #003366;
+    background-color: #0033666d;
     border-radius: 10px;
     color: white;
-    width: 300px;
-    height: 150px;
+    width: 450px;
+    height: auto;
+    .solicitar{
+        color: white;
+        font-family: 'Poppins', sans-serif;
+        width: 80px;
+        height: 40px;
+        border-radius: 20%;
+        background-color: orange;
+        border-color: #cacaca00;
+        width: 180px;
+        margin: 10px;
+    }
+    .reiniciar{
+        color: white;
+        font-family: 'Poppins', sans-serif;
+        width: 80px;
+        height: 40px;
+        border-radius: 20%;
+        background-color: #000b5ca5;
+        border-color: #cacaca00;
+        width: 180px;
+        margin: 10px;
+    }
 
     .total {
         font-size: 30px;
