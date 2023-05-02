@@ -20,7 +20,7 @@ header {
 li {
   list-style: none; }
 
-.navbar a {
+.barraNavegacion a {
   text-decoration: none;
   color: black;
   font-size: 1.1rem; }
@@ -29,43 +29,44 @@ header {
   position: relative;
   padding: 0 2rem; }
 
-.navbar {
+.barraNavegacion {
   width: 100%;
   height: 60px;
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
+  flex-wrap: nowrap;
   align-items: center;
   justify-content: space-between; }
 
-.navbar .logo {
+.barraNavegacion .logo {
   display: flex;
   align-items: center; }
 
-.navbar .logo img {
+.barraNavegacion .logo img {
   margin-top: 1rem;
   margin-right: 0px;
   margin-left: 0px;
   width: 80px; }
 
-.navbar .logo a {
+.barraNavegacion .logo a {
   margin-top: 1rem;
   font-family: hemi;
   font-size: 1.5rem;
   font-weight: bold; }
 
-.navbar .logo a:hover {
+.barraNavegacion .logo a:hover {
   color: orange; }
 
-.navbar .links {
+.barraNavegacion .links {
   margin-top: 20px;
   display: flex;
   gap: 2rem; }
 
-.navbar .links a:hover {
+.barraNavegacion .links a:hover {
   color: orange; }
 
-.navbar .toggle_btn {
+.barraNavegacion .toggle_btn {
   color: black;
   font-size: 1.5rem;
   cursor: pointer;
@@ -129,6 +130,10 @@ header {
 .dropdown_menu .action_btn:hover {
   scale: 1.05;
   color: white; }
+
+@font-face {
+  font-family: hemi;
+  src: url(../fonts/hemi.otf); }
 
 /*inicio*/
 /*main-index*/
@@ -255,43 +260,61 @@ header {
 
 /*----main---precios--*/
 .mainPrecios {
-  margin-left: 50px;
-  margin-right: 50px;
-  margin-bottom: 20px;
-  background-image: url("../img/fondoprecios.jpg");
-  padding: 30px;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center; }
+  .mainPrecios .titulo img {
+    width: 100%;
+    position: relative;
+    left: 190px;
+    top: 80px; }
+
+.heroPrecios {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10%;
   border-radius: 30px;
-  min-height: 1200px; }
-
-.heroPrecios i {
-  font-size: 20px;
-  margin-top: 20px;
-  color: orange; }
-
-.heroPrecios i:hover {
-  color: #036bd3; }
-
-.heroPrecios h1 {
-  text-align: center;
-  color: #5c5c5ca9;
-  font-size: 30px;
-  font-family: 'Anton', sans-serif;
-  margin-bottom: 50px; }
+  width: 80%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.com/svgjs' width='1440' height='560' preserveAspectRatio='none' viewBox='0 0 1440 560'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1638%26quot%3b)' fill='none'%3e%3crect width='1440' height='560' x='0' y='0' fill='url(%23SvgjsLinearGradient1639)'%3e%3c/rect%3e%3cpath d='M1440 0L1187.97 0L1440 168.9z' fill='rgba(255%2c 255%2c 255%2c .1)'%3e%3c/path%3e%3cpath d='M1187.97 0L1440 168.9L1440 215.71L765.25 0z' fill='rgba(255%2c 255%2c 255%2c .075)'%3e%3c/path%3e%3cpath d='M765.25 0L1440 215.71L1440 227.73000000000002L316.87 0z' fill='rgba(255%2c 255%2c 255%2c .05)'%3e%3c/path%3e%3cpath d='M316.8699999999999 0L1440 227.73000000000002L1440 394.12L113.28999999999988 0z' fill='rgba(255%2c 255%2c 255%2c .025)'%3e%3c/path%3e%3cpath d='M0 560L221.21 560L0 386.3z' fill='rgba(0%2c 0%2c 0%2c .1)'%3e%3c/path%3e%3cpath d='M0 386.3L221.21 560L224.28 560L0 295.55z' fill='rgba(0%2c 0%2c 0%2c .075)'%3e%3c/path%3e%3cpath d='M0 295.55L224.28 560L785.42 560L0 264.1z' fill='rgba(0%2c 0%2c 0%2c .05)'%3e%3c/path%3e%3cpath d='M0 264.1L785.42 560L1060.71 560L0 188.86z' fill='rgba(0%2c 0%2c 0%2c .025)'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1638'%3e%3crect width='1440' height='560' fill='white'%3e%3c/rect%3e%3c/mask%3e%3clinearGradient x1='50%25' y1='100%25' x2='50%25' y2='0%25' gradientUnits='userSpaceOnUse' id='SvgjsLinearGradient1639'%3e%3cstop stop-color='rgba(0%2c 60%2c 121%2c 1)' offset='0'%3e%3c/stop%3e%3cstop stop-color='rgba(255%2c 255%2c 255%2c 1)' offset='1'%3e%3c/stop%3e%3c/linearGradient%3e%3c/defs%3e%3c/svg%3e"); }
+  .heroPrecios i {
+    font-size: 20px;
+    margin-top: 20px;
+    color: orange; }
+  .heroPrecios i:hover {
+    color: #036bd3; }
+  .heroPrecios h1 {
+    position: relative;
+    right: 122px;
+    top: -527px;
+    z-index: 9990;
+    text-align: left;
+    color: #485a7cdb;
+    font-size: 8rem;
+    font-family: 'Anton', sans-serif;
+    margin-bottom: 10px;
+    padding: 10%; }
 
 /*INICIO TARJETA DE PRECIOS*/
 .tarjetasDePrecios {
+  font-family: 'Poppins', sans-serif;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   align-items: start;
-  justify-content: space-between;
+  justify-content: center;
   height: auto; }
 
 .tarjetaPrecios {
   margin: 10px;
   color: white;
   border-radius: 25px;
-  width: 300px;
+  width: 265px;
   height: 155px;
   padding: 20px;
   display: block;
@@ -361,6 +384,50 @@ header {
   justify-content: center; }
 
 /*FIN TARJETAS DE PRECIOS*/
+/*PREGUNTAS FRECUENTES*/
+#preguntasFrecuentes {
+  margin-top: 40px; }
+  #preguntasFrecuentes h2 {
+    font-family: 'Anton', sans-serif;
+    font-size: 40px;
+    text-align: center;
+    margin-bottom: 40px; }
+
+.faq-container {
+  font-family: 'Poppins', sans-serif;
+  max-width: 600px;
+  margin: 0 auto;
+  margin-bottom: 40px; }
+
+.faq-btn {
+  background-color: #f2f2f2;
+  color: #333;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  font-size: 18px;
+  margin-bottom: 10px; }
+
+.faq-btn:focus {
+  outline: none; }
+
+.faq-btn.active {
+  background-color: #ddd; }
+
+.faq-content {
+  display: none;
+  background-color: #f9f9f9;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  font-size: 16px; }
+
+.faq-content.active {
+  display: block; }
+
 .aclaracion {
   margin-top: 50px;
   padding-left: 7%;
@@ -370,24 +437,32 @@ header {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-family: 'Poppins', sans-serif; }
+  font-family: 'Poiret One', cursive; }
   .aclaracion p {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-align: left;
-    margin-bottom: 70px;
-    font-size: 20px;
-    color: #5c5c5c; }
-  .aclaracion h3 {
+    margin-bottom: 40px;
     font-size: 30px;
-    margin-bottom: 50px;
+    color: #ffffff; }
+  .aclaracion h3 {
+    font-size: 40px;
+    margin-bottom: 10px;
     color: white; }
   .aclaracion img {
     margin-bottom: 20px;
     height: 100px; }
+  .aclaracion a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 22px; }
+  .aclaracion .action_btn {
+    width: 150px;
+    height: 60px; }
 
 /*---------------PAGINA----COTIZACION----------------------*/
 .mainCotizador {
-  background-image: url(../img/fondocotizacion.png);
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.com/svgjs' width='1440' height='560' preserveAspectRatio='none' viewBox='0 0 1440 560'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1638%26quot%3b)' fill='none'%3e%3crect width='1440' height='560' x='0' y='0' fill='url(%23SvgjsLinearGradient1639)'%3e%3c/rect%3e%3cpath d='M1440 0L1187.97 0L1440 168.9z' fill='rgba(255%2c 255%2c 255%2c .1)'%3e%3c/path%3e%3cpath d='M1187.97 0L1440 168.9L1440 215.71L765.25 0z' fill='rgba(255%2c 255%2c 255%2c .075)'%3e%3c/path%3e%3cpath d='M765.25 0L1440 215.71L1440 227.73000000000002L316.87 0z' fill='rgba(255%2c 255%2c 255%2c .05)'%3e%3c/path%3e%3cpath d='M316.8699999999999 0L1440 227.73000000000002L1440 394.12L113.28999999999988 0z' fill='rgba(255%2c 255%2c 255%2c .025)'%3e%3c/path%3e%3cpath d='M0 560L221.21 560L0 386.3z' fill='rgba(0%2c 0%2c 0%2c .1)'%3e%3c/path%3e%3cpath d='M0 386.3L221.21 560L224.28 560L0 295.55z' fill='rgba(0%2c 0%2c 0%2c .075)'%3e%3c/path%3e%3cpath d='M0 295.55L224.28 560L785.42 560L0 264.1z' fill='rgba(0%2c 0%2c 0%2c .05)'%3e%3c/path%3e%3cpath d='M0 264.1L785.42 560L1060.71 560L0 188.86z' fill='rgba(0%2c 0%2c 0%2c .025)'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1638'%3e%3crect width='1440' height='560' fill='white'%3e%3c/rect%3e%3c/mask%3e%3clinearGradient x1='50%25' y1='100%25' x2='50%25' y2='0%25' gradientUnits='userSpaceOnUse' id='SvgjsLinearGradient1639'%3e%3cstop stop-color='rgba(0%2c 60%2c 121%2c 1)' offset='0'%3e%3c/stop%3e%3cstop stop-color='rgba(255%2c 255%2c 255%2c 1)' offset='1'%3e%3c/stop%3e%3c/linearGradient%3e%3c/defs%3e%3c/svg%3e");
   padding: 30px;
   border-radius: 30px;
   background-attachment: fixed;
@@ -635,19 +710,28 @@ footer nav {
   .heroPrecios {
     padding-top: 50px; } }
 
-@media (min-width: 1200px) {
-  .mainPrecios {
-    margin-left: 200px;
-    margin-right: 200px;
-    min-height: 600px; }
-  .mainPrecios h1 {
-    font-size: 60px; } }
+@media (max-width: 1200px) {
+  .heroPrecios h1 {
+    font-size: 6rem; } }
+
+@media (max-width: 1000px) {
+  .heroPrecios h1 {
+    font-size: 5rem; } }
+
+@media (max-width: 900px) {
+  .heroPrecios h1 {
+    font-size: 4rem; } }
 
 @media (max-width: 700px) {
-  .mainPrecios {
-    width: 350px;
-    margin-left: 30px;
-    margin-right: 30px; } }
+  .heroPrecios h1 {
+    font-size: 3rem; } }
+
+@media (max-width: 600px) {
+  .heroPrecios h1 {
+    position: relative;
+    right: 28px;
+    top: -100px;
+    font-size: 2rem; } }
 
 @media (max-width: 700px) {
   .tarjetaPrecio {
@@ -672,10 +756,102 @@ footer nav {
 
 /*reponsive header*/
 @media (max-width: 992px) {
-  .navbar .links,
-  .navbar .action_btn {
+  .barraNavegacion .links,
+  .barraNavegacion .action_btn {
     display: none; }
-  .navbar .toggle_btn {
+  .barraNavegacion .toggle_btn {
+    margin: 5px;
     display: block; }
   .dropdown_menu {
     display: block; } }
+
+@media (max-width: 400px) {
+  .barraNavegacion .logo a {
+    font-size: 1rem; } }
+
+@media (max-width: 2000px) {
+  .mainPrecios .titulo img {
+    position: relative;
+    left: 80px;
+    top: 80px; } }
+
+@media (max-width: 1600px) {
+  .mainPrecios .titulo img {
+    position: relative;
+    left: 60px;
+    top: 80px; } }
+
+@media (max-width: 1500px) {
+  .mainPrecios .titulo img {
+    position: relative;
+    left: 50px;
+    top: 80px; } }
+
+@media (max-width: 1200px) {
+  .mainPrecios .titulo img {
+    position: relative;
+    left: 40px;
+    top: 80px; } }
+
+@media (max-width: 1000px) {
+  .mainPrecios .titulo img {
+    position: relative;
+    left: 35px;
+    top: 80px; } }
+
+@media (max-width: 700px) {
+  .mainPrecios .titulo img {
+    position: relative;
+    left: 20px;
+    top: 50px; } }
+
+@media (min-width: 340px) {
+  .mainPrecios .titulo {
+    height: 280px; } }
+
+@media (min-width: 400px) {
+  .mainPrecios .titulo {
+    height: 230px; } }
+
+@media (min-width: 500px) {
+  .mainPrecios .titulo {
+    height: 350px; } }
+
+@media (min-width: 600px) {
+  .mainPrecios .titulo {
+    height: 400px; } }
+
+@media (min-width: 700px) {
+  .mainPrecios .titulo {
+    height: 500px; } }
+
+@media (min-width: 1000px) {
+  .mainPrecios .titulo {
+    height: 600px; } }
+
+@media (min-width: 1300px) {
+  .mainPrecios .titulo {
+    height: 800px; } }
+
+@media (min-width: 1500px) {
+  .mainPrecios .titulo {
+    height: 850px; } }
+
+@media (min-width: 1700px) {
+  .mainPrecios .titulo {
+    height: 900px; } }
+
+@media (min-width: 2000px) {
+  .mainPrecios .titulo {
+    height: 1100px; } }
+
+@media (max-width: 420px) {
+  .aclaracion p {
+    font-size: 20px; }
+  .aclaracion h3 {
+    text-align: left;
+    font-size: 20px; } }
+
+@media (max-width: 420px) {
+  #preguntasFrecuentes {
+    width: 340px; } }
