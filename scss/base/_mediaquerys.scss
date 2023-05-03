@@ -88,46 +88,13 @@
 
 }
 
-@media (min-width: 1200px) {
-    .heroPrecios {
-        padding-top: 50px;
+@media(max-width: 500px){
+    .heroPrecios{
+        h1{
+            font-size: 10vw;
+        }
     }
 }
-
-@media (max-width: 1200px) {
-    .heroPrecios h1 {
-        font-size: 6rem;
-    }
-}
-
-@media (max-width: 1000px) {
-    .heroPrecios h1 {
-        font-size: 5rem;
-    }
-}
-
-@media (max-width: 900px) {
-    .heroPrecios h1 {
-        font-size: 4rem;
-    }
-}
-
-@media (max-width: 700px) {
-    .heroPrecios h1 {
-        font-size: 3rem;
-    }
-}
-
-@media (max-width: 600px) {
-    .heroPrecios h1 {
-        position: relative;
-        right: 28px;
-        top: -100px;
-        font-size: 2rem;
-    }
-}
-
-
 
 @media(max-width: 700px) {
     .tarjetaPrecio {
@@ -193,162 +160,17 @@
     }
 }
 
-//heroseccion precios img y titulo//
-@media (max-width: 2000px){
-    .mainPrecios .titulo img {
-        position: relative;
-        left: 80px;
-        top: 80px;
-    }
-}
-@media (max-width: 1600px){
-    .mainPrecios .titulo img {
-        position: relative; 
-        left: 60px;
-        top: 80px;
-    }
-}
-@media (max-width: 1500px){
-    .mainPrecios .titulo img {
-        position: relative;
-        left: 50px;
-        top: 80px;
+//aclaracion//
+
+@media(max-width: 500px){
+    .aclaracion{
+        margin-top: 380px;
     }
 }
 
-@media (max-width: 1200px){
-    .mainPrecios .titulo img {
-        position: relative;
-        left: 40px;
-        top: 80px;
-    }
-}
-@media (max-width: 1000px){
-    .mainPrecios .titulo img {
-        position: relative;
-        left: 35px;
-        top: 80px;
+@media(max-width: 650px){
+    .aclaracion{
+        margin-top: 400px;
     }
 }
 
-@media (max-width: 700px){
-    .mainPrecios .titulo img {
-        position: relative;
-        left: 20px;
-        top: 50px;
-    }
-}
-
-@media (min-width: 340px){
-    .mainPrecios .titulo {
-        height: 280px;
-    }
-}
-@media (min-width: 400px){
-    .mainPrecios .titulo {
-        height: 230px;
-    }
-}
-
-@media (min-width: 500px){
-    .mainPrecios .titulo {
-        height: 350px;
-    }
-}
-
-@media (min-width: 600px){
-    .mainPrecios .titulo {
-        height: 400px;
-    }
-}
-
-@media (min-width: 700px){
-    .mainPrecios .titulo {
-        height: 500px;
-    }
-}
-
-@media (min-width: 1000px){
-    .mainPrecios .titulo {
-        height: 600px;
-    }
-}
-
-@media (min-width: 1300px){
-    .mainPrecios .titulo {
-        height: 800px;
-    }
-}
-
-@media (min-width: 1500px){
-    .mainPrecios .titulo {
-        height: 850px;
-    }
-}
-
-@media (min-width: 1700px){
-    .mainPrecios .titulo {
-        height: 900px;
-    }
-}
-
-@media (min-width: 2000px){
-    .mainPrecios .titulo {
-        height: 1100px;
-    }
-}
-
-@media (max-width: 420px) {
-    .aclaracion p{
-        font-size: 20px;
-    }
-    .aclaracion h3{
-        text-align: left;
-        font-size: 20px;
-    }
-}
-
-@media (max-width: 420px) {
-    #preguntasFrecuentes{
-        width: 340px;
-    }
-}
-
-@media (min-width: 500px){
-    #googleMap{
-        width: 390px;
-    }
-}
-
-@media (min-width: 1000px){
-    #googleMap{
-        width: 1000px;
-    }
-}
-
-
-@media (min-width: 500px){
-    #from{
-        width: 390px;
-    }
-    #to{
-        width: 390px;
-    }
-}
-
-@media (min-width: 1000px){
-    #from{
-        width: 500px;
-    }
-    #to{
-        width: 500px;
-    }
-}
-
-@media (max-width: 500px){
- .container-fluid{
-    h1{
-        font-size: 2.5rem;
-    }
- }
-}

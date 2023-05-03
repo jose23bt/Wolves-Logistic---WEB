@@ -164,61 +164,50 @@
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    .titulo img{
-        width: 100%;
-        position: relative;
-        left: 190px;
-        top: 80px;        
-    }
 }
 .heroPrecios {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 10%;
+    padding: 5%;
     border-radius: 30px;
-    width: 80%;
+    width: 95%;   
+    background-attachment: fixed;
     background-repeat: no-repeat;
-    background-size: cover;
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.com/svgjs' width='1440' height='560' preserveAspectRatio='none' viewBox='0 0 1440 560'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1638%26quot%3b)' fill='none'%3e%3crect width='1440' height='560' x='0' y='0' fill='url(%23SvgjsLinearGradient1639)'%3e%3c/rect%3e%3cpath d='M1440 0L1187.97 0L1440 168.9z' fill='rgba(255%2c 255%2c 255%2c .1)'%3e%3c/path%3e%3cpath d='M1187.97 0L1440 168.9L1440 215.71L765.25 0z' fill='rgba(255%2c 255%2c 255%2c .075)'%3e%3c/path%3e%3cpath d='M765.25 0L1440 215.71L1440 227.73000000000002L316.87 0z' fill='rgba(255%2c 255%2c 255%2c .05)'%3e%3c/path%3e%3cpath d='M316.8699999999999 0L1440 227.73000000000002L1440 394.12L113.28999999999988 0z' fill='rgba(255%2c 255%2c 255%2c .025)'%3e%3c/path%3e%3cpath d='M0 560L221.21 560L0 386.3z' fill='rgba(0%2c 0%2c 0%2c .1)'%3e%3c/path%3e%3cpath d='M0 386.3L221.21 560L224.28 560L0 295.55z' fill='rgba(0%2c 0%2c 0%2c .075)'%3e%3c/path%3e%3cpath d='M0 295.55L224.28 560L785.42 560L0 264.1z' fill='rgba(0%2c 0%2c 0%2c .05)'%3e%3c/path%3e%3cpath d='M0 264.1L785.42 560L1060.71 560L0 188.86z' fill='rgba(0%2c 0%2c 0%2c .025)'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1638'%3e%3crect width='1440' height='560' fill='white'%3e%3c/rect%3e%3c/mask%3e%3clinearGradient x1='50%25' y1='100%25' x2='50%25' y2='0%25' gradientUnits='userSpaceOnUse' id='SvgjsLinearGradient1639'%3e%3cstop stop-color='rgba(0%2c 60%2c 121%2c 1)' offset='0'%3e%3c/stop%3e%3cstop stop-color='rgba(255%2c 255%2c 255%2c 1)' offset='1'%3e%3c/stop%3e%3c/linearGradient%3e%3c/defs%3e%3c/svg%3e");
-
+    background-size:cover;
+    background-image: url(../img/fondoprecios.png);
     i {
         font-size: 20px;
         margin-top: 20px;
         color: orange;
     }
-
     i:hover {
         color: #036bd3;
     }
-
-
-    h1{
-        position: relative;
-        right: 122px;
-        top: -527px;
-        z-index: 9990;
+    h1{        
+        border-radius: 25px;
         text-align: left;
-        color: #485a7cdb;
-        font-size: 8rem;
-        font-family: 'Anton', sans-serif;
+        color: #ffffff;
+        font-size: 6vw;
+        font-family: hemi;
         margin-bottom: 10px;
-        padding: 10%;     
-    }
+        padding: 5%;
+        }
 }
 
 /*INICIO TARJETA DE PRECIOS*/
 
 
 .tarjetasDePrecios {
+    padding-top: 5%;
     font-family: 'Poppins', sans-serif;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     align-items: start;
     justify-content: center;
-    height: auto;    
+    height: 400px;    
 }
 
 .tarjetaPrecios {
@@ -228,8 +217,7 @@
     width: 265px;
     height: 155px;
     padding: 20px;
-    display: block;
-    position: unset;
+    display: block;    
     overflow: hidden;
     transition: height 0.8s ease-out;
     span{
@@ -363,8 +351,7 @@
 
 //ACLARACION//
 
-.aclaracion {    
-    margin-top: 50px;
+.aclaracion { 
     padding-left: 7%;
     padding-right: 7%;
     text-align: center;
@@ -403,24 +390,32 @@
 
 /*---------------PAGINA----COTIZACION----------------------*/
 
-.mainCotizador {
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.com/svgjs' width='1440' height='560' preserveAspectRatio='none' viewBox='0 0 1440 560'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1638%26quot%3b)' fill='none'%3e%3crect width='1440' height='560' x='0' y='0' fill='url(%23SvgjsLinearGradient1639)'%3e%3c/rect%3e%3cpath d='M1440 0L1187.97 0L1440 168.9z' fill='rgba(255%2c 255%2c 255%2c .1)'%3e%3c/path%3e%3cpath d='M1187.97 0L1440 168.9L1440 215.71L765.25 0z' fill='rgba(255%2c 255%2c 255%2c .075)'%3e%3c/path%3e%3cpath d='M765.25 0L1440 215.71L1440 227.73000000000002L316.87 0z' fill='rgba(255%2c 255%2c 255%2c .05)'%3e%3c/path%3e%3cpath d='M316.8699999999999 0L1440 227.73000000000002L1440 394.12L113.28999999999988 0z' fill='rgba(255%2c 255%2c 255%2c .025)'%3e%3c/path%3e%3cpath d='M0 560L221.21 560L0 386.3z' fill='rgba(0%2c 0%2c 0%2c .1)'%3e%3c/path%3e%3cpath d='M0 386.3L221.21 560L224.28 560L0 295.55z' fill='rgba(0%2c 0%2c 0%2c .075)'%3e%3c/path%3e%3cpath d='M0 295.55L224.28 560L785.42 560L0 264.1z' fill='rgba(0%2c 0%2c 0%2c .05)'%3e%3c/path%3e%3cpath d='M0 264.1L785.42 560L1060.71 560L0 188.86z' fill='rgba(0%2c 0%2c 0%2c .025)'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1638'%3e%3crect width='1440' height='560' fill='white'%3e%3c/rect%3e%3c/mask%3e%3clinearGradient x1='50%25' y1='100%25' x2='50%25' y2='0%25' gradientUnits='userSpaceOnUse' id='SvgjsLinearGradient1639'%3e%3cstop stop-color='rgba(0%2c 60%2c 121%2c 1)' offset='0'%3e%3c/stop%3e%3cstop stop-color='rgba(255%2c 255%2c 255%2c 1)' offset='1'%3e%3c/stop%3e%3c/linearGradient%3e%3c/defs%3e%3c/svg%3e");
-    padding-top: 30px;
-    padding-bottom: 30px;
-    border-radius: 30px;
+.mainCotizador{
+    height: auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cotizador {
+    background-image: url(../img/fondocotizacion.png);
     background-attachment: fixed;
     background-repeat: no-repeat;
-    background-size: cover;
-    height: auto;
-    margin-left: 50px;
-    margin-right: 50px;
-    margin-bottom: 20px; 
-    
+    background-size:cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5%;
+    border-radius: 30px;
+    width: 95%;   
     h1{
         margin: 50px;
+        font-size: 5vw;
         text-align: center;
-        font-family: 'Anton', sans-serif;
-        color: #485a7cdb;
+        font-family: hemi;
+        color: #ffffffdb;
     }
     p{
         color: white;

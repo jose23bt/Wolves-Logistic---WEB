@@ -265,23 +265,19 @@ header {
   justify-content: center;
   flex-direction: column;
   align-items: center; }
-  .mainPrecios .titulo img {
-    width: 100%;
-    position: relative;
-    left: 190px;
-    top: 80px; }
 
 .heroPrecios {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 10%;
+  padding: 5%;
   border-radius: 30px;
-  width: 80%;
+  width: 95%;
+  background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.com/svgjs' width='1440' height='560' preserveAspectRatio='none' viewBox='0 0 1440 560'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1638%26quot%3b)' fill='none'%3e%3crect width='1440' height='560' x='0' y='0' fill='url(%23SvgjsLinearGradient1639)'%3e%3c/rect%3e%3cpath d='M1440 0L1187.97 0L1440 168.9z' fill='rgba(255%2c 255%2c 255%2c .1)'%3e%3c/path%3e%3cpath d='M1187.97 0L1440 168.9L1440 215.71L765.25 0z' fill='rgba(255%2c 255%2c 255%2c .075)'%3e%3c/path%3e%3cpath d='M765.25 0L1440 215.71L1440 227.73000000000002L316.87 0z' fill='rgba(255%2c 255%2c 255%2c .05)'%3e%3c/path%3e%3cpath d='M316.8699999999999 0L1440 227.73000000000002L1440 394.12L113.28999999999988 0z' fill='rgba(255%2c 255%2c 255%2c .025)'%3e%3c/path%3e%3cpath d='M0 560L221.21 560L0 386.3z' fill='rgba(0%2c 0%2c 0%2c .1)'%3e%3c/path%3e%3cpath d='M0 386.3L221.21 560L224.28 560L0 295.55z' fill='rgba(0%2c 0%2c 0%2c .075)'%3e%3c/path%3e%3cpath d='M0 295.55L224.28 560L785.42 560L0 264.1z' fill='rgba(0%2c 0%2c 0%2c .05)'%3e%3c/path%3e%3cpath d='M0 264.1L785.42 560L1060.71 560L0 188.86z' fill='rgba(0%2c 0%2c 0%2c .025)'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1638'%3e%3crect width='1440' height='560' fill='white'%3e%3c/rect%3e%3c/mask%3e%3clinearGradient x1='50%25' y1='100%25' x2='50%25' y2='0%25' gradientUnits='userSpaceOnUse' id='SvgjsLinearGradient1639'%3e%3cstop stop-color='rgba(0%2c 60%2c 121%2c 1)' offset='0'%3e%3c/stop%3e%3cstop stop-color='rgba(255%2c 255%2c 255%2c 1)' offset='1'%3e%3c/stop%3e%3c/linearGradient%3e%3c/defs%3e%3c/svg%3e"); }
+  background-image: url(../img/fondoprecios.png); }
   .heroPrecios i {
     font-size: 20px;
     margin-top: 20px;
@@ -289,26 +285,24 @@ header {
   .heroPrecios i:hover {
     color: #036bd3; }
   .heroPrecios h1 {
-    position: relative;
-    right: 122px;
-    top: -527px;
-    z-index: 9990;
+    border-radius: 25px;
     text-align: left;
-    color: #485a7cdb;
-    font-size: 8rem;
-    font-family: 'Anton', sans-serif;
+    color: #ffffff;
+    font-size: 6vw;
+    font-family: hemi;
     margin-bottom: 10px;
-    padding: 10%; }
+    padding: 5%; }
 
 /*INICIO TARJETA DE PRECIOS*/
 .tarjetasDePrecios {
+  padding-top: 5%;
   font-family: 'Poppins', sans-serif;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   align-items: start;
   justify-content: center;
-  height: auto; }
+  height: 400px; }
 
 .tarjetaPrecios {
   margin: 10px;
@@ -318,7 +312,6 @@ header {
   height: 155px;
   padding: 20px;
   display: block;
-  position: unset;
   overflow: hidden;
   transition: height 0.8s ease-out; }
   .tarjetaPrecios span {
@@ -429,7 +422,6 @@ header {
   display: block; }
 
 .aclaracion {
-  margin-top: 50px;
   padding-left: 7%;
   padding-right: 7%;
   text-align: center;
@@ -462,23 +454,31 @@ header {
 
 /*---------------PAGINA----COTIZACION----------------------*/
 .mainCotizador {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.com/svgjs' width='1440' height='560' preserveAspectRatio='none' viewBox='0 0 1440 560'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1638%26quot%3b)' fill='none'%3e%3crect width='1440' height='560' x='0' y='0' fill='url(%23SvgjsLinearGradient1639)'%3e%3c/rect%3e%3cpath d='M1440 0L1187.97 0L1440 168.9z' fill='rgba(255%2c 255%2c 255%2c .1)'%3e%3c/path%3e%3cpath d='M1187.97 0L1440 168.9L1440 215.71L765.25 0z' fill='rgba(255%2c 255%2c 255%2c .075)'%3e%3c/path%3e%3cpath d='M765.25 0L1440 215.71L1440 227.73000000000002L316.87 0z' fill='rgba(255%2c 255%2c 255%2c .05)'%3e%3c/path%3e%3cpath d='M316.8699999999999 0L1440 227.73000000000002L1440 394.12L113.28999999999988 0z' fill='rgba(255%2c 255%2c 255%2c .025)'%3e%3c/path%3e%3cpath d='M0 560L221.21 560L0 386.3z' fill='rgba(0%2c 0%2c 0%2c .1)'%3e%3c/path%3e%3cpath d='M0 386.3L221.21 560L224.28 560L0 295.55z' fill='rgba(0%2c 0%2c 0%2c .075)'%3e%3c/path%3e%3cpath d='M0 295.55L224.28 560L785.42 560L0 264.1z' fill='rgba(0%2c 0%2c 0%2c .05)'%3e%3c/path%3e%3cpath d='M0 264.1L785.42 560L1060.71 560L0 188.86z' fill='rgba(0%2c 0%2c 0%2c .025)'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1638'%3e%3crect width='1440' height='560' fill='white'%3e%3c/rect%3e%3c/mask%3e%3clinearGradient x1='50%25' y1='100%25' x2='50%25' y2='0%25' gradientUnits='userSpaceOnUse' id='SvgjsLinearGradient1639'%3e%3cstop stop-color='rgba(0%2c 60%2c 121%2c 1)' offset='0'%3e%3c/stop%3e%3cstop stop-color='rgba(255%2c 255%2c 255%2c 1)' offset='1'%3e%3c/stop%3e%3c/linearGradient%3e%3c/defs%3e%3c/svg%3e");
-  padding-top: 30px;
-  padding-bottom: 30px;
-  border-radius: 30px;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center; }
+
+.cotizador {
+  background-image: url(../img/fondocotizacion.png);
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
-  height: auto;
-  margin-left: 50px;
-  margin-right: 50px;
-  margin-bottom: 20px; }
-  .mainCotizador h1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5%;
+  border-radius: 30px;
+  width: 95%; }
+  .cotizador h1 {
     margin: 50px;
+    font-size: 5vw;
     text-align: center;
-    font-family: 'Anton', sans-serif;
-    color: #485a7cdb; }
-  .mainCotizador p {
+    font-family: hemi;
+    color: #ffffffdb; }
+  .cotizador p {
     color: white;
     text-align: center;
     font-family: 'Poppins', sans-serif; }
@@ -766,32 +766,9 @@ footer nav {
   .div7 {
     grid-area: 3 / 1 / 4 / 2; } }
 
-@media (min-width: 1200px) {
-  .heroPrecios {
-    padding-top: 50px; } }
-
-@media (max-width: 1200px) {
+@media (max-width: 500px) {
   .heroPrecios h1 {
-    font-size: 6rem; } }
-
-@media (max-width: 1000px) {
-  .heroPrecios h1 {
-    font-size: 5rem; } }
-
-@media (max-width: 900px) {
-  .heroPrecios h1 {
-    font-size: 4rem; } }
-
-@media (max-width: 700px) {
-  .heroPrecios h1 {
-    font-size: 3rem; } }
-
-@media (max-width: 600px) {
-  .heroPrecios h1 {
-    position: relative;
-    right: 28px;
-    top: -100px;
-    font-size: 2rem; } }
+    font-size: 10vw; } }
 
 @media (max-width: 700px) {
   .tarjetaPrecio {
@@ -829,113 +806,10 @@ footer nav {
   .barraNavegacion .logo a {
     font-size: 1rem; } }
 
-@media (max-width: 2000px) {
-  .mainPrecios .titulo img {
-    position: relative;
-    left: 80px;
-    top: 80px; } }
-
-@media (max-width: 1600px) {
-  .mainPrecios .titulo img {
-    position: relative;
-    left: 60px;
-    top: 80px; } }
-
-@media (max-width: 1500px) {
-  .mainPrecios .titulo img {
-    position: relative;
-    left: 50px;
-    top: 80px; } }
-
-@media (max-width: 1200px) {
-  .mainPrecios .titulo img {
-    position: relative;
-    left: 40px;
-    top: 80px; } }
-
-@media (max-width: 1000px) {
-  .mainPrecios .titulo img {
-    position: relative;
-    left: 35px;
-    top: 80px; } }
-
-@media (max-width: 700px) {
-  .mainPrecios .titulo img {
-    position: relative;
-    left: 20px;
-    top: 50px; } }
-
-@media (min-width: 340px) {
-  .mainPrecios .titulo {
-    height: 280px; } }
-
-@media (min-width: 400px) {
-  .mainPrecios .titulo {
-    height: 230px; } }
-
-@media (min-width: 500px) {
-  .mainPrecios .titulo {
-    height: 350px; } }
-
-@media (min-width: 600px) {
-  .mainPrecios .titulo {
-    height: 400px; } }
-
-@media (min-width: 700px) {
-  .mainPrecios .titulo {
-    height: 500px; } }
-
-@media (min-width: 1000px) {
-  .mainPrecios .titulo {
-    height: 600px; } }
-
-@media (min-width: 1300px) {
-  .mainPrecios .titulo {
-    height: 800px; } }
-
-@media (min-width: 1500px) {
-  .mainPrecios .titulo {
-    height: 850px; } }
-
-@media (min-width: 1700px) {
-  .mainPrecios .titulo {
-    height: 900px; } }
-
-@media (min-width: 2000px) {
-  .mainPrecios .titulo {
-    height: 1100px; } }
-
-@media (max-width: 420px) {
-  .aclaracion p {
-    font-size: 20px; }
-  .aclaracion h3 {
-    text-align: left;
-    font-size: 20px; } }
-
-@media (max-width: 420px) {
-  #preguntasFrecuentes {
-    width: 340px; } }
-
-@media (min-width: 500px) {
-  #googleMap {
-    width: 390px; } }
-
-@media (min-width: 1000px) {
-  #googleMap {
-    width: 1000px; } }
-
-@media (min-width: 500px) {
-  #from {
-    width: 390px; }
-  #to {
-    width: 390px; } }
-
-@media (min-width: 1000px) {
-  #from {
-    width: 500px; }
-  #to {
-    width: 500px; } }
-
 @media (max-width: 500px) {
-  .container-fluid h1 {
-    font-size: 2.5rem; } }
+  .aclaracion {
+    margin-top: 380px; } }
+
+@media (max-width: 650px) {
+  .aclaracion {
+    margin-top: 400px; } }

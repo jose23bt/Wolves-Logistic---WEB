@@ -94,44 +94,44 @@
                             <button class="reiniciar">Reiniciar Cotizador</button>
                         </div>            
                     </div>                    
+                    <div class="jumbotron">
+                        <div class="container-fluid">
+                            <h1>Cotizador de viajes Particulares</h1>
+                            <p>Calcula el precio de tu envio de forma particular</p>
+                            <form class="form-horizontal">
+                                <div>
+                                    <div>
+                                        <input type="text" id="from" placeholder="Origen">
+                                    </div>
+                                </div>
+                                <div>
+                                    <div>
+                                        <input type="text" id="to" placeholder="Destino">
+                                    </div>
+                                </div>
+                            </form>
+                
+                            <div class="boton">
+                                <div>
+                                    <button onclick="calcRoute();">COTIZAR</button>
+                                </div>
+                            </div>
+                
+                        </div>
+                        <div class="container-fluid">
+                
+                            <div id="googleMap">
+                
+                            </div>
+                            <div id="output">
+                
+                            </div>
+                        </div>
+                        <h4>Estado del Clima</h4>
+                        <div id="clima"></div>
+                
+                    </div>
         </section>
-        <div class="jumbotron">
-            <div class="container-fluid">
-                <h1>Cotizador de viajes Particulares</h1>
-                <p>Calcula el precio de tu envio de forma particular</p>
-                <form class="form-horizontal">
-                    <div>
-                        <div>
-                            <input type="text" id="from" placeholder="Origen">
-                        </div>
-                    </div>
-                    <div>
-                        <div>
-                            <input type="text" id="to" placeholder="Destino">
-                        </div>
-                    </div>
-                </form>
-    
-                <div class="boton">
-                    <div>
-                        <button onclick="calcRoute();">COTIZAR</button>
-                    </div>
-                </div>
-    
-            </div>
-            <div class="container-fluid">
-    
-                <div id="googleMap">
-    
-                </div>
-                <div id="output">
-    
-                </div>
-            </div>
-            <h4>Estado del Clima</h4>
-            <div id="clima"></div>
-    
-        </div>
     </main>
     <script src="../Main.js"></script>
 </body>
