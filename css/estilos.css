@@ -274,8 +274,8 @@ header {
   padding: 5%;
   border-radius: 30px;
   width: 95%;
-  background-attachment: fixed;
   background-repeat: no-repeat;
+  background-attachment: fixed;
   background-size: cover;
   background-image: url(../img/fondoprecios.png); }
   .heroPrecios i {
@@ -302,7 +302,7 @@ header {
   flex-wrap: wrap;
   align-items: start;
   justify-content: center;
-  height: 400px; }
+  height: auto; }
 
 .tarjetaPrecios {
   margin: 10px;
@@ -422,8 +422,8 @@ header {
   display: block; }
 
 .aclaracion {
-  padding-left: 7%;
-  padding-right: 7%;
+  margin-top: 20px;
+  width: 90%;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -815,14 +815,6 @@ footer nav {
 @media (max-width: 400px) {
   .barraNavegacion .logo a {
     font-size: 1rem; } }
-
-@media (max-width: 500px) {
-  .aclaracion {
-    margin-top: 380px; } }
-
-@media (max-width: 650px) {
-  .aclaracion {
-    margin-top: 400px; } }
 
 @media (max-width: 500px) {
   .mainCotizador h1 {

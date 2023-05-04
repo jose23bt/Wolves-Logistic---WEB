@@ -163,19 +163,19 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
-    align-items: center;
+    align-items: center;    
 }
-.heroPrecios {
+.heroPrecios {    
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 5%;
     border-radius: 30px;
-    width: 95%;   
-    background-attachment: fixed;
+    width: 95%;    
     background-repeat: no-repeat;
-    background-size:cover;
+    background-attachment: fixed;
+    background-size: cover;
     background-image: url(../img/fondoprecios.png);
     i {
         font-size: 20px;
@@ -206,11 +206,13 @@
     flex-direction: row;
     flex-wrap: wrap;
     align-items: start;
-    justify-content: center;
-    height: 400px;    
+    justify-content: center;    
+    height: auto;   
+    
 }
 
-.tarjetaPrecios {
+.tarjetaPrecios {    
+    
     margin: 10px;
     color: white;
     border-radius: 25px;
@@ -231,7 +233,7 @@
 
 .tarjeta1 {
     background-color: rgba(255, 119, 0, 0.476);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);    
 }
 
 .tarjeta2 {
@@ -351,9 +353,9 @@
 
 //ACLARACION//
 
-.aclaracion { 
-    padding-left: 7%;
-    padding-right: 7%;
+.aclaracion {
+    margin-top: 20px; 
+    width: 90%;
     text-align: center;
     display: flex;
     flex-direction: column;
