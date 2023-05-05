@@ -1,4 +1,8 @@
 @import "../base/variables";
+@font-face {
+    font-family: hemi;
+    src: url(../fonts/hemi.otf);
+}
 
 /*inicio*/
 
@@ -6,21 +10,23 @@
 
 /*hero-section*/
 
-.heroSection{
+.heroSection {    
     display: flex;
     justify-content: center;
 }
-.carousel-inner{
+
+.carousel-inner {
     width: 1200px;
-    border-radius: 25px;    
+    border-radius: 25px;
 }
+
 .carousel.slide {
     max-width: 1200px;
 }
 
 /*segundoHero*/
 
-.segundoHero {    
+.segundoHero {
 
     h5 {
         font-family: 'Anton', sans-serif;
@@ -34,7 +40,7 @@
 
 .nuestrosServicios {
     margin-left: 50px;
-    margin-right: 50px; 
+    margin-right: 50px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -43,7 +49,7 @@
 
 /*main-index*/
 
-.parentCenter{
+.parentCenter {
     display: flex;
     justify-content: center;
 }
@@ -65,7 +71,7 @@
     height: auto;
     width: 500px;
     margin-left: 50px;
-    margin-right: 50px; 
+    margin-right: 50px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -76,7 +82,7 @@
     height: auto;
     width: 500px;
     margin-left: 50px;
-    margin-right: 50px; 
+    margin-right: 50px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -88,7 +94,7 @@
     height: auto;
     width: 500px;
     margin-left: 50px;
-    margin-right: 50px; 
+    margin-right: 50px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -100,14 +106,14 @@
     height: auto;
     width: 500px;
     margin-left: 50px;
-    margin-right: 50px;    
+    margin-right: 50px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     grid-area: 2 / 2 / 3 / 3;
 }
 
-.parentCenter2{
+.parentCenter2 {
     display: flex;
     justify-content: center;
 }
@@ -152,277 +158,310 @@
 
 /*----main---precios--*/
 
-.mainPrecios{
-    margin-left: 50px;
-    margin-right: 50px;
-    margin-bottom: 20px;
-    background-image: url("../Img/fondoprecios.png");
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-size:cover; 
-    padding: 30px;
-    border-radius: 30px;    
-    min-height: 900px;   
+.mainPrecios { 
+    height: auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;    
 }
-
-
-
-.heroPrecios {
-
-    i{  
+.heroPrecios {    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5%;
+    border-radius: 30px;
+    width: 95%;    
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-image: url(../img/fondoprecios.png);
+    i {
         font-size: 20px;
-        margin-top: 20px;             
+        margin-top: 20px;
         color: orange;
     }
-    i:hover{
+    i:hover {
         color: #036bd3;
     }
-    
-    
-    h1 {
-        text-align: center;
-        color: #5c5c5ca9;
-        font-size: 30px;
-        font-family: 'Anton', sans-serif;
-        margin-bottom: 50px;
-    }
+    h1{        
+        border-radius: 25px;
+        text-align: left;
+        color: #ffffff;
+        font-size: 6vw;
+        font-family: hemi;
+        margin-bottom: 10px;
+        padding: 5%;
+        }
 }
 
 /*INICIO TARJETA DE PRECIOS*/
 
-.precios{    
+
+.tarjetasDePrecios {
+    padding-top: 5%;
+    font-family: 'Poppins', sans-serif;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    align-items: start;
+    justify-content: center;    
+    height: auto;   
+    
 }
 
-/*TARJETAS DE PRECIOS*/
-
-.tarjetaPrecio {    
-    backdrop-filter: blur(10px);
+.tarjetaPrecios {    
+    
+    margin: 10px;
     color: white;
-    margin: 5px;
     border-radius: 25px;
-    width: 250px;
-    height: 130px;
-    background-color: #ff8913aa;
+    width: 265px;
+    height: 155px;
     padding: 20px;
-    position: relative;
-    transition: all 0.5s ease-in-out;
+    display: block;    
+    overflow: hidden;
+    transition: height 0.8s ease-out;
+    span{
+        font-size: 15px;
+        margin-bottom: 0px;
+    }
     i{
-        margin-top: 30px;
+        margin-top: 0px;
     }
 }
 
-.tarjetaPrecio:hover {    
-    width: 250px;
-    height: 560px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-    z-index: 1;
+.tarjeta1 {
+    background-color: rgba(255, 119, 0, 0.476);
+    backdrop-filter: blur(10px);    
 }
 
-.title {
+.tarjeta2 {
+    background-color: rgba(0, 0, 255, 0.319);
+    backdrop-filter: blur(10px);
+}
+
+.tarjeta3 {
+    background-color: rgba(173, 173, 173, 0.794);
+    backdrop-filter: blur(10px);
+}
+
+.tarjeta4 {
+    background-color: rgba(39, 39, 39, 0.319);
+    backdrop-filter: blur(10px);
+}
+
+
+.tarjetaPrecios.tarjeta1.open {
+    display: block;
+    height: 580px;
+    position: relative;
+}
+
+.tarjetaPrecios.tarjeta2.open {
+    display: block;
+    height: 450px;
+    position: relative;
+}
+
+.tarjetaPrecios.tarjeta3.open {
+    display: block;
+    height: 840px;
+    position: relative;
+}
+
+.tarjetaPrecios.tarjeta4.open {
+    display: block;
+    height: 580px;
+    position: relative;
+}
+
+.menu {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    height: auto;
-}
-
-.tarjetaPrecio .title h2{
-    margin-bottom: 15px;
-    font-size: 25px;
-    text-align: center;
-}
-
-.title h2 {
-    margin-bottom: 15px;
+    justify-content: center;
+    flex-wrap: nowrap;
     color: white;
-    font-size: 2rem;
 }
 
-.list {
-    width: 0px;
-    height: 0px;
-    margin: 20px 0 0 0;
-    padding: 0;
-    visibility: hidden;
-    opacity: 0;
-    transition: opacity 2s ease-in-out;
+.menu a:hover {
+    color: rgb(0, 98, 255);
 }
 
-.tarjetaPrecio:hover .list {
-    width: auto;
-    height: auto;
-    visibility: visible;
-    opacity: 1;
+.tarjetaPrecios ol {
+    padding: 0px;
 }
 
-.list li {
-    list-style: none;
-    margin: 0 0 10px 0;
-    padding: 0;
+.tarjetaPrecios li {
+    padding: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.list li:before {
-    content: "• ";
-    color: #ffa200;
-}
-
-/*tarjeta zona 1*/
-
-.tarjetaPrecio1 {
-    backdrop-filter: blur(10px);
-    color: white;
-    margin: 5px;
-    border-radius: 25px;
-    width: 250px;
-    height: 130px;
-    background-color: #0048ff56;    
-    padding: 20px;
-    position: relative;
-    transition: all 0.5s ease-in-out;
-}
-
-.tarjetaPrecio1:hover {
-    width: 250px;
-    height: 430px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-    z-index: 1;
-}
-
-.tarjetaPrecio1:hover .list {
-    width: auto;
-    height: auto;
-    visibility: visible;
-    opacity: 1;
-}
-
-/*tarjeta zona 2*/
-
-.tarjetaPrecio2 {
-    backdrop-filter: blur(10px);
-    color: white;
-    margin: 5px;
-    border-radius: 25px;
-    width: 250px;
-    height: 130px;
-    background-color: #afafaf81;
-    padding: 20px;
-    position: relative;
-    transition: all 0.5s ease-in-out;
-    p{
-        margin-top: 20px;
-    }
-}
-
-.tarjetaPrecio2:hover {
-    width: 250px;
-    height: 740px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-    z-index: 1;
-}
-
-.tarjetaPrecio2:hover .list {
-    width: auto;
-    height: auto;
-    visibility: visible;
-    opacity: 1;
-}
-
-/*tarjeta zona 3*/
-
-.tarjetaPrecio3 {
-    backdrop-filter: blur(10px);
-    margin: 5px;
-    border-radius: 25px;
-    width: 250px;
-    height: 130px;
-    background-color: #0000006a;
-    padding: 20px;
-    position: relative;
-    transition: all 0.5s ease-in-out;
-}
-
-.tarjetaPrecio3:hover {
-    margin-bottom: 50px;
-    width: 250px;
-    height: 530px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-    z-index: 1;
-}
-
-.tarjetaPrecio3:hover .list {
-    color: white;
-    width: auto;
-    height: auto;
-    visibility: visible;
-    opacity: 1;
-}
 
 /*FIN TARJETAS DE PRECIOS*/
 
+/*PREGUNTAS FRECUENTES*/
+
+#preguntasFrecuentes{
+    margin-top: 40px;
+    h2{
+        font-family: 'Anton', sans-serif;
+        font-size: 40px;
+        text-align: center;
+        margin-bottom: 40px;
+    }
+}
+
+.faq-container {
+    font-family: 'Poppins', sans-serif;
+    max-width: 600px;
+    margin: 0 auto;
+    margin-bottom: 40px;
+}
+.faq-btn {
+    background-color: #f2f2f2;
+    color: #333;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+.faq-btn:focus {
+    outline: none;
+}
+.faq-btn.active {
+    background-color: #ddd;
+}
+.faq-content {
+    display: none;
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+.faq-content.active {
+    display: block;
+}
+
+//ACLARACION//
+
 .aclaracion {
-    p {
-        font-family:Verdana, Geneva, Tahoma, sans-serif;
-        text-align: left;
-        margin-bottom: 70px;
-        font-size: 20px;
-        color: #5c5c5c;        
-    }
-
-    h3 {
-        font-size: 30px;
-        margin-bottom: 50px;
-        color: white;
-    }
-
-    margin-top: 50px;
-    padding-left: 7%;
-    padding-right: 7%;
+    margin-top: 20px; 
+    width: 90%;
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    font-family: 'Poppins',
-    sans-serif;
-
+    justify-content: center; 
+    font-family: 'Poiret One', cursive;    
+    p {  
+        text-align: left;        
+        margin-bottom: 40px;
+        font-size: 30px;
+        color: #ffffff;
+    }
+    h3 {
+        font-size: 40px;
+        margin-bottom: 10px;
+        color: white;
+    }
     img {
         margin-bottom: 20px;
         height: 100px;
     }
-
+    a{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        font-size: 22px;
+    }
+    .action_btn{
+        width: 150px;
+        height: 60px;        
+    }
 }
 
 /*---------------PAGINA----COTIZACION----------------------*/
 
 .mainCotizador{
-    background-image: url(../Img/fondocotizacion.png);
-    padding: 30px;
-    border-radius: 30px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cotizador {
+    background-image: url(../img/fondocotizacion.png);
     background-attachment: fixed;
     background-repeat: no-repeat;
-    background-size: cover;
-    height: auto;
-    margin-left: 50px;
-    margin-right: 50px;
-    margin-bottom: 20px;
+    background-size:cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5%;
+    border-radius: 30px;
+    width: 95%;   
+    h1{
+        margin: 50px;
+        font-size: 5vw;
+        text-align: center;
+        font-family: hemi;
+        color: #ffffffdb;
+    }
+    p{
+        color: white;
+        text-align: center;
+        font-family:'Poppins', sans-serif; 
+    }
 }
 
 /*precios-mapa*/
 
-.fa-map-marker-alt,
-.fa-dot-circle {
-    color: #000000;
+.container-fluid{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    #output{
+        color: white;
+        font-size: 3vw;
+    }
+
+}
+
+.form-horizontal{
+    margin: 25px;
+}
+
+#from{
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+    width: 250px;
+    height: 30px;
+    margin-bottom: 10px;
+}
+#to{
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+    width: 250px;
+    height: 30px;
 }
 
 /*Jumbotron*/
-.jumbotron {
-    margin: 0;
-    padding: 30px;
-}
+
 
 .jumbotron h1 {
     letter-spacing: 2.5px;
@@ -442,15 +481,18 @@
     justify-content: center;
 
     button {
-        background-color: #e4e4e449;
-        width: 280px;
-        height: auto;
-        border-radius: 40px;
-        font-family: 'Poiret One', 200;
+        color: white;
+        font-family: 'Poppins', sans-serif;
+        width: 80px;
+        height: 40px;
+        border-radius: 20%;
+        background-color: #000b5ca5;
+        border-color: #cacaca00;
     }
 }
 
 #googleMap {
+    border-radius: 25px;
     width: 100%;
     height: 400px;
     margin: 10px auto;
@@ -479,10 +521,21 @@
 }
 
 /*SECCION COTIZADOR POR ZONAS*/
-.zonas{
-    margin-top: 80px;    
+.zonas {    
+    margin-top: 80px;
+    button{
+        color: white;
+        font-family: 'Poppins', sans-serif;
+        width: 80px;
+        height: 40px;
+        border-radius: 20%;
+        background-color: #000b5ca5;
+        border-color: #cacaca00;
+    }
+    .agregar{
+        background-color: orange;
+    }
 }
-
 .container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -493,7 +546,9 @@
 
 /*ZONAS*/
 
+
 /*TARJETAS*/
+
 
 .zonas {
     display: flex;
@@ -502,6 +557,7 @@
     margin: 20px;
     flex-wrap: wrap;
     width: auto;
+
 }
 
 h3 {
@@ -511,7 +567,7 @@ h3 {
 .botones {
     display: flex;
     flex-direction: row;
-    margin: 300px;
+    margin: 260px;
     visibility: hidden;
     opacity: 0;
     transition: opacity 3s ease;
@@ -527,25 +583,26 @@ h3 {
     margin: 5px;
     border-radius: 25px;
     width: 250px;
-    height: 390px;    
+    height: 400px;
     padding: 20px;
-    position: relative;    
-    background-color: #0033667d;    
+    position: relative;
+    border-color:#00336600;
+    background-color: #00336658;
     background-position: center;
-    background-repeat:no-repeat;
-    background-size:contain;  
+    background-repeat: no-repeat;
+    background-size: contain;
     display: flex;
     flex-direction: column;
-    align-items: center;    
+    align-items: center;
 }
 
 .card:hover {
     background-color: #005fbe7d;
     background-position: center;
-    background-repeat: no-repeat;    
+    background-repeat: no-repeat;
     height: 420px;
     transition: ease 1s;
-    }
+}
 
 .card:hover .botones {
     visibility: visible;
@@ -572,20 +629,57 @@ h3 {
     background-image: url(../img/zona3.png);
 }
 
-.divCarrito{
+.divCarrito {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.carrito{
+.carrito {
     text-align: center;
-    background-color: #003366;
+    background-color: #0033666d;
     border-radius: 10px;
     color: white;
-    width: 300px;
-    height: 150px;
-    .total{
+    width: auto;
+    height: auto;
+    .solicitar{
+        color: white;
+        font-family: 'Poppins', sans-serif;
+        width: 80px;
+        height: 40px;
+        border-radius: 20%;
+        background-color: orange;
+        border-color: #cacaca00;
+        width: 180px;
+        margin: 10px;
+    }
+    .reiniciar{
+        color: white;
+        font-family: 'Poppins', sans-serif;
+        width: 80px;
+        height: 40px;
+        border-radius: 20%;
+        background-color: #000b5ca5;
+        border-color: #cacaca00;
+        width: 180px;
+        margin: 10px;
+    }
+
+    .total {
         font-size: 30px;
     }
 }
+
+
+
+.estadoClima{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+ }
+
+
+    
+    

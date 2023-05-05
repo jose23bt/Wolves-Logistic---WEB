@@ -7,12 +7,13 @@
 
 header {
     min-height: 6rem;
+    
 }
 
 li {
     list-style: none;
 }
-.navbar a {
+.barraNavegacion a {
     text-decoration: none;
     color: rgb(0, 0, 0);
     font-size: 1.1rem;
@@ -23,50 +24,51 @@ header {
     padding: 0 2rem;
 }
 
-.navbar {
+.barraNavegacion {    
     width: 100%;
     height: 60px;
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
+    flex-wrap: nowrap;
     align-items: center;
     justify-content: space-between;
 }
 
-.navbar .logo{    
+.barraNavegacion .logo{    
     display: flex;
     align-items: center;
 }
 
-.navbar .logo img{
+.barraNavegacion .logo img{
     margin-top: 1rem;    
     margin-right: 0px;
     margin-left: 0px;
     width: 80px;
 }
 
-.navbar .logo a {
+.barraNavegacion .logo a {
     margin-top: 1rem;
     font-family: hemi;
     font-size: 1.5rem;
     font-weight: bold;
 }
 
-.navbar .logo a:hover{
+.barraNavegacion .logo a:hover{
     color: orange;
 }
 
-.navbar .links {
+.barraNavegacion .links {
     margin-top: 20px;
     display: flex;
     gap: 2rem;
 }
 
-.navbar .links a:hover{
+.barraNavegacion .links a:hover{
     color: orange;
 }
 
-.navbar .toggle_btn {
+.barraNavegacion .toggle_btn {
     color: black;
     font-size: 1.5rem;
     cursor: pointer;
@@ -143,3 +145,4 @@ header {
     scale: 1.05;
     color:white;
 }
+

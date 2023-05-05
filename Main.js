@@ -10,6 +10,33 @@ toggleBtn.onclick = function () {
     dropDownMenu.classList.toggle('open')
 }
 
+//-----------tarejtas-precios---------------//
+
+/*BOTONES TARJETA DE PRECIOS*/
+
+const toggleBtns = document.querySelectorAll('.tarjetaBoton');
+const dropDownMenus = document.querySelectorAll('.tarjetaPrecios');
+
+toggleBtns.forEach((toggleBtn, index) => {
+    toggleBtn.addEventListener('click', () => {
+        dropDownMenus[index].classList.toggle('open');
+    });
+});
+
+
+/*-----------PREGUNTAS---FRECUENTES---------------*/
+
+	// Añadimos un evento "click" a cada botón de preguntas frecuentes para mostrar o esconder su respuesta
+	let faqBtns = document.querySelectorAll(".faq-btn");
+	faqBtns.forEach(function(btn) {
+		btn.addEventListener("click", function() {
+			this.classList.toggle("active");
+			let faqContent = this.nextElementSibling;
+			faqContent.classList.toggle("active");
+		});
+	});
+
+
 //-------------------COTIZADOR POR ZONAS-------------------------//
 
 // Obtener los botones

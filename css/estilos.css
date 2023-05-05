@@ -1,4 +1,3 @@
-@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Anton&family=Poiret+One&family=Poppins:ital,wght@0,100;0,200;0,500;1,300&display=swap");
 * {
   padding: 0;
@@ -21,7 +20,7 @@ header {
 li {
   list-style: none; }
 
-.navbar a {
+.barraNavegacion a {
   text-decoration: none;
   color: black;
   font-size: 1.1rem; }
@@ -30,43 +29,44 @@ header {
   position: relative;
   padding: 0 2rem; }
 
-.navbar {
+.barraNavegacion {
   width: 100%;
   height: 60px;
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
+  flex-wrap: nowrap;
   align-items: center;
   justify-content: space-between; }
 
-.navbar .logo {
+.barraNavegacion .logo {
   display: flex;
   align-items: center; }
 
-.navbar .logo img {
+.barraNavegacion .logo img {
   margin-top: 1rem;
   margin-right: 0px;
   margin-left: 0px;
   width: 80px; }
 
-.navbar .logo a {
+.barraNavegacion .logo a {
   margin-top: 1rem;
   font-family: hemi;
   font-size: 1.5rem;
   font-weight: bold; }
 
-.navbar .logo a:hover {
+.barraNavegacion .logo a:hover {
   color: orange; }
 
-.navbar .links {
+.barraNavegacion .links {
   margin-top: 20px;
   display: flex;
   gap: 2rem; }
 
-.navbar .links a:hover {
+.barraNavegacion .links a:hover {
   color: orange; }
 
-.navbar .toggle_btn {
+.barraNavegacion .toggle_btn {
   color: black;
   font-size: 1.5rem;
   cursor: pointer;
@@ -130,6 +130,10 @@ header {
 .dropdown_menu .action_btn:hover {
   scale: 1.05;
   color: white; }
+
+@font-face {
+  font-family: hemi;
+  src: url(../fonts/hemi.otf); }
 
 /*inicio*/
 /*main-index*/
@@ -256,227 +260,258 @@ header {
 
 /*----main---precios--*/
 .mainPrecios {
-  margin-left: 50px;
-  margin-right: 50px;
-  margin-bottom: 20px;
-  background-image: url("../Img/fondoprecios.png");
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-size: cover;
-  padding: 30px;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center; }
+
+.heroPrecios {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5%;
   border-radius: 30px;
-  min-height: 900px; }
-
-.heroPrecios i {
-  font-size: 20px;
-  margin-top: 20px;
-  color: orange; }
-
-.heroPrecios i:hover {
-  color: #036bd3; }
-
-.heroPrecios h1 {
-  text-align: center;
-  color: #5c5c5ca9;
-  font-size: 30px;
-  font-family: 'Anton', sans-serif;
-  margin-bottom: 50px; }
+  width: 95%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-image: url(../img/fondoprecios.png); }
+  .heroPrecios i {
+    font-size: 20px;
+    margin-top: 20px;
+    color: orange; }
+  .heroPrecios i:hover {
+    color: #036bd3; }
+  .heroPrecios h1 {
+    border-radius: 25px;
+    text-align: left;
+    color: #ffffff;
+    font-size: 6vw;
+    font-family: hemi;
+    margin-bottom: 10px;
+    padding: 5%; }
 
 /*INICIO TARJETA DE PRECIOS*/
-.precios {
+.tarjetasDePrecios {
+  padding-top: 5%;
+  font-family: 'Poppins', sans-serif;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-evenly; }
-
-/*TARJETAS DE PRECIOS*/
-.tarjetaPrecio {
-  backdrop-filter: blur(10px);
-  color: white;
-  margin: 5px;
-  border-radius: 25px;
-  width: 250px;
-  height: 130px;
-  background-color: #ff8913aa;
-  padding: 20px;
-  position: relative;
-  transition: all 0.5s ease-in-out; }
-  .tarjetaPrecio i {
-    margin-top: 30px; }
-
-.tarjetaPrecio:hover {
-  width: 250px;
-  height: 560px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-  z-index: 1; }
-
-.title {
-  display: flex;
-  flex-direction: column;
+  align-items: start;
   justify-content: center;
-  align-items: center;
   height: auto; }
 
-.tarjetaPrecio .title h2 {
-  margin-bottom: 15px;
-  font-size: 25px;
-  text-align: center; }
-
-.title h2 {
-  margin-bottom: 15px;
+.tarjetaPrecios {
+  margin: 10px;
   color: white;
-  font-size: 2rem; }
-
-.list {
-  width: 0px;
-  height: 0px;
-  margin: 20px 0 0 0;
-  padding: 0;
-  visibility: hidden;
-  opacity: 0;
-  transition: opacity 2s ease-in-out; }
-
-.tarjetaPrecio:hover .list {
-  width: auto;
-  height: auto;
-  visibility: visible;
-  opacity: 1; }
-
-.list li {
-  list-style: none;
-  margin: 0 0 10px 0;
-  padding: 0; }
-
-.list li:before {
-  content: "• ";
-  color: #ffa200; }
-
-/*tarjeta zona 1*/
-.tarjetaPrecio1 {
-  backdrop-filter: blur(10px);
-  color: white;
-  margin: 5px;
   border-radius: 25px;
-  width: 250px;
-  height: 130px;
-  background-color: #0048ff56;
+  width: 265px;
+  height: 155px;
   padding: 20px;
-  position: relative;
-  transition: all 0.5s ease-in-out; }
+  display: block;
+  overflow: hidden;
+  transition: height 0.8s ease-out; }
+  .tarjetaPrecios span {
+    font-size: 15px;
+    margin-bottom: 0px; }
+  .tarjetaPrecios i {
+    margin-top: 0px; }
 
-.tarjetaPrecio1:hover {
-  width: 250px;
-  height: 430px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-  z-index: 1; }
+.tarjeta1 {
+  background-color: rgba(255, 119, 0, 0.476);
+  backdrop-filter: blur(10px); }
 
-.tarjetaPrecio1:hover .list {
-  width: auto;
-  height: auto;
-  visibility: visible;
-  opacity: 1; }
+.tarjeta2 {
+  background-color: rgba(0, 0, 255, 0.319);
+  backdrop-filter: blur(10px); }
 
-/*tarjeta zona 2*/
-.tarjetaPrecio2 {
-  backdrop-filter: blur(10px);
-  color: white;
-  margin: 5px;
-  border-radius: 25px;
-  width: 250px;
-  height: 130px;
-  background-color: #afafaf81;
-  padding: 20px;
-  position: relative;
-  transition: all 0.5s ease-in-out; }
-  .tarjetaPrecio2 p {
-    margin-top: 20px; }
+.tarjeta3 {
+  background-color: rgba(173, 173, 173, 0.794);
+  backdrop-filter: blur(10px); }
 
-.tarjetaPrecio2:hover {
-  width: 250px;
-  height: 740px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-  z-index: 1; }
+.tarjeta4 {
+  background-color: rgba(39, 39, 39, 0.319);
+  backdrop-filter: blur(10px); }
 
-.tarjetaPrecio2:hover .list {
-  width: auto;
-  height: auto;
-  visibility: visible;
-  opacity: 1; }
+.tarjetaPrecios.tarjeta1.open {
+  display: block;
+  height: 580px;
+  position: relative; }
 
-/*tarjeta zona 3*/
-.tarjetaPrecio3 {
-  backdrop-filter: blur(10px);
-  margin: 5px;
-  border-radius: 25px;
-  width: 250px;
-  height: 130px;
-  background-color: #0000006a;
-  padding: 20px;
-  position: relative;
-  transition: all 0.5s ease-in-out; }
+.tarjetaPrecios.tarjeta2.open {
+  display: block;
+  height: 450px;
+  position: relative; }
 
-.tarjetaPrecio3:hover {
-  margin-bottom: 50px;
-  width: 250px;
-  height: 530px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-  z-index: 1; }
+.tarjetaPrecios.tarjeta3.open {
+  display: block;
+  height: 840px;
+  position: relative; }
 
-.tarjetaPrecio3:hover .list {
-  color: white;
-  width: auto;
-  height: auto;
-  visibility: visible;
-  opacity: 1; }
+.tarjetaPrecios.tarjeta4.open {
+  display: block;
+  height: 580px;
+  position: relative; }
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  color: white; }
+
+.menu a:hover {
+  color: #0062ff; }
+
+.tarjetaPrecios ol {
+  padding: 0px; }
+
+.tarjetaPrecios li {
+  padding: 0.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
 
 /*FIN TARJETAS DE PRECIOS*/
+/*PREGUNTAS FRECUENTES*/
+#preguntasFrecuentes {
+  margin-top: 40px; }
+  #preguntasFrecuentes h2 {
+    font-family: 'Anton', sans-serif;
+    font-size: 40px;
+    text-align: center;
+    margin-bottom: 40px; }
+
+.faq-container {
+  font-family: 'Poppins', sans-serif;
+  max-width: 600px;
+  margin: 0 auto;
+  margin-bottom: 40px; }
+
+.faq-btn {
+  background-color: #f2f2f2;
+  color: #333;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  font-size: 18px;
+  margin-bottom: 10px; }
+
+.faq-btn:focus {
+  outline: none; }
+
+.faq-btn.active {
+  background-color: #ddd; }
+
+.faq-content {
+  display: none;
+  background-color: #f9f9f9;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  font-size: 16px; }
+
+.faq-content.active {
+  display: block; }
+
 .aclaracion {
-  margin-top: 50px;
-  padding-left: 7%;
-  padding-right: 7%;
+  margin-top: 20px;
+  width: 90%;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-family: 'Poppins', sans-serif; }
+  font-family: 'Poiret One', cursive; }
   .aclaracion p {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-align: left;
-    margin-bottom: 70px;
-    font-size: 20px;
-    color: #5c5c5c; }
-  .aclaracion h3 {
+    margin-bottom: 40px;
     font-size: 30px;
-    margin-bottom: 50px;
+    color: #ffffff; }
+  .aclaracion h3 {
+    font-size: 40px;
+    margin-bottom: 10px;
     color: white; }
   .aclaracion img {
     margin-bottom: 20px;
     height: 100px; }
+  .aclaracion a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 22px; }
+  .aclaracion .action_btn {
+    width: 150px;
+    height: 60px; }
 
 /*---------------PAGINA----COTIZACION----------------------*/
 .mainCotizador {
-  background-image: url(../Img/fondocotizacion.png);
-  padding: 30px;
-  border-radius: 30px;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center; }
+
+.cotizador {
+  background-image: url(../img/fondocotizacion.png);
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
-  height: auto;
-  margin-left: 50px;
-  margin-right: 50px;
-  margin-bottom: 20px; }
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5%;
+  border-radius: 30px;
+  width: 95%; }
+  .cotizador h1 {
+    margin: 50px;
+    font-size: 5vw;
+    text-align: center;
+    font-family: hemi;
+    color: #ffffffdb; }
+  .cotizador p {
+    color: white;
+    text-align: center;
+    font-family: 'Poppins', sans-serif; }
 
 /*precios-mapa*/
-.fa-map-marker-alt,
-.fa-dot-circle {
-  color: #000000; }
+.container-fluid {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+  .container-fluid #output {
+    color: white;
+    font-size: 3vw; }
+
+.form-horizontal {
+  margin: 25px; }
+
+#from {
+  padding: 10px;
+  border-radius: 20px;
+  border: none;
+  width: 250px;
+  height: 30px;
+  margin-bottom: 10px; }
+
+#to {
+  padding: 10px;
+  border-radius: 20px;
+  border: none;
+  width: 250px;
+  height: 30px; }
 
 /*Jumbotron*/
-.jumbotron {
-  margin: 0;
-  padding: 30px; }
-
 .jumbotron h1 {
   letter-spacing: 2.5px;
   font-size: 3.5em; }
@@ -490,13 +525,16 @@ header {
   display: flex;
   justify-content: center; }
   .boton button {
-    background-color: #e4e4e449;
-    width: 280px;
-    height: auto;
-    border-radius: 40px;
-    font-family: 'Poiret One', 200; }
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    width: 80px;
+    height: 40px;
+    border-radius: 20%;
+    background-color: #000b5ca5;
+    border-color: #cacaca00; }
 
 #googleMap {
+  border-radius: 25px;
   width: 100%;
   height: 400px;
   margin: 10px auto; }
@@ -521,6 +559,16 @@ header {
 /*SECCION COTIZADOR POR ZONAS*/
 .zonas {
   margin-top: 80px; }
+  .zonas button {
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    width: 80px;
+    height: 40px;
+    border-radius: 20%;
+    background-color: #000b5ca5;
+    border-color: #cacaca00; }
+  .zonas .agregar {
+    background-color: orange; }
 
 .container {
   display: grid;
@@ -545,7 +593,7 @@ h3 {
 .botones {
   display: flex;
   flex-direction: row;
-  margin: 300px;
+  margin: 260px;
   visibility: hidden;
   opacity: 0;
   transition: opacity 3s ease; }
@@ -559,10 +607,11 @@ h3 {
   margin: 5px;
   border-radius: 25px;
   width: 250px;
-  height: 390px;
+  height: 400px;
   padding: 20px;
   position: relative;
-  background-color: #0033667d;
+  border-color: #00336600;
+  background-color: #00336658;
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -603,13 +652,40 @@ h3 {
 
 .carrito {
   text-align: center;
-  background-color: #003366;
+  background-color: #0033666d;
   border-radius: 10px;
   color: white;
-  width: 300px;
-  height: 150px; }
+  width: auto;
+  height: auto; }
+  .carrito .solicitar {
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    width: 80px;
+    height: 40px;
+    border-radius: 20%;
+    background-color: orange;
+    border-color: #cacaca00;
+    width: 180px;
+    margin: 10px; }
+  .carrito .reiniciar {
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    width: 80px;
+    height: 40px;
+    border-radius: 20%;
+    background-color: #000b5ca5;
+    border-color: #cacaca00;
+    width: 180px;
+    margin: 10px; }
   .carrito .total {
     font-size: 30px; }
+
+.estadoClima {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white; }
 
 footer {
   background-color: black;
@@ -700,23 +776,9 @@ footer nav {
   .div7 {
     grid-area: 3 / 1 / 4 / 2; } }
 
-@media (min-width: 1200px) {
-  .heroPrecios {
-    padding-top: 50px; } }
-
-@media (min-width: 1200px) {
-  .mainPrecios {
-    margin-left: 200px;
-    margin-right: 200px;
-    min-height: 600px; }
-  .mainPrecios h1 {
-    font-size: 60px; } }
-
-@media (max-width: 700px) {
-  .mainPrecios {
-    width: 350px;
-    margin-left: 30px;
-    margin-right: 30px; } }
+@media (max-width: 500px) {
+  .heroPrecios h1 {
+    font-size: 10vw; } }
 
 @media (max-width: 700px) {
   .tarjetaPrecio {
@@ -741,10 +803,19 @@ footer nav {
 
 /*reponsive header*/
 @media (max-width: 992px) {
-  .navbar .links,
-  .navbar .action_btn {
+  .barraNavegacion .links,
+  .barraNavegacion .action_btn {
     display: none; }
-  .navbar .toggle_btn {
+  .barraNavegacion .toggle_btn {
+    margin: 5px;
     display: block; }
   .dropdown_menu {
     display: block; } }
+
+@media (max-width: 400px) {
+  .barraNavegacion .logo a {
+    font-size: 1rem; } }
+
+@media (max-width: 500px) {
+  .mainCotizador h1 {
+    font-size: 9vw; } }
