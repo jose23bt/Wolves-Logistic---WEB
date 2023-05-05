@@ -100,6 +100,7 @@ header {
   height: 0px;
   width: 350px;
   background: rgba(255, 255, 255, 0.1);
+  -webkit-backdrop-filter: blur(15px);
   backdrop-filter: blur(15px);
   border-radius: 10px;
   overflow: hidden;
@@ -322,19 +323,23 @@ header {
 
 .tarjeta1 {
   background-color: rgba(255, 119, 0, 0.476);
-  backdrop-filter: blur(10px); }
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px); }
 
 .tarjeta2 {
   background-color: rgba(0, 0, 255, 0.319);
-  backdrop-filter: blur(10px); }
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px); }
 
 .tarjeta3 {
   background-color: rgba(173, 173, 173, 0.794);
-  backdrop-filter: blur(10px); }
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px); }
 
 .tarjeta4 {
   background-color: rgba(39, 39, 39, 0.319);
-  backdrop-filter: blur(10px); }
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px); }
 
 .tarjetaPrecios.tarjeta1.open {
   display: block;
@@ -603,6 +608,7 @@ h3 {
 
 .card {
   backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   color: white;
   margin: 5px;
   border-radius: 25px;
