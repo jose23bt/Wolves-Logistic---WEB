@@ -1,4 +1,12 @@
-﻿//-------header-----//
+﻿//----libreria-iNoBounce-funciona-para-compatibilidad-de-efectos-css-en-dispositvos-Ios-----//
+
+window.onload = function () {
+    document.addEventListener('touchmove', function (e) {
+        inobounce(e);
+    });
+}
+
+//-------header-----//
 
 const toggleBtn = document.querySelector('.toggle_btn')
 const toggle_btnIcon = document.querySelector('.toggle_btn i')
@@ -24,15 +32,15 @@ toggleBtns.forEach((toggleBtn, index) => {
 
 /*-----------PREGUNTAS---FRECUENTES---------------*/
 
-	// Añadimos un evento "click" a cada botón de preguntas frecuentes para mostrar o esconder su respuesta
-	let faqBtns = document.querySelectorAll(".faq-btn");
-	faqBtns.forEach(function(btn) {
-		btn.addEventListener("click", function() {
-			this.classList.toggle("active");
-			let faqContent = this.nextElementSibling;
-			faqContent.classList.toggle("active");
-		});
-	});
+// Añadimos un evento "click" a cada botón de preguntas frecuentes para mostrar o esconder su respuesta
+let faqBtns = document.querySelectorAll(".faq-btn");
+faqBtns.forEach(function (btn) {
+    btn.addEventListener("click", function () {
+        this.classList.toggle("active");
+        let faqContent = this.nextElementSibling;
+        faqContent.classList.toggle("active");
+    });
+});
 
 
 //-------------------COTIZADOR POR ZONAS-------------------------//
