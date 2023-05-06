@@ -1,4 +1,4 @@
-﻿//----libreria-iNoBounce-funciona-para-compatibilidad-de-efectos-css-en-dispositvos-Ios-----//
+//----libreria-iNoBounce-funciona-para-compatibilidad-de-efectos-css-en-dispositvos-Ios-----//
 
 window.onload = function () {
     document.addEventListener('touchmove', function (e) {
@@ -49,8 +49,8 @@ faqBtns.forEach(function (btn) {
 const botonesAgregar = document.querySelectorAll('.agregar');
 const botonesEliminar = document.querySelectorAll('.eliminar');
 
-console.log(botonesAgregar); // Verificar si se seleccionan los botones correctamente
-console.log(botonesEliminar); // Verificar si se seleccionan los botones correctamente
+// console.log(botonesAgregar); // Verificar si se seleccionan los botones correctamente
+// console.log(botonesEliminar); // Verificar si se seleccionan los botones correctamente
 
 // Obtener el carrito desde el almacenamiento local (si existe)
 let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
@@ -117,7 +117,7 @@ botonesEliminar.forEach(boton => boton.addEventListener('click', eliminarProduct
 // Mostrar el carrito al cargar la página
 actualizarCarrito();
 
-function solicitarViaje() {
+function solicitarViaje(obj) {
     // Obtener los productos agrupados por nombre y sumar las cantidades
     const productosAgrupados = carrito.reduce((acumulador, producto) => {
         if (!acumulador[producto.nombre]) {
@@ -143,7 +143,14 @@ function solicitarViaje() {
         .reduce((acumulador, producto) => acumulador + producto.precio, 0);
 
     // Crear el mensaje con los productos y el precio total
-    const mensaje = `¡Hola! Quiero solicitar un viaje con los siguientes productos:%0A%0A${queryString}%0A%0ATotal: $${total.toFixed(2)}`;
+    const mensaje = `¡Hola! Quiero solicitar un viaje con los siguientes productos:%0A
+    ${queryString}%0A%0A
+    Total: $${total.toFixed(2)}%0A%0A
+    Nombre: ${obj.Nombre}%0A
+    Contacto: ${obj.Contacto}%0A
+    Email: ${obj.Email}%0A
+    Direccion: ${obj.Direccion} barrio: ${obj.Barrio}%0A
+    localidad: ${obj.Localidad} Codigo Postal: ${obj.CP}`;
 
     // Crear la URL de la conversación de WhatsApp con el mensaje
     const url = `https://api.whatsapp.com/send/?phone=5491123318355&text=${mensaje}`;
@@ -151,6 +158,8 @@ function solicitarViaje() {
     // Abrir la conversación de WhatsApp en una pestaña nueva
     window.open(url, '_blank');
 }
+
+export {solicitarViaje}
 
 //REINICIAR COTIZADOR
 
@@ -256,3 +265,8 @@ document.addEventListener('DOMContentLoaded', () => {
         })
         .catch(error => console.error(error));
 });
+
+
+
+
+
