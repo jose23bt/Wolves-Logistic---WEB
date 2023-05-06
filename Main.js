@@ -1,4 +1,10 @@
-﻿
+//----libreria-iNoBounce-funciona-para-compatibilidad-de-efectos-css-en-dispositvos-Ios-----//
+
+window.onload = function () {
+    document.addEventListener('touchmove', function (e) {
+        inobounce(e);
+    });
+}
 
 //-------header-----//
 
@@ -9,6 +15,33 @@ const dropDownMenu = document.querySelector('.dropdown_menu')
 toggleBtn.onclick = function () {
     dropDownMenu.classList.toggle('open')
 }
+
+//-----------tarejtas-precios---------------//
+
+/*BOTONES TARJETA DE PRECIOS*/
+
+const toggleBtns = document.querySelectorAll('.tarjetaBoton');
+const dropDownMenus = document.querySelectorAll('.tarjetaPrecios');
+
+toggleBtns.forEach((toggleBtn, index) => {
+    toggleBtn.addEventListener('click', () => {
+        dropDownMenus[index].classList.toggle('open');
+    });
+});
+
+
+/*-----------PREGUNTAS---FRECUENTES---------------*/
+
+// Añadimos un evento "click" a cada botón de preguntas frecuentes para mostrar o esconder su respuesta
+let faqBtns = document.querySelectorAll(".faq-btn");
+faqBtns.forEach(function (btn) {
+    btn.addEventListener("click", function () {
+        this.classList.toggle("active");
+        let faqContent = this.nextElementSibling;
+        faqContent.classList.toggle("active");
+    });
+});
+
 
 //-------------------COTIZADOR POR ZONAS-------------------------//
 
@@ -84,7 +117,7 @@ botonesEliminar.forEach(boton => boton.addEventListener('click', eliminarProduct
 // Mostrar el carrito al cargar la página
 actualizarCarrito();
 
-function solicitarViaje() {
+function solicitarViaje(obj) {
     // Obtener los productos agrupados por nombre y sumar las cantidades
     const productosAgrupados = carrito.reduce((acumulador, producto) => {
         if (!acumulador[producto.nombre]) {
@@ -110,7 +143,14 @@ function solicitarViaje() {
         .reduce((acumulador, producto) => acumulador + producto.precio, 0);
 
     // Crear el mensaje con los productos y el precio total
-    const mensaje = `¡Hola! Quiero solicitar un viaje con los siguientes productos:%0A%0A${queryString}%0A%0ATotal: $${total.toFixed(2)}`;
+    const mensaje = `¡Hola! Quiero solicitar un viaje con los siguientes productos:%0A
+    ${queryString}%0A%0A
+    Total: $${total.toFixed(2)}%0A%0A
+    Nombre: ${obj.Nombre}%0A
+    Contacto: ${obj.Contacto}%0A
+    Email: ${obj.Email}%0A
+    Direccion: ${obj.Direccion} barrio: ${obj.Barrio}%0A
+    localidad: ${obj.Localidad} Codigo Postal: ${obj.CP}`;
 
     // Crear la URL de la conversación de WhatsApp con el mensaje
     const url = `https://api.whatsapp.com/send/?phone=5491123318355&text=${mensaje}`;
