@@ -1,0 +1,106 @@
+.inactive{
+  display: none;
+}
+
+.contenedor{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 999;
+}
+
+.contenedor .wrapper{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    width: 700px;
+    /* height:250px; */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    flex-wrap: nowrap;
+}
+
+.contenedor .wrapper .icon-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 45px;
+  height: 45px;
+  background: #eb9316;
+  color: #fff;
+  font-size: 2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom-left-radius: 20px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.contenedor .wrapper .form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    /* background-color: rebeccapurple; */
+
+}
+
+.contenedor .wrapper .form h3{
+  color: black;
+}
+
+.contenedor .wrapper .form form div{
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+.contenedor .wrapper .form form div input{
+  margin: 5px;
+  width: 100%;
+  height: 100%;  
+  border: none;
+  outline: none;
+  font-size: 1.1em;
+  color: #162938;
+  font-weight: 600;
+  padding: 0 35px 0 5px;
+}
+.contenedor .wrapper .form form div input{
+  border-bottom: 2px solid black;
+}
+
+.contenedor .wrapper .form form .solicitar {
+	color: white;
+	font-family: 'Poppins', sans-serif;
+	/* width: 80px; */
+	height: 40px;
+	border-radius: 20%;
+	background-color: orange;
+	border-color: #cacaca00;
+	width: 180px;
+	margin: 10px;
+}
+
+.inputerror{
+  background-color: rgba(255,0,0,0.5);
+  border-color: red;
+}
+
+
+@media (max-width: 720px) {
+  .contenedor .wrapper{
+    width: 95%;
+  }
+  
+}
+
+
+
