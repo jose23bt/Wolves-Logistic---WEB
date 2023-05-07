@@ -2,11 +2,13 @@ footer{
     background-color: rgb(0, 0, 0);
     height: 200px;
     img{
+        margin-top: 20px;
         height: 100px;
         }
 }
 
 footer{
+    margin-top: 20px;
     .pie{
         display: flex;
         align-items: center;
@@ -18,7 +20,8 @@ footer{
         display: flex;
         flex-direction: row;
         align-items: center;
-        ul{                    
+        ul{    
+            text-align: center;                
             display: flex;
             flex-direction: column;            
             a{

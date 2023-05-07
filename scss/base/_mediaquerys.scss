@@ -88,6 +88,8 @@
 
 }
 
+//PRECIOS//
+
 @media(max-width: 500px){
     .heroPrecios{
         h1{
@@ -118,6 +120,8 @@
         height: 730px;
     }
 }
+
+//FOOTER//
 
 @media(max-width: 700px) {
     footer {
@@ -160,8 +164,30 @@
     }
 }
 
-//aclaracion//
-
+//NOSOTROS//
+@media (max-width: 500px){
+    .infoNosotros{
+        .info{
+            width: 400px;
+            .contenidoInfo{
+                margin: 10px;
+                h4{
+                    font-size: 20px;
+                }
+                p{
+                    font-size: 10px;
+                }
+            }
+            img{
+                width: 280px;
+            }            
+        }
+    .infoCliente{
+        width: 360px;
+        font-size: 10px;
+    }
+    }
+}
 
 
 //COTIZADORES//
