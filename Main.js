@@ -238,7 +238,7 @@ const input2 = document.getElementById("to");
 const autocomplete2 = new google.maps.places.Autocomplete(input2, options);
 
 function calculateFare_km(kilometros) {
-    const fare = (kilometros * 0.100).toFixed(2);
+    const fare = (kilometros * 0.130).toFixed(2);
     return fare;
 }
 
