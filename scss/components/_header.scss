@@ -108,6 +108,7 @@ header {
     height: 0px;
     width: 350px;
     background: rgba(255, 255, 255, 0.1);
+    -webkit-backdrop-filter: blur(15px);
     backdrop-filter: blur(15px);
     border-radius: 10px;
     overflow: hidden;

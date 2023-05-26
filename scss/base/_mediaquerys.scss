@@ -88,6 +88,8 @@
 
 }
 
+//PRECIOS//
+
 @media(max-width: 500px){
     .heroPrecios{
         h1{
@@ -97,27 +99,13 @@
 }
 
 @media(max-width: 700px) {
-    .tarjetaPrecio {
-        height: 130px;
-        margin-bottom: 50px;
-    }
-
-    .tarjetaPrecio1 {
-        margin-bottom: 50px;
-    }
-
-    .tarjetaPrecio2 {
-        margin-bottom: 50px;
-    }
-
-    .tarjetaPrecio3 {
-        margin-bottom: 50px;
-    }
-
-    .tarjetaPrecio2:hover {
-        height: 730px;
+    .tarjetaPrecios {  
+        margin: 0px;      
+        margin-bottom: 20px;
     }
 }
+
+//FOOTER//
 
 @media(max-width: 700px) {
     footer {
@@ -160,19 +148,31 @@
     }
 }
 
-//aclaracion//
-
-@media(max-width: 500px){
-    .aclaracion{
-        margin-top: 380px;
+//NOSOTROS//
+@media (max-width: 500px){
+    .infoNosotros{
+        .info{
+            width: 400px;
+            .contenidoInfo{
+                margin: 10px;
+                h4{
+                    font-size: 20px;
+                }
+                p{
+                    font-size: 10px;
+                }
+            }
+            img{
+                width: 280px;
+            }            
+        }
+    .infoCliente{
+        width: 360px;
+        font-size: 10px;
+    }
     }
 }
 
-@media(max-width: 650px){
-    .aclaracion{
-        margin-top: 400px;
-    }
-}
 
 //COTIZADORES//
 @media(max-width:500px){

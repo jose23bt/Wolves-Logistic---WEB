@@ -5,7 +5,8 @@
   "main": "Main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build-css": "node-sass --include-path scss scss/estilos.scss css/estilos.css","watch-css": "nodemon -e scss -x \"npm run build-css\""
+    "build-css": "node-sass --include-path scss scss/estilos.scss css/estilos.css",
+    "watch-css": "nodemon -e scss -x \"npm run build-css\""
   },
   "repository": {
     "type": "git",
@@ -18,6 +19,7 @@
   },
   "homepage": "https://github.com/jose23bt/proyecto-WOLVES#readme",
   "dependencies": {
+    "inobounce": "^0.2.1",
     "node-sass": "^8.0.0",
     "nodemon": "^2.0.20"
   }
