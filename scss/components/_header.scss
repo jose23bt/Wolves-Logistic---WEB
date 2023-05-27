@@ -3,11 +3,13 @@
 @font-face {
     font-family: hemi;
     src: url(../fonts/hemi.otf);
+    
 }
 
-header {
-    min-height: 6rem;
-    
+header {  
+    top:0;      
+    position: sticky;    
+    z-index: 10000;
 }
 
 li {
@@ -19,29 +21,30 @@ li {
     font-size: 1.1rem;
 }
 
-header {
-    position: relative;
-    padding: 0 2rem;
-}
-
-.barraNavegacion {    
+.barraNavegacion { 
+    background: rgba(255, 255, 255, 0.1);
+    -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px);
+    border-radius: 10px;    
     width: 100%;
-    height: 60px;
+    height: 65px;
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
     flex-wrap: nowrap;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-between;       
 }
 
 .barraNavegacion .logo{    
     display: flex;
+    flex-direction: row;
     align-items: center;
 }
 
 .barraNavegacion .logo img{
-    margin-top: 1rem;    
+    margin-top: 1rem;   
+    margin-bottom: 1rem; 
     margin-right: 0px;
     margin-left: 0px;
     width: 80px;
@@ -49,6 +52,7 @@ header {
 
 .barraNavegacion .logo a {
     margin-top: 1rem;
+    margin-bottom: 1rem; 
     font-family: hemi;
     font-size: 1.5rem;
     font-weight: bold;
@@ -100,8 +104,7 @@ header {
 
 /*dropdown menu*/
 
-.dropdown_menu {
-    margin-top: 3.8vh;
+.dropdown_menu {    
     z-index: 9999;
     display: none;
     position: absolute;
