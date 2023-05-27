@@ -569,8 +569,7 @@ li {
   justify-content: center;
   align-items: center; }
   .container-fluid #output {
-    color: white;
-    font-size: 3vw; }
+    color: black; }
 
 .form-horizontal {
   margin: 25px; }
@@ -620,11 +619,14 @@ li {
   height: 400px;
   margin: 10px auto; }
 
-/*output box*/
+.container-fluid
 #output {
   text-align: center;
-  font-size: 2em;
-  margin: 20px auto; }
+  font-size: 2vh;
+  margin: 20px auto;
+  background-color: #536f8c;
+  border-radius: 25px;
+  padding: 5px; }
 
 #mode {
   color: black; }

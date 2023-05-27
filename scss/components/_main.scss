@@ -529,8 +529,7 @@
     justify-content: center;
     align-items: center;
     #output{
-        color: white;
-        font-size: 3vw;
+        color: black;        
     }
 
 }
@@ -595,11 +594,16 @@
     margin: 10px auto;
 }
 
+.container-fluid
+
 /*output box*/
 #output {
     text-align: center;
-    font-size: 2em;
+    font-size: 2vh;
     margin: 20px auto;
+    background-color: #536f8c;
+    border-radius: 25px;
+    padding: 5px;
 }
 
 #mode {
