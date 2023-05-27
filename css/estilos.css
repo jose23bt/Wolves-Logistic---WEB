@@ -532,25 +532,27 @@ header {
   justify-content: center;
   flex-direction: column;
   align-items: center; }
+  .mainCotizador .titulo {
+    margin: 10px;
+    background-image: url(../img/fondocotizacion.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 25px;
+    min-height: 250px; }
 
 .cotizador {
-  background-image: url(../img/fondocotizacion.png);
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-size: cover;
+  max-width: 1200px;
+  margin-top: 0px;
+  margin: 30px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 5%;
-  border-radius: 30px;
-  width: 95%; }
+  justify-content: center; }
   .cotizador h1 {
-    margin: 50px;
+    padding: 5%;
     font-size: 5vw;
     text-align: center;
-    font-family: hemi;
-    color: #ffffffdb; }
+    font-family: 'Anton', sans-serif;
+    color: white; }
   .cotizador p {
     color: white;
     text-align: center;
@@ -586,11 +588,13 @@ header {
 
 /*Jumbotron*/
 .jumbotron h1 {
+  color: #000000;
   letter-spacing: 2.5px;
   font-size: 3.5em; }
 
 .jumbotron h1,
 .jumbotron p {
+  color: #000000;
   text-align: center; }
 
 /*map*/
@@ -619,7 +623,7 @@ header {
   margin: 20px auto; }
 
 #mode {
-  color: #eeeeee; }
+  color: black; }
 
 /*SECCION COTIZADOR POR ZONAS*/
 .container {
@@ -666,17 +670,12 @@ h3 {
 .botones {
   display: flex;
   flex-direction: row;
-  margin: 260px;
-  visibility: hidden;
-  opacity: 0;
-  transition: opacity 3s ease; }
+  margin: 230px; }
 
 .botones button {
   margin: 10px; }
 
 .card {
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
   color: white;
   margin: 5px;
   border-radius: 25px;
@@ -684,8 +683,8 @@ h3 {
   height: 400px;
   padding: 20px;
   position: relative;
-  border-color: #00336600;
-  background-color: #00336658;
+  border-color: white;
+  background-color: #bcbcbc;
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -694,18 +693,10 @@ h3 {
   align-items: center; }
 
 .card:hover {
-  background-color: #005fbe7d;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 420px;
-  transition: ease 1s; }
-
-.card:hover .botones {
-  visibility: visible;
-  opacity: 1; }
-
-.card:hover .botones button {
-  transition: all 2s ease; }
+  background-color: #536f8c;
+  width: 270px;
+  height: 410px;
+  transition: ease 0.5s; }
 
 .card0 {
   background-image: url(../img/lomasdezamora.png); }
@@ -729,7 +720,6 @@ h3 {
   background-color: #0033666d;
   border-radius: 10px;
   color: white;
-  width: auto;
   height: auto; }
   .carrito .solicitar {
     color: white;
@@ -759,7 +749,7 @@ h3 {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: white; }
+  color: black; }
 
 footer {
   background-color: black;
