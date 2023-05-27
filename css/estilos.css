@@ -6,9 +6,6 @@
   list-style: none;
   box-sizing: border-box; }
 
-body {
-  background-color: #f3f3f3; }
-
 /*header*/
 @font-face {
   font-family: hemi;
@@ -17,7 +14,9 @@ body {
 header {
   top: 0;
   position: sticky;
-  z-index: 10000; }
+  z-index: 10000;
+  margin-top: 10px;
+  margin-bottom: 50px; }
 
 li {
   list-style: none; }
@@ -145,7 +144,8 @@ li {
 /*hero-section*/
 .heroSection {
   display: flex;
-  justify-content: center; }
+  justify-content: center;
+  margin-bottom: 5vw; }
 
 .carousel-inner {
   width: 1200px;
@@ -163,12 +163,10 @@ li {
   font-size: 100%; }
 
 .nuestrosServicios {
-  margin-left: 50px;
-  margin-right: 50px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  margin-top: 50px;
   text-align: center; }
+  .nuestrosServicios h3 {
+    color: black; }
 
 .parentCenter {
   display: flex;
@@ -231,17 +229,18 @@ li {
   justify-content: center; }
 
 .parent2 {
+  margin-top: 50px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: 1fr;
-  grid-column-gap: px;
-  grid-row-gap: px;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-  align-content: center; }
+  align-content: center;
+  width: 1200px; }
   .parent2 img {
-    width: 70%;
+    width: 250px;
+    height: 380px;
     border-radius: 30px; }
 
 .div5 {
@@ -265,15 +264,16 @@ li {
 .mainNosotros {
   display: flex;
   flex-direction: column;
-  align-items: center; }
+  align-items: center;
+  justify-content: center; }
 
 .heroNosotros {
+  max-width: 1200px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   border-radius: 30px;
-  width: 95%;
   background-repeat: no-repeat;
   background-size: cover;
   background-image: url(../img/heroNosotros.jpg);
@@ -283,7 +283,7 @@ li {
     text-align: center;
     color: #ffffff;
     font-size: 4vw;
-    font-family: hemi;
+    font-family: 'Anton', sans-serif;
     margin-bottom: 10px;
     padding: 5%; }
 
@@ -292,11 +292,15 @@ li {
   flex-direction: column;
   align-items: center;
   justify-content: center; }
+  .infoNosotros h2 {
+    text-align: center; }
   .infoNosotros .contenidoInfo {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    color: black;
+    font-size: 1vw;
     width: 400px;
     margin: 50px; }
   .infoNosotros .info {
@@ -326,11 +330,15 @@ li {
     width: 500px;
     margin: 20px; }
   .infoNosotros p {
-    text-align: center; }
+    text-align: justify;
+    hyphens: auto; }
   .infoNosotros .infoCliente {
     font-size: 15px;
+    max-width: 1200px;
     width: 400px;
     margin-bottom: 30px; }
+    .infoNosotros .infoCliente h2 {
+      text-align: center; }
 
 .mainPrecios {
   height: auto;
@@ -575,17 +583,17 @@ li {
   margin: 25px; }
 
 #from {
+  border-color: black;
   padding: 10px;
   border-radius: 20px;
-  border: none;
   width: 250px;
   height: 30px;
   margin-bottom: 10px; }
 
 #to {
+  border-color: black;
   padding: 10px;
   border-radius: 20px;
-  border: none;
   width: 250px;
   height: 30px; }
 
@@ -624,9 +632,9 @@ li {
   text-align: center;
   font-size: 2vh;
   margin: 20px auto;
-  background-color: #536f8c;
+  background-color: #e8e8e8;
   border-radius: 25px;
-  padding: 5px; }
+  padding: 30px; }
 
 #mode {
   color: black; }
@@ -882,6 +890,11 @@ footer {
     font-size: 1rem; } }
 
 @media (max-width: 500px) {
+  .heroNosotros {
+    max-width: 300px;
+    min-height: 250px; }
+    .heroNosotros h1 {
+      font-size: 25px; }
   .infoNosotros .info {
     width: 400px; }
     .infoNosotros .info .contenidoInfo {
@@ -893,6 +906,7 @@ footer {
     .infoNosotros .info img {
       width: 280px; }
   .infoNosotros .infoCliente {
+    max-width: 280px;
     width: 360px;
     font-size: 10px; } }
 

@@ -150,6 +150,13 @@
 
 //NOSOTROS//
 @media (max-width: 500px){
+    .heroNosotros{
+        max-width: 300px;
+        min-height: 250px;
+        h1{
+            font-size: 25px;
+        }
+    }
     .infoNosotros{
         .info{
             width: 400px;
@@ -167,6 +174,7 @@
             }            
         }
     .infoCliente{
+        max-width: 280px;
         width: 360px;
         font-size: 10px;
     }

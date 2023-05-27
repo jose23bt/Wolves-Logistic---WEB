@@ -13,6 +13,7 @@
 .heroSection {    
     display: flex;
     justify-content: center;
+    margin-bottom: 5vw;
 }
 
 .carousel-inner {
@@ -38,13 +39,13 @@
     }
 }
 
-.nuestrosServicios {
-    margin-left: 50px;
-    margin-right: 50px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.nuestrosServicios {  
+
+    margin-top: 50px; 
     text-align: center;
+    h3{ 
+        color: black;
+    }
 }
 
 //------------------------MAIN INDEX----------------------//
@@ -119,18 +120,19 @@
 }
 
 .parent2 {
+    margin-top: 50px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: 1fr;
-    grid-column-gap: px;
-    grid-row-gap: px;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     align-content: center;
+    width: 1200px;
 
     img {
-        width: 70%;
+        width: 250px;
+        height: 380px;
         border-radius: 30px;
     }
 }
@@ -161,14 +163,15 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;    
 }
 .heroNosotros{
+    max-width: 1200px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;    
     border-radius: 30px;
-    width: 95%;    
     background-repeat: no-repeat;    
     background-size: cover;
     background-image: url(../img/heroNosotros.jpg);
@@ -178,7 +181,7 @@
         text-align: center;
         color: #ffffff;
         font-size: 4vw;
-        font-family: hemi;
+        font-family: 'Anton', sans-serif;
         margin-bottom: 10px;
         padding: 5%;
         }
@@ -189,13 +192,18 @@
     flex-direction: column; 
     align-items: center;    
     justify-content: center;
+    h2{
+        text-align: center;
+    }        
     .contenidoInfo{
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        color: black;
+        font-size: 1vw;
         width: 400px;
-        margin: 50px;        
+        margin: 50px;
     }
     .info{
         display: flex;
@@ -229,12 +237,17 @@
             margin: 20px;
         }
         p{
-            text-align: center;
+            text-align: justify;  
+            hyphens: auto; 
         }
         .infoCliente{
             font-size: 15px;
+            max-width: 1200px;
             width: 400px;
             margin-bottom: 30px;
+            h2{
+                text-align: center;
+            }
         }
     }
 
@@ -449,8 +462,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center; 
-    padding: 20px;
-        
+    padding: 20px;        
     p {  
         text-align: justify;  
         hyphens: auto;      
@@ -539,17 +551,17 @@
 }
 
 #from{
+    border-color: black; 
     padding: 10px;
-    border-radius: 20px;
-    border: none;
+    border-radius: 20px;    
     width: 250px;
     height: 30px;
     margin-bottom: 10px;
 }
 #to{
+    border-color: black;
     padding: 10px;
-    border-radius: 20px;
-    border: none;
+    border-radius: 20px;    
     width: 250px;
     height: 30px;
 }
@@ -601,9 +613,10 @@
     text-align: center;
     font-size: 2vh;
     margin: 20px auto;
-    background-color: #536f8c;
+    background-color: #e8e8e8;
     border-radius: 25px;
-    padding: 5px;
+    padding: 30px;
+    
 }
 
 #mode {
