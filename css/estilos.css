@@ -537,6 +537,91 @@ li {
     width: 150px;
     height: 60px; }
 
+/*---------------PAGINA----CONTACTO-----------------------*/
+.mainContacto {
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+.contacto {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+
+.contactoTexto {
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.4);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  color: white;
+  text-align: center;
+  margin-bottom: 20px; }
+  .contactoTexto p {
+    text-align: justify;
+    width: 300px; }
+
+.formContacto {
+  padding: 50px;
+  width: 100%;
+  border-radius: 20px;
+  background-image: url(../img/fondoContacto.jpg);
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center; }
+
+form {
+  max-width: 610px;
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+  padding: 30px;
+  border-radius: 20px; }
+  form h1 {
+    text-align: center;
+    color: white;
+    margin-bottom: 30px; }
+  form input {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 15px;
+    font-size: 17px;
+    border: none; }
+  form textarea {
+    min-height: 100px;
+    max-height: 300px;
+    max-width: 100%;
+    min-width: 100%;
+    margin-bottom: 30px;
+    border-radius: 15px;
+    padding: 10px; }
+
+.agradecimiento {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+  .agradecimiento img {
+    width: 200px;
+    margin-bottom: 50px; }
+
+.agradecimientoTexto {
+  margin-top: 50px;
+  max-width: 800px;
+  text-align: justify;
+  color: black;
+  text-align: center;
+  font-size: 30px; }
+  .agradecimientoTexto p {
+    font-size: 20px; }
+
+/*---------------FIN----PAGINA---CONTACTO---------------*/
 /*---------------PAGINA----COTIZACION----------------------*/
 .mainCotizador {
   height: auto;
@@ -913,3 +998,7 @@ footer {
 @media (max-width: 500px) {
   .mainCotizador h1 {
     font-size: 9vw; } }
+
+@media (min-width: 500px) {
+  .contactoTexto {
+    margin-right: 20px; } }

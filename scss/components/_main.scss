@@ -492,6 +492,99 @@
     }
 }
 
+/*---------------PAGINA----CONTACTO-----------------------*/
+.mainContacto{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.contacto{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.contactoTexto{
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.400);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;   
+    color: rgb(255, 255, 255);
+    text-align: center;
+    margin-bottom: 20px;    
+    p{
+        text-align: justify;
+        width: 300px;
+    }
+}
+.formContacto{
+    padding: 50px;
+    width: 100%;
+    border-radius: 20px;     
+    background-image: url(../img/fondoContacto.jpg);
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+form{
+    max-width: 610px;    
+    background-color: rgba(0, 0, 0, 0.400);
+    backdrop-filter: blur(10px);
+    padding: 30px;    
+    border-radius: 20px;
+    h1{
+        text-align: center;
+        color: white;
+        margin-bottom: 30px;
+    }
+    input{
+        width: 100%;
+        margin-bottom: 20px;
+        padding: 10px;
+        box-sizing: border-box;
+        border-radius: 15px;
+        font-size: 17px;
+        border: none;
+    }
+    textarea{
+        min-height: 100px;
+        max-height: 300px;
+        max-width: 100%;
+        min-width: 100%;
+        margin-bottom: 30px;
+        border-radius: 15px;
+        padding: 10px;
+    }
+}
+.agradecimiento{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    img{
+        width: 200px;
+        margin-bottom: 50px;
+    }
+}
+.agradecimientoTexto{
+    margin-top: 50px;
+    max-width: 800px;
+    text-align: justify;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    font-size: 30px;       
+    p{
+        font-size: 20px;
+    }
+}
+
+/*---------------FIN----PAGINA---CONTACTO---------------*/
+
 /*---------------PAGINA----COTIZACION----------------------*/
 
 .mainCotizador{
