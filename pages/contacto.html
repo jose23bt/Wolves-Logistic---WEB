@@ -15,7 +15,7 @@
     <header>
         <div class="barraNavegacion">
             <div class="logo">
-                <img src="../Img/logo.png" alt="">
+                <img src="../img/logo.png" alt="">
                 <a href="../index.html">Wolves Logistica</a>
             </div>
             <ul class="links">
@@ -43,15 +43,15 @@
         <div class="formContacto">
             <div class="contactoTexto">
                 <h2>Contáctanos</h2>
-                <p>En Logística Motorizada Argentina, nos encanta estar en contacto con nuestros clientes. Si tienes alguna consulta, solicitud o simplemente deseas hacernos llegar tus comentarios, estás en el lugar indicado. <br> Puedes completar el siguiente formulario con tus datos y mensaje, y nos comunicaremos contigo lo antes posible. Queremos asegurarnos de brindarte una respuesta rápida y precisa, por lo que te pedimos que proporciones la mayor cantidad de detalles posible. Así, podremos entender tus requerimientos de manera más efectiva.</p>
+                <p>En Logística Wolves, nos encanta estar en contacto con nuestros clientes. Si tienes alguna consulta, solicitud o simplemente deseas hacernos llegar tus comentarios, estás en el lugar indicado. <br> Puedes completar el siguiente formulario con tus datos y mensaje, y nos comunicaremos contigo lo antes posible. Queremos asegurarnos de brindarte una respuesta rápida y precisa, por lo que te pedimos que proporciones la mayor cantidad de detalles posible. Así, podremos entender tus requerimientos de manera más efectiva.</p>
             </div>
-            <form>
+            <form action="enviar_formulario.php" method="POST">
                 <h1>Formulario</h1>
                 <input type="text" name="Nombre" placeholder="Nombre y Apellido">
                 <input type="text" name="Numero" placeholder="Numero de Contacto">
                 <input type="text" name="Correo" placeholder="Correo Electronico">
-                <textarea name="mensaje" id="" cols="30" rows="10" placeholder="Escriba aqui su mensaje"></textarea>
-                <input type="button" value="ENVIAR">
+                <textarea name="mensaje" cols="30" rows="10" placeholder="Escriba aqui su mensaje"></textarea>
+                <input type="submit" value="ENVIAR">
             </form>
         </div>
         <div class="agradecimiento">
