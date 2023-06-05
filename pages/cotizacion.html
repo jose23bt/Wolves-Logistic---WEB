@@ -110,8 +110,23 @@
                             <p id="distancia-total"></p>
                             <p id="precio-total"></p>
                         </div>
+
+                        <!-- Botón para abrir el modal -->
+                        <button id="openModalButton">Solicitar Viaje</button>
+
+                        <!-- Modal -->
+                        <div id="modal" class="modal">
+                            <div class="modal-content">
+                            <span id="closeModalButton" class="close">&times;</span>
+                            <h2>Datos del Remitente</h2>
+                            <input type="text" id="remitenteNombre" placeholder="Nombre del Remitente" required>
+                            <input type="text" id="remitenteContacto" placeholder="Número de Contacto del Remitente" required>
+                            <div class="button-container">
+                                <button id="solicitarButton" class="button">Solicitar</button>
+                            </div>
+                            </div>
                         </div>
-                    </div>
+
         </section>
         <section id="contenedor" class="contenedor inactive">
             <div class="wrapper">

@@ -7,7 +7,7 @@ const pricePerKm = 130;
 let autocompleteService;
 
 // Agregar un evento para esperar a que se cargue el contenido de la página
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     // Llamar a la función para inicializar el mapa y agregar el autocompletado
     initMap();
 
@@ -132,6 +132,9 @@ function calcularRuta() {
             document.getElementById('distancia-total').textContent = `Distancia total: ${distance.toFixed(2)} km`;
             document.getElementById('precio-total').textContent = `Precio total: $${(distance * pricePerKm).toFixed(2)}`;
             document.getElementById('resumen-ruta').style.display = 'block';
+            // Almacenar las direcciones buscadas
+            direccionesBuscadas = direcciones;
+
         } else {
             alert('No se pudo calcular la ruta. Por favor, verifica las direcciones ingresadas.');
         }
@@ -183,3 +186,62 @@ function clearMarkers() {
 
     markers = [];
 }
+//BOTON SOLICITAR VIAJE EN MAPA//
+
+// Obtener elementos del DOM
+const openModalButton = document.getElementById('openModalButton');
+const modal = document.getElementById('modal');
+const closeModalButton = document.getElementById('closeModalButton');
+const solicitarButton = document.getElementById('solicitarButton');
+const remitenteNombreInput = document.getElementById('remitenteNombre');
+const remitenteContactoInput = document.getElementById('remitenteContacto');
+
+// Abrir el modal al hacer clic en el botón
+openModalButton.addEventListener('click', () => {
+    modal.style.display = 'block';
+});
+
+// Cerrar el modal al hacer clic en la "X"
+closeModalButton.addEventListener('click', () => {
+    modal.style.display = 'none';
+});
+
+// Cerrar el modal al hacer clic fuera del contenido del modal
+window.addEventListener('click', (event) => {
+    if (event.target === modal) {
+        modal.style.display = 'none';
+    }
+});
+
+// Variables globales
+let distanciaTotal = distance * pricePerKm;
+let direccionesBuscadas = [distance];
+
+// Manejar clic en el botón de solicitar
+solicitarButton.addEventListener('click', () => {
+    const remitenteNombre = remitenteNombreInput.value;
+    const remitenteContacto = remitenteContactoInput.value;
+
+    // Obtener las direcciones solicitadas
+    const direccionesSolicitadas = direccionesBuscadas;
+
+    // Calcular el kilometraje total y el monto total
+    const kilometrajeTotal = distanciaTotal;
+    const montoTotal = distance * pricePerKm;
+
+    // Construir el mensaje
+    let mensaje = `Datos del Remitente:\nNombre: ${remitenteNombre}\nContacto: ${remitenteContacto}\n\n`;
+    mensaje += 'Direcciones Solicitadas:\n';
+    direccionesSolicitadas.forEach((direccion) => {
+        mensaje += `${direccion}\n`;
+    });
+    mensaje += `\nKilometraje Total: ${distance.toFixed(2)} km\nMonto Total: $${(distance * pricePerKm).toFixed(2)}`;
+
+    // Enviar el mensaje por WhatsApp (simulado)
+    const numeroWhatsApp = '5491123318355';
+    const url = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensaje)}`;
+    window.open(url);
+
+    // Cerrar el modal
+    modal.style.display = 'none';
+});

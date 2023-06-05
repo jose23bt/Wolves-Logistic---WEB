@@ -165,5 +165,3 @@ function reiniciarCotizador() {
 botonReiniciar.addEventListener('click', reiniciarCotizador);
 
 
-
-
