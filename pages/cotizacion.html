@@ -9,8 +9,7 @@
     <link rel="stylesheet" href="../css/estilos-form.css">    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="https://api.openweathermap.org/data/2.5/weather?q=New%20York&appid=de7441f28b6bb245fa434b1e282f457b"></script>
+        crossorigin="anonymous" referrerpolicy="no-referrer" />    
     
         
     <title>Wolves | Cotizaciones</title>
@@ -95,42 +94,22 @@
                         </div>            
                     </div>                    
                     <div class="jumbotron">
-                        <div class="container-fluid">
-                            <h1>Cotizador de viajes Particulares</h1>
-                            <p>Calcula el precio de tu envio de forma particular</p>
-                            <form class="form-horizontal">
-                                <div>
-                                    <div>
-                                        <input type="text" id="from" placeholder="Origen">
-                                    </div>
-                                </div>
-                                <div>
-                                    <div>
-                                        <input type="text" id="to" placeholder="Destino">
-                                    </div>
-                                </div>
-                            </form>
-                
-                            <div class="boton">
-                                <div>
-                                    <button id="cotizarBtn">COTIZAR</button>
-                                </div>
-                            </div>
-                
+                        <div id="map"></div>
+                        <ul id="direccion-lista">
+                            <li>
+                                <input type="text" placeholder="Dirección 1">
+                                <br>
+                                <input type="text" placeholder="Dirección 2">
+                            </li>
+                        </ul>
+                        <button id="agregar-direccion-btn">Agregar Dirección</button>
+                        <br><br>
+                        <button id="calcular-ruta-btn">Calcular Ruta</button>
+                        <button id="reiniciar-btn">Reiniciar</button>
+                        <div id="resumen-ruta" style="display: none;">
+                            <p id="distancia-total"></p>
+                            <p id="precio-total"></p>
                         </div>
-                        <div class="container-fluid">
-                
-                            <div id="googleMap">
-                
-                            </div>
-                            <div id="output">
-                
-                            </div>
-                        </div>
-                        <div class="estadoClima">
-                            <p>En dias lluviosos se cobrara un 50% adicional a la tarifa de viajes particulares</p>
-                            <h4>Estado del Clima</h4>
-                            <div id="clima"></div>    
                         </div>
                     </div>
         </section>
@@ -188,9 +167,9 @@
     </footer>
     <script type="module" src="../Main.js"></script>
     <script type="module" src="../js/mapa.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBCTFv7kmJ-6tH3VBiygWhlbyRCOtnJVww&libraries=places"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script type="module" src="../js/getform.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAmJ7wGtJoWHASpMsjuqOpcfRTDk4AVgu4&libraries=places&callback=initMap"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>

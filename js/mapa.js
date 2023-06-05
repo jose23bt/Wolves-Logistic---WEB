@@ -1,79 +1,185 @@
-// Características del mapa
-const myLatLng = { lat: -34.6148108, lng: -58.502316 };
-const mapOptions = {
-    center: myLatLng,
-    zoom: 11,
-    mapTypeId: google.maps.MapTypeId.ROADMAP
-};
+let map;
+let directionsService;
+let directionsRenderer;
+let markers = [];
+let distance = 0;
+const pricePerKm = 130;
+let autocompleteService;
 
-// El mapa
-const map = new google.maps.Map(document.getElementById('googleMap'), mapOptions);
+// Agregar un evento para esperar a que se cargue el contenido de la página
+document.addEventListener('DOMContentLoaded', function() {
+    // Llamar a la función para inicializar el mapa y agregar el autocompletado
+    initMap();
 
-// Crear un objeto DirectionsService para usar el método de ruta y obtener un resultado para nuestra solicitud
-const directionsService = new google.maps.DirectionsService();
+    // Obtener los botones por su ID
+    const agregarDireccionBtn = document.getElementById('agregar-direccion-btn');
+    const calcularRutaBtn = document.getElementById('calcular-ruta-btn');
+    const reiniciarBtn = document.getElementById('reiniciar-btn');
 
-// Crear un objeto DirectionsRenderer que usaremos para mostrar la ruta
-const directionsDisplay = new google.maps.DirectionsRenderer();
+    // Agregar event listeners a los botones
+    agregarDireccionBtn.addEventListener('click', agregarDireccion);
+    calcularRutaBtn.addEventListener('click', calcularRuta);
+    reiniciarBtn.addEventListener('click', resetSummaryAndInputs);
+});
 
-// Vincular DirectionsRenderer al mapa
-directionsDisplay.setMap(map);
+// Función para inicializar el mapa
+function initMap() {
+    const buenosAires = { lat: -34.6037, lng: -58.3816 };
 
-// Definir función calcRoute
-function calcRoute() {
-    // Crear solicitud
-    const request = {
-        origin: document.getElementById("from").value,
-        destination: document.getElementById("to").value,
-        travelMode: google.maps.TravelMode.DRIVING,
-        unitSystem: google.maps.UnitSystem.METRIC,
+    map = new google.maps.Map(document.getElementById('map'), {
+        center: buenosAires,
+        zoom: 12,
+    });
+
+    directionsService = new google.maps.DirectionsService();
+    directionsRenderer = new google.maps.DirectionsRenderer();
+    directionsRenderer.setMap(map);
+
+    // Inicializar el autocompletado
+    autocompleteService = new google.maps.places.AutocompleteService();
+
+    // Agregar autocompletado a los campos de dirección existentes
+    const direccionInputs = document.querySelectorAll('#direccion-lista input');
+    direccionInputs.forEach(addAutocomplete);
+}
+
+// Función para agregar campos de entrada de direcciones
+function agregarDireccion() {
+    const inputContainer = document.getElementById('direccion-lista');
+    const direccionCount = inputContainer.children.length + 2;
+
+    const input = document.createElement('li');
+    const inputField = document.createElement('input');
+    inputField.type = 'text';
+    inputField.placeholder = `Dirección ${direccionCount}`;
+    input.appendChild(inputField);
+
+    const removeButton = document.createElement('button');
+    removeButton.textContent = 'Eliminar';
+    removeButton.addEventListener('click', () => {
+        eliminarDireccion(input);
+    });
+
+    input.appendChild(removeButton);
+
+    inputContainer.appendChild(input);
+
+    // Agregar autocompletado al nuevo campo de dirección
+    addAutocomplete(inputField);
+}
+
+// Función para eliminar un campo de entrada de dirección
+function eliminarDireccion(input) {
+    const inputContainer = document.getElementById('direccion-lista');
+    inputContainer.removeChild(input);
+}
+
+// Función para agregar autocompletado a un campo de dirección
+function addAutocomplete(input) {
+    const autocomplete = new google.maps.places.Autocomplete(input, {
+        types: ['address'],
+        componentRestrictions: { country: 'AR' }, // Restricción para buscar direcciones en Argentina
+        fields: ['address_components', 'geometry'],
+    });
+
+    // Evento de selección de un lugar en el autocompletado
+    autocomplete.addListener('place_changed', () => {
+        const place = autocomplete.getPlace();
+
+        if (!place.geometry || !place.geometry.location) {
+            return;
+        }
+
+        // Obtener la ubicación seleccionada y centrar el mapa en ella
+        const location = place.geometry.location;
+        map.setCenter(location);
+
+        // Crear un marcador en la ubicación seleccionada
+        const marker = new google.maps.Marker({
+            map: map,
+            position: location,
+        });
+
+        // Agregar el marcador a la lista de marcadores
+        markers.push(marker);
+    });
+}
+
+// Función para calcular la ruta
+function calcularRuta() {
+    clearMarkers();
+    resetSummary();
+
+    const direccionInputs = document.querySelectorAll('#direccion-lista input');
+    const direcciones = Array.from(direccionInputs).map((input) => input.value);
+
+    const directionsRequest = {
+        origin: direcciones[0], // Obtener la dirección de origen desde el primer input
+        destination: direcciones[direcciones.length - 1], // Obtener la dirección de destino desde el último input
+        waypoints: getWaypoints(direcciones),
+        optimizeWaypoints: false,
+        travelMode: 'DRIVING',
     };
 
-    // Pasar la solicitud al método de ruta
-    directionsService.route(request, function (result, status) {
-        if (status == google.maps.DirectionsStatus.OK) {
-            // Obtener distancia y tiempo
-            const output = document.querySelector('#output');
-            const fare = calculateFare_km(result.routes[0].legs[0].distance.value);
-            output.innerHTML = "<div>Origen: " + document.getElementById("from").value + ".<br />Destino: " + document.getElementById("to").value + ".<br /> distancia del recorrido: " + result.routes[0].legs[0].distance.text + ".<br />Duración : " + result.routes[0].legs[0].duration.text + ".<br /> Tarifa $ : " + fare + ".</div>"
-            // Mostrar la ruta
-            directionsDisplay.setDirections(result);
-        }
-        else {
-            // Eliminar la ruta del mapa
-            directionsDisplay.setDirections({ routes: [] });
-            // Centrar el mapa en Buenos Aires
-            map.setCenter(myLatLng);
+    directionsService.route(directionsRequest, (response, status) => {
+        if (status === 'OK') {
+            directionsRenderer.setDirections(response);
 
-            // Mostrar mensaje de error
-            output.innerHTML = "<div>No se pudo recuperar la distancia del viaje.</div>";
+            const legs = response.routes[0].legs;
+            distance = legs.reduce((total, leg) => total + leg.distance.value, 0) / 1000; // Convertir de metros a kilómetros
+
+            // Actualizar el resumen de la ruta
+            document.getElementById('distancia-total').textContent = `Distancia total: ${distance.toFixed(2)} km`;
+            document.getElementById('precio-total').textContent = `Precio total: $${(distance * pricePerKm).toFixed(2)}`;
+            document.getElementById('resumen-ruta').style.display = 'block';
+        } else {
+            alert('No se pudo calcular la ruta. Por favor, verifica las direcciones ingresadas.');
         }
     });
 }
 
-// Crear objetos de autocompletado para todas las entradas
-const options = {
-    types: ['(cities)']
-};
-
-const input1 = document.getElementById("from");
-const autocomplete1 = new google.maps.places.Autocomplete(input1, options);
-
-const input2 = document.getElementById("to");
-const autocomplete2 = new google.maps.places.Autocomplete(input2, options);
-
-function calculateFare_km(kilometros) {
-    const fare = (kilometros * 0.100).toFixed(2);
-    return fare;
+// Función para reiniciar el resumen de la ruta y los inputs
+function resetSummaryAndInputs() {
+    resetSummary();
+    clearInputs();
+    directionsRenderer.setDirections({ routes: [] });
+    document.getElementById('resumen-ruta').style.display = 'none';
 }
 
-// Esperar a que se cargue el DOM
-document.addEventListener('DOMContentLoaded', function () {
-    // Obtener referencia al botón
-    var cotizarBtn = document.getElementById('cotizarBtn');
+// Función para borrar los inputs de dirección
+function clearInputs() {
+    const direccionInputs = document.querySelectorAll('#direccion-lista input');
+    direccionInputs.forEach((input) => {
+        input.value = '';
+    });
+}
 
-        // Agregar evento onclick al botón
-        cotizarBtn.addEventListener('click', function () {
-            // Llamar a la función calcRoute()
-            calcRoute();
+// Función para reiniciar el resumen de la ruta
+function resetSummary() {
+    distance = 0;
+    document.getElementById('distancia-total').textContent = '';
+    document.getElementById('precio-total').textContent = '';
+}
+
+// Función para obtener los puntos intermedios de la ruta
+function getWaypoints(direcciones) {
+    const waypoints = [];
+
+    for (let i = 1; i < direcciones.length - 1; i++) {
+        waypoints.push({
+            location: direcciones[i],
+            stopover: true,
         });
+    }
+
+    return waypoints;
+}
+
+// Función para eliminar los marcadores anteriores del mapa
+function clearMarkers() {
+    markers.forEach((marker) => {
+        marker.setMap(null);
     });
+
+    markers = [];
+}

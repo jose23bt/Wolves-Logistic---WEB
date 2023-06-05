@@ -164,29 +164,6 @@ function reiniciarCotizador() {
 
 botonReiniciar.addEventListener('click', reiniciarCotizador);
 
-//-----------------------CLIMA------------------------//
-
-document.addEventListener('DOMContentLoaded', () => {
-    const climaDiv = document.getElementById("clima");
-    const apikey = "de7441f28b6bb245fa434b1e282f457b";
-    const ciudad = "Lomas de Zamora,Buenos Aires,Argentina"; // Cambia la ciudad aquí
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=${ciudad}&appid=${apikey}&lang=es`;
-
-    fetch(url)
-        .then(response => response.json())
-        .then(data => {
-            const clima = data.weather[0].description;
-            const temperatura = (data.main.temp - 273.15).toFixed(2); // Temperatura en Celsius
-            const sensacionTermica = (data.main.feels_like - 273.15).toFixed(2); // Sensación térmica en Celsius
-            const humedad = data.main.humidity;
-
-            const infoClima = `El clima en ${ciudad} es ${clima}. La temperatura actual es de ${temperatura}°C, con una sensación térmica de ${sensacionTermica}°C. La humedad es del ${humedad}%.`;
-            const textoClima = document.createTextNode(infoClima);
-            climaDiv.appendChild(textoClima);
-        })
-        .catch(error => console.error(error));
-});
-
 
 
 
